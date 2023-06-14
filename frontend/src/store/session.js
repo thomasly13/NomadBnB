@@ -23,12 +23,13 @@ const removeCurrentUser = () => {
     };
 };
 
-//csrfSession stuff
+//stores token inside session
 const storeCSRFToken = response => {
   const csrfToken = response.headers.get("X-CSRF-Token");
   if (csrfToken) sessionStorage.setItem("X-CSRF-Token", csrfToken);
 }
 
+//stores current user into session
 const storeCurrentUser = user => {
   if (user) sessionStorage.setItem("currentUser", JSON.stringify(user));
   else sessionStorage.removeItem("currentUser");
@@ -39,7 +40,6 @@ const storeCurrentUser = user => {
 export const login = (user) => async (dispatch) => {
 
     const { email, password } = user;
-    debugger
     const response = await csrfFetch('/api/session', {
         method: 'POST',
         body: JSON.stringify({
@@ -48,26 +48,41 @@ export const login = (user) => async (dispatch) => {
         })
     });
     const data = await response.json();
-    debugger
+    storeCurrentUser(data.user)
     dispatch(setCurrentUser(data.user));
+    return data;
+};
+
+//TODO logout thunk action controller
+export const logout = () => async (dispatch) => {
+    const response = await csrfFetch('/api/session', {
+        method: 'DELETE'
+    });
+    storeCurrentUser(null);
+    dispatch(removeCurrentUser());
     return response;
 };
 
-export const logout = (user) => async (dispatch) => {
-    const { email, password } = user;
-    const response = await csrfFetch('/api/session', {
-        method: 'POST',
-        body: JSON.stringify({
+// signup thunk action controller
+export const signup = (user) => async (dispatch) => {
+    const { email, password, firstName, lastName } = user;
+    const response = await csrfFetch("/api/users", {
+      method: "POST",
+      body: JSON.stringify({
         email,
-        password
-        })
+        password,
+        firstName,
+        lastName
+      })
     });
     const data = await response.json();
+    storeCurrentUser(data.user);
     dispatch(setCurrentUser(data.user));
-    return response;
+    return data;
 };
 
 
+//restores the session if the user were to refresh
 export const restoreSession = () => async dispatch => {
     const response = await csrfFetch("/api/session");
     storeCSRFToken(response);
@@ -78,11 +93,13 @@ export const restoreSession = () => async dispatch => {
 };
 
 
-//question: why do we have this
+
 const initialState = { 
   user: JSON.parse(sessionStorage.getItem("currentUser"))
 };
 
+
+//session reducer that controls the actions
 const sessionReducer = (state = initialState, action) => {
 
     Object.freeze(state) 

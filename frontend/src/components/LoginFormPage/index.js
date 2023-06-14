@@ -9,22 +9,29 @@ function LoginFormPage() {
     // gives access to dispatch
     const dispatch = useDispatch();
 
-    // finds the current sessionUser
-    //question
+    // finds the current user
     const sessionUser = useSelector(state => state.sessions.user);
    
 
     //states of email and password
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+
+    //state of error messages
     const [errors, setErrors] = useState([]);
-  
-    if (sessionUser) return <Redirect to="/" />;
-  
-    const handleSubmit = (e) => {
+
+    //return to home if user is logged in
+    if (sessionUser) return <Redirect to="/" />
+      
+    //handle submit form
+    const handleSubmit = async (e) => {
+      //stops instant refresh from form submit
       e.preventDefault();
-      setErrors([]);
-      dispatch(login({ email, password }))
+
+      //calls thunk action and gets a response
+      const res = await dispatch(login({ email, password }))
+      //sets errors to any errors the response gets
+      setErrors(res.errors)
     }
   
     return (
