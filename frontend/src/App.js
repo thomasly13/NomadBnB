@@ -2,15 +2,16 @@ import React from 'react';
 import { Route, Switch } from 'react-router-dom';
 import LoginFormPage from './components/LoginFormPage/index.js';
 import SignupFormPage from './components/SignupFormPage/index.js';
-import { Navigation } from './components/Navigation/index.js';
+import { ProfileButton } from './components/Navigation/ProfileButton.js';
+
 
 
 
 //app component
 function App() {
   return (
-    <>
-      < Navigation />
+    <div className="App">
+      < ProfileButton />
       <Switch>
         <Route path="/login">
           <LoginFormPage />
@@ -18,8 +19,8 @@ function App() {
         <Route path="/signup">
           <SignupFormPage />
         </Route>
-      </Switch>    
-    </>
+      </Switch>   
+    </div>
 
   );
 }
