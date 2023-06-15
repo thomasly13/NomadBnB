@@ -10,7 +10,7 @@ function LoginFormPage() {
     const dispatch = useDispatch();
 
     // finds the current user
-    const sessionUser = useSelector(state => state.sessions.user);
+    const sessionUser = useSelector(state => state.session.user);
    
 
     //states of email and password

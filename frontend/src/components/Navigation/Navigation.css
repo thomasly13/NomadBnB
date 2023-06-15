@@ -1,0 +1,16 @@
+.profileButton {
+    position: fixed;
+    float: right;
+    padding: 5px 5px 5px 12px;
+    border: 1px solid rgb(228,228,228);
+    border-radius: 21px;
+    display: flex;
+    flex-direction: row;
+    right: 15px;
+    align-items: center;
+
+}
+
+.profilePicture {
+    margin-left:15.3px;
+}

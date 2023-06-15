@@ -10,7 +10,7 @@ function SignupFormPage() {
     const dispatch = useDispatch();
 
     //gets the current user
-    const sessionUser = useSelector(state => state.sessions.user);
+    const sessionUser = useSelector(state => state.session.user);
 
     //states of credentials
     const [email, setEmail] = useState("");
