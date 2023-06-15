@@ -81,6 +81,17 @@ export const signup = (user) => async (dispatch) => {
     return data;
 };
 
+export const signin = (email) => async (dispatch) => {
+    const response = await csrfFetch("api/users/check", {
+        method: "POST",
+        body: JSON.stringify({
+            email
+        })
+    });
+    const data = await response.json();
+    return data.checkmark
+};
+
 
 //restores the session if the user were to refresh
 export const restoreSession = () => async dispatch => {

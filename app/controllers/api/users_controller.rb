@@ -13,6 +13,15 @@ class Api::UsersController < ApplicationController
 
     end
 
+    def check 
+        @user = User.find_by(email: params[:user][:email])
+        if @user
+            render json: { checkmark: 'Cool'}
+        else 
+            render json: { checkmark: 'Not Cool'}
+        end
+    end
+
 
     private
 

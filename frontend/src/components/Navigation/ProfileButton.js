@@ -6,6 +6,7 @@ import './Navigation.css'
 import { Modal } from "../../context/Modal";
 import SignupFormPage from "../SignupFormPage";
 import LoginFormPage from "../LoginFormPage";
+import SignInFormPage from "../SignInFormPage";
 
 
 
@@ -19,6 +20,7 @@ export const ProfileButton = () => {
     const [showMenu, setShowMenu] = useState(false);
     const [showLoginModal, setShowLoginModal] = useState(false);
     const [showSignupModal, setShowSignupModal] = useState(false);
+    const [showModal, setShowModal] = useState(false);
   
     //finds current user
     const sessionUser = useSelector(state => state.session.user);
@@ -42,22 +44,17 @@ export const ProfileButton = () => {
                 {showMenu && (
                 <div className="profile-dropdown">
                     <ul>
-                        <li><h2 className="signup-dropdown"onClick={() => setShowSignupModal(true)}>Sign Up</h2></li>
-                        <li><h2 className="login-dropdown"onClick={() => setShowLoginModal(true)}>Log In</h2></li>
+                        <li><h2 className="signup-dropdown"onClick={() => setShowModal(true)}>Sign Up</h2></li>
+                        <li><h2 className="login-dropdown"onClick={() => setShowModal(true)}>Log In</h2></li>
                     </ul>
                 </div>
                 )} 
 
-                {showLoginModal && (
-                <Modal onClose={() => setShowLoginModal(false)}>
-                    <LoginFormPage />
-                </Modal>
-                )}
 
-                {showSignupModal && (
-                <Modal onClose={() => setShowSignupModal(false)}>
-                    <SignupFormPage />
-                </Modal>
+                {showModal && (
+                    <Modal onClose={() => setShowModal(false)}>
+                        <SignInFormPage />
+                    </Modal>
                 )}
             </>
         )
