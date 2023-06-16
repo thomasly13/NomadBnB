@@ -1,0 +1,30 @@
+.email-sign-in-page{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 568px;
+}
+
+.email-sign-in-page form{
+  display: flex;
+  flex-direction: column;
+}
+
+.email-sign-in-page h2{
+  color: #222222;
+  font-family: Circular, -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  font-size: 16px;
+  border-bottom: 1px solid #F7F7F7;
+  padding-top: 0;
+  padding-bottom: 0;
+  padding-left: 24px;
+  padding-right: 24px;
+
+}
+
+.email-sign-in-header {
+  min-height: 64px;
+  display: flex;
+  margin: auto;
+}

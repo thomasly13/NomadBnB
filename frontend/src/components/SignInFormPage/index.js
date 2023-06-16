@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
 import { login, signin, signup } from "../../store/session";
-
+import "./SignIn.css"
 
 
 
@@ -130,10 +130,14 @@ export function SignInFormPage() {
 
 
     const emailSignInPage = (
-        <>
-          <h2>Log in or sign up </h2>
-          <h2>Welcome to Airbnb</h2>
+        <div className="email-sign-in-page">
+          <div className="email-sign-in-header">
+            <h2>Log in or sign up </h2>
+          </div>
+          
+          
           <form onSubmit={handleEmailSignInSubmit}>
+              <h2>Welcome to Airbnb</h2>  
               <label>
               Email
               <input
@@ -143,9 +147,9 @@ export function SignInFormPage() {
                   required
               />
               </label>
-              <button type="submit">Continue</button>
+              <button className="emailSubmitButton"type="submit">Continue</button>
           </form>      
-        </>
+        </div>
       )
 
     
