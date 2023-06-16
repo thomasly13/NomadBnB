@@ -135,20 +135,27 @@ export function SignInFormPage() {
             <h2>Log in or sign up </h2>
           </div>
           
-          
-          <form onSubmit={handleEmailSignInSubmit}>
-              <h2>Welcome to Airbnb</h2>  
-              <label>
-              Email
-              <input
-                  type="text"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  required
-              />
-              </label>
-              <button className="emailSubmitButton"type="submit">Continue</button>
-          </form>      
+          <hr className="email-sign-in-form-line"></hr>
+
+          <div className="email-sign-in-form-container"> 
+            <form onSubmit={handleEmailSignInSubmit}>
+                <h2>Welcome to Airbnb</h2>  
+                <label>
+                  <div className="email-sign-in-form-input">
+                    <input
+                        type="email"
+                        value={email}
+                        placeholder="Email"
+                        onChange={(e) => setEmail(e.target.value)}
+                        required
+                    />  
+                  </div>
+
+                </label>
+                <button className="emailSubmitButton"type="submit">Continue</button>
+            </form>   
+          </div>
+     
         </div>
       )
 
