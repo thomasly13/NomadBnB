@@ -49,7 +49,8 @@ export const login = (user) => async (dispatch) => {
     });
     const data = await response.json();
     storeCurrentUser(data.user)
-    dispatch(setCurrentUser(data.user));
+    if (data.user) dispatch(setCurrentUser(data.user)); 
+
     return data;
 };
 
@@ -76,8 +77,8 @@ export const signup = (user) => async (dispatch) => {
       })
     });
     const data = await response.json();
-    storeCurrentUser(data.user);
-    dispatch(setCurrentUser(data.user));
+    storeCurrentUser(data.user)
+    if (data.user) dispatch(setCurrentUser(data.user)); 
     return data;
 };
 
@@ -125,5 +126,7 @@ const sessionReducer = (state = initialState, action) => {
             return nextState;
     }
 };
+
+
 
 export default sessionReducer;

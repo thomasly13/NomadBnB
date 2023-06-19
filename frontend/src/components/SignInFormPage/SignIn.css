@@ -19,12 +19,12 @@
   margin: auto;
   color: #222222;
   border-bottom: 1px solid rgba(235, 235, 235, 0.039);
-  font-family: Circular, -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-weight: 700;
   font-size: 16px;
 }
 
-.email-sign-in-form-line, .sign-in-form-line, .sign-up-form-line {
+.email-sign-in-form-line, .sign-up-form-line {
   box-sizing: border-box;
   border: 1px solid rgb(228,228,228);
   width: 100%;
@@ -39,7 +39,7 @@
 
 .email-sign-in-page form h2{
   color: #222222;
-  font-family: Circular, -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
+  font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-weight: 600;
   font-size: 22px;
   margin-top: 8px;
@@ -78,7 +78,7 @@
   margin: 26px 12px 6px;
   color: #222222;
   background-color: transparent;
-  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+  font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-size: 16px;
   line-height: 20px;
   font-weight: 400;
@@ -105,7 +105,7 @@
 }
 
 .email-submit-button span, .sign-in-submit-button span, .sign-up-submit-button span, .demo-login-button span {
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-weight: 600;
   font-size: 16px;
   line-height: 20px;
@@ -123,7 +123,7 @@
 .or-line-block span {
   background: white;
   padding:0 10px; 
-  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-weight: 400;
   font-size: 12px;
   line-height: 0px;
@@ -154,7 +154,7 @@
   color: #717171;
   font-size: 12px;
   line-height: 16px;
-  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+  font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
   font-weight: 400;
   margin-top: 8px;
   margin-bottom: 8px;
@@ -173,4 +173,55 @@
 .demo-login-button {
   width: 90%;
   margin: 24px;
+}
+
+.errors-container {
+  display: flex;
+  flex-direction: row;
+  box-sizing: border-box;
+  width: 100%;
+  padding: 16px;
+  margin-bottom: 24px;
+  border: 1px solid #DDDDDD;
+  border-radius: 12px;
+}
+
+.errorLogo {
+  margin-right: 12px;
+}
+
+.error-messages {
+  display: flex;
+  flex-direction: column;
+}
+
+.sign-in-bold {
+  font-family: 'Circular', '-apple-system', 'BlinkMacSystemFont', 'Roboto', "Helvetica Neue", sans-serif;
+  font-weight: 800;
+  font-size: 14px;
+  line-height: 18px;
+  color: #222222;
+}
+
+.sign-in-error {
+  font-family: 'Circular', '-apple-system', 'BlinkMacSystemFont', 'Roboto', "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 18px;
+  color: #717171;
+}
+
+.sign-up-first-name-error, .sign-up-last-name-error, .sign-up-password-error {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.sign-up-error {
+
+  color: #C13515;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: 'Circular', '-apple-system', 'BlinkMacSystemFont', 'Roboto', "Helvetica Neue", sans-serif;
+  font-weight: 400;
 }

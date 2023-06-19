@@ -10,7 +10,6 @@ import csrfFetch, { restoreCSRF } from './store/csrf';
 import * as sessionActions from './store/session';
 import { ModalProvider } from './context/Modal';
 
-console.log('hi')
 
 //creates the store
 const store = configureStore();

@@ -22,7 +22,7 @@ export function SignInFormPage() {
 
 
     // state of error messages
-    const [errors, setErrors] = useState([]);
+    const [errors, setErrors] = useState({});
 
     //current form displaying 
 
@@ -41,7 +41,12 @@ export function SignInFormPage() {
       //calls thunk action and gets a response
       const res = await dispatch(login({ email, password }))
       //sets errors to any errors the response gets
-      setErrors(res.errors)
+      if (res.errors.length > 0){
+        setErrors({password: res.errors})
+      } else {
+        setErrors({})
+      }
+      
     }
 
     const handleEmailSignInSubmit = async (e) => {
@@ -64,7 +69,15 @@ export function SignInFormPage() {
         //if the password matches confirm password it dispatchs a request
         setErrors([]);
         const res = await dispatch(signup({ email, firstName, lastName, password }))
-        setErrors(res.errors)
+
+        if (res.errors.last_name) setErrors({...errors}, errors.lastName = "Last name is required.")
+        if (res.errors.password) setErrors({...errors}, errors.password = "Password is required.")
+        if (res.errors.first_name) setErrors({...errors}, errors.firstName = "First name is required.")
+
+
+
+
+
 
     };
 
@@ -113,8 +126,61 @@ export function SignInFormPage() {
         dispatch(login({ email: "demo@user.com" , password: "password" }))}, 2700)
     };
 
+    
+    const SignUpFirstNameError = () => {
+      return (
+        <div className="sign-up-first-name-error">
+          <div  style={{ color: "#c13515", fontSize: "16px" }}>
+            <i className="fa-sharp fa-solid fa-circle-exclamation"></i>
+          </div>
+          <div >
+            <span className="sign-up-error">{errors.firstName}</span>  
+          </div>
+        </div>
+      )
+    }
+
+    const SignUpLastNameError = () => {
+      return (
+        <div className="sign-up-last-name-error">
+          <div  style={{ color: "#c13515", fontSize: "16px" }}>
+            <i className="fa-sharp fa-solid fa-circle-exclamation"></i>
+          </div>
+          <div >
+            <span className="sign-up-error">{errors.lastName}</span>        
+          </div>
+        </div>
+      )
+    }
+
+    const SignUpPasswordError = () => {
+      return (
+        <div className="sign-up-password-error">
+          <div  style={{ color: "#c13515", fontSize: "16px" }}>
+            <i className="fa-sharp fa-solid fa-circle-exclamation"></i>
+          </div>
+          <div >
+            <span className="sign-up-error">{errors.password}</span>        
+          </div>
+        </div>
+      )
+    }
+
+
+
+    const SignUpNameError = () => {
+      return (
+        <>
+          {errors.firstName ? < SignUpFirstNameError /> : null}
+          {errors.lastName ? < SignUpLastNameError /> : null}
+        </>
+      )
+    }
+
+
     const newSignUpPage = (
         <div className="sign-up-page">
+          {console.log(errors)}
           <div className="sign-up-header">
             <h2>Finish signing up</h2>
           </div>
@@ -132,7 +198,6 @@ export function SignInFormPage() {
                           value={firstName}
                           placeholder="First name"
                           onChange={(e) => setFirstName(e.target.value)}
-                          required
                       />
                     </div>
                   </label>
@@ -146,13 +211,12 @@ export function SignInFormPage() {
                           value={lastName}
                           placeholder="Last name"
                           onChange={(e) => setLastName(e.target.value)}
-                          required
                       />
                     </div>
                   </label>
                 </div>
               </div>
-              <div className="sign-up-name-message">Make sure it matches the name on your government ID.</div>
+              { (errors.firstName || errors.lastName) ? <SignUpNameError /> : <div className="sign-up-name-message">Make sure it matches the name on your government ID.</div> }
               <div className="sign-up-email-container">
                 <div className="sign-up-email-label">
                   <label>
@@ -162,7 +226,6 @@ export function SignInFormPage() {
                           value={email}
                           placeholder="Email"
                           onChange={(e) => setEmail(e.target.value)}
-                          required
                       />
                     </div>
                   </label>
@@ -178,11 +241,12 @@ export function SignInFormPage() {
                         value={password}
                         placeholder="Password"
                         onChange={(e) => setPassword(e.target.value)}
-                        required
                     />
                   </div>
                 </label>
               </div>
+
+              { errors.password ? < SignUpPasswordError /> : null}
               <div className="contract-div">By selecting Agree and continue, I agree to Airbnb’s Terms of Service, Payments Terms of Service, and Nondiscrimination Policy and acknowledge the Privacy Policy.</div>
               <button className="sign-up-submit-button" type="submit">
                 <span>Agree and continue</span> 
@@ -239,6 +303,22 @@ export function SignInFormPage() {
         </div>
       )
 
+    const SignInErrors = () => {
+      return (
+        <div className="errors-container">
+          <div className="errorLogo" style={{ color: "#c13515", fontSize: "44px" }}>
+            <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+          </div>
+          <div className="error-messages">
+            <span className="sign-in-bold">Let's try that again</span>
+            <span className="sign-in-error">{errors.password}</span>        
+          </div>
+            
+        </div>
+
+      )
+    }
+
     
 
     const existingSignInPage = (
@@ -247,10 +327,10 @@ export function SignInFormPage() {
             <h2>Log in</h2>
           </div>
 
-          <hr className="sign-in-form-line"></hr>
-
           <div className="sign-in-form-container"> 
             <form onSubmit={handleExistingSignInSubmit}>
+              {errors.password ? < SignInErrors /> : null}
+
               <div className="sign-in-form-label">
                 <label>
                   <div className="sign-in-form-input">
@@ -265,16 +345,15 @@ export function SignInFormPage() {
 
                 </label>
               </div>  
-                <button className="sign-in-submit-button" type="submit">
-                  <span>Login</span>
-                </button>
+
+              <button className="sign-in-submit-button" type="submit">
+                <span>Login</span>
+              </button>
               
             </form>
           </div>
 
-          <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
-          </ul>
+
         </div>    
       )
 
