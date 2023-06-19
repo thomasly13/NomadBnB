@@ -2,7 +2,7 @@
 import { logout } from "../../store/session";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
-import './Navigation.css'
+import './ProfileButton.css'
 import { Modal } from "../../context/Modal";
 import SignInFormPage from "../SignInFormPage";
 

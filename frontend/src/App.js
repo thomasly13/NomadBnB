@@ -1,5 +1,7 @@
 import React from 'react';
-import { ProfileButton } from './components/Navigation/ProfileButton.js';
+import { Route, Switch } from "react-router-dom";
+import { NavigationBar } from './components/Navigation/Navigation.js';
+
 
 
 
@@ -8,7 +10,14 @@ import { ProfileButton } from './components/Navigation/ProfileButton.js';
 function App() {
   return (
     <div className="App">
-      < ProfileButton />
+      < NavigationBar />
+      <Switch>
+
+        <Route path="/">
+      
+        </Route>
+      </Switch>
+
     </div>
 
   );
