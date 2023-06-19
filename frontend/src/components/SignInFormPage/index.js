@@ -19,7 +19,6 @@ export function SignInFormPage() {
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [password, setPassword] = useState("");
-    const [confirmPassword, setConfirmPassword] = useState("");
 
 
     // state of error messages
@@ -63,67 +62,136 @@ export function SignInFormPage() {
         e.preventDefault();
 
         //if the password matches confirm password it dispatchs a request
-        if (password === confirmPassword) {
-            setErrors([]);
-            const res = await dispatch(signup({ email, firstName, lastName, password }))
-            setErrors(res.errors)
-        } else {
-            return setErrors(['Confirm Password field must be the same as the Password field']);
-        }
-    }
+        setErrors([]);
+        const res = await dispatch(signup({ email, firstName, lastName, password }))
+        setErrors(res.errors)
+
+    };
+
+    const handleDemoSignIn = async () => {
+      setTimeout(()=> {
+        setEmail("d")
+      }, 200);
+      setTimeout(()=> {
+        setEmail("de")
+      }, 400);
+      setTimeout(()=> {
+        setEmail("dem")
+      }, 600);
+      setTimeout(()=> {
+        setEmail("demo")
+      }, 800);
+      setTimeout(()=> {
+        setEmail("demo@")
+      }, 1000);
+      setTimeout(()=> {
+        setEmail("demo@u")
+      }, 1200);
+      setTimeout(()=> {
+        setEmail("demo@us")
+      }, 1400);
+      setTimeout(()=> {
+        setEmail("demo@use")
+      }, 1600);
+      setTimeout(()=> {
+        setEmail("demo@user")
+      }, 1800);
+      setTimeout(()=> {
+        setEmail("demo@user.")
+      }, 2000);
+      setTimeout(()=> {
+        setEmail("demo@user.c")
+      }, 2200);
+      setTimeout(()=> {
+        setEmail("demo@user.co")
+      }, 2400);
+      setTimeout(()=> {
+        setEmail("demo@user.com")
+      }, 2600);
+
+      setTimeout( () => {
+        dispatch(login({ email: "demo@user.com" , password: "password" }))}, 2700)
+    };
 
     const newSignUpPage = (
-        <form onSubmit={handleNewSignUp}>
-            <ul>
-            {errors.map(error => <li key={error}>{error}</li>)}
-            </ul>
-            <label>
-            First Name
-            <input
-                type="text"
-                value={firstName}
-                onChange={(e) => setFirstName(e.target.value)}
-                required
-            />
-            </label>
-            <label>
-            Last Name
-            <input
-                type="text"
-                value={lastName}
-                onChange={(e) => setLastName(e.target.value)}
-                required
-            />
-            </label>
-            <label>
-            Email
-            <input
-                type="text"
-                value={email}
-                onChange={(e) => setEmail(e.target.value)}
-                required
-            />
-            </label>
-            <label>
-            Password
-            <input
-                type="password"
-                value={password}
-                onChange={(e) => setPassword(e.target.value)}
-                required
-            />
-            </label>
-            <label>
-            Confirm Password
-            <input
-                type="password"
-                value={confirmPassword}
-                onChange={(e) => setConfirmPassword(e.target.value)}
-                required
-            />
-            </label>
-            <button type="submit">Agree and continue</button>
-        </form>        
+        <div className="sign-up-page">
+          <div className="sign-up-header">
+            <h2>Finish signing up</h2>
+          </div>
+
+          <hr className="sign-up-form-line"></hr>
+
+          <div className="sign-up-form-container">
+            <form onSubmit={handleNewSignUp}>
+              <div className="sign-up-name-container">
+                <div className="sign-up-first-name-label">
+                  <label>
+                    <div className="sign-up-first-name-input">
+                      <input
+                          type="text"
+                          value={firstName}
+                          placeholder="First name"
+                          onChange={(e) => setFirstName(e.target.value)}
+                          required
+                      />
+                    </div>
+                  </label>
+                </div>
+                <hr className="sign-up-name-line"></hr>
+                <div className="sign-up-last-name-label">
+                  <label>
+                    <div className="sign-up-last-name-input">
+                      <input
+                          type="text"
+                          value={lastName}
+                          placeholder="Last name"
+                          onChange={(e) => setLastName(e.target.value)}
+                          required
+                      />
+                    </div>
+                  </label>
+                </div>
+              </div>
+              <div className="sign-up-name-message">Make sure it matches the name on your government ID.</div>
+              <div className="sign-up-email-container">
+                <div className="sign-up-email-label">
+                  <label>
+                    <div className="sign-up-email-input">
+                      <input
+                          type="text"
+                          value={email}
+                          placeholder="Email"
+                          onChange={(e) => setEmail(e.target.value)}
+                          required
+                      />
+                    </div>
+                  </label>
+                </div> 
+                <div className="sign-up-email-message">We'll email you trip confirmations and receipts.</div>               
+              </div>
+
+              <div className="sign-up-password-label">
+                <label>
+                  <div className="sign-up-password-input">
+                    <input
+                        type="password"
+                        value={password}
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />
+                  </div>
+                </label>
+              </div>
+              <div className="contract-div">By selecting Agree and continue, I agree to Airbnb’s Terms of Service, Payments Terms of Service, and Nondiscrimination Policy and acknowledge the Privacy Policy.</div>
+              <button className="sign-up-submit-button" type="submit">
+                <span>Agree and continue</span> 
+              </button>
+
+            </form>  
+          </div>
+    
+        </div>   
       )
 
     
@@ -139,7 +207,7 @@ export function SignInFormPage() {
 
           <div className="email-sign-in-form-container"> 
             <form onSubmit={handleEmailSignInSubmit}>
-                <h2>Welcome to Airbnb</h2>  
+                <h2>Welcome to Nomadbnb</h2>  
                 <div className="email-sign-in-form-label">
                   <label>
                     <div className="email-sign-in-form-input">
@@ -153,7 +221,7 @@ export function SignInFormPage() {
                     </div>
                   </label>
                 </div>
-                <button className="emailSubmitButton"type="submit">
+                <button className="email-submit-button"type="submit">
                   <span>Continue</span>
                 </button>
 
@@ -163,6 +231,10 @@ export function SignInFormPage() {
           </div>
           <h2 className="or-line-block"><span>or</span></h2>
 
+          <button className="demo-login-button" onClick={handleDemoSignIn}>
+            <span>Log in with Demo</span>
+          </button>
+
      
         </div>
       )
@@ -170,31 +242,46 @@ export function SignInFormPage() {
     
 
     const existingSignInPage = (
-        <>
-          <h2>Log in</h2>
-          <form onSubmit={handleExistingSignInSubmit}>
-              <label>
-              Password
-              <input
-                  type="text"
-                  value={password}
-                  onChange={(e) => setPassword(e.target.value)}
-                  required
-              />
-              </label>
-              <button type="submit">Login</button>
-          </form>
+        <div className="sign-in-page">
+          <div className="sign-in-header">
+            <h2>Log in</h2>
+          </div>
+
+          <hr className="sign-in-form-line"></hr>
+
+          <div className="sign-in-form-container"> 
+            <form onSubmit={handleExistingSignInSubmit}>
+              <div className="sign-in-form-label">
+                <label>
+                  <div className="sign-in-form-input">
+                    <input
+                        type="password"
+                        value={password}
+                        placeholder="Password"
+                        onChange={(e) => setPassword(e.target.value)}
+                        required
+                    />  
+                  </div>
+
+                </label>
+              </div>  
+                <button className="sign-in-submit-button" type="submit">
+                  <span>Login</span>
+                </button>
+              
+            </form>
+          </div>
+
           <ul>
             {errors.map(error => <li key={error}>{error}</li>)}
           </ul>
-        </>        
+        </div>    
       )
 
     
-    let currentView;
 
-    const renderForm = () => {
-      // debugger
+
+    const renderForm = () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
       if (currentForm === 'Email Sign In') {
         return emailSignInPage
       }
@@ -213,5 +300,10 @@ export function SignInFormPage() {
 
     );
 }
+
+//TODO an exit for the email sign in page
+//TODO a back for the sign-in and sign-up page
+//TODO proper dropdown menu
+
 
 export default SignInFormPage;

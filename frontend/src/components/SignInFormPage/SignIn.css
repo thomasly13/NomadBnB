@@ -1,14 +1,16 @@
-.email-sign-in-page{
+
+/* email sign in page, and sign in page */
+.email-sign-in-page, .sign-in-page, .sign-up-page{
   display: flex;
   flex-direction: column;
   align-items: center;
 }
 
-.email-sign-in-form-container {
+.email-sign-in-form-container, .sign-in-form-container, .sign-up-form-container{
   width: 100%;
 }
 
-.email-sign-in-header {
+.email-sign-in-header, .sign-in-header, .sign-up-header{
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -22,32 +24,31 @@
   font-size: 16px;
 }
 
-.email-sign-in-form-line {
+.email-sign-in-form-line, .sign-in-form-line, .sign-up-form-line {
   box-sizing: border-box;
   border: 1px solid rgb(228,228,228);
   width: 100%;
 }
 
 
-.email-sign-in-page form{
+.email-sign-in-page form, .sign-in-page form, .sign-up-page form{
   display: flex;
   flex-direction: column;
   padding: 24px;
 }
 
-.email-sign-in-page form  h2{
+.email-sign-in-page form h2{
   color: #222222;
   font-family: Circular, -apple-system, "system-ui", Roboto, "Helvetica Neue", sans-serif;
   font-weight: 600;
   font-size: 22px;
-  border-bottom: 1px solid #F7F7F7;
   margin-top: 8px;
   margin-bottom: 24px;
   box-sizing: border-box;
   line-height: 26px;
 }
 
-.email-sign-in-form-label  {
+.email-sign-in-form-label, .sign-in-form-label, .sign-up-email-label, .sign-up-password-label  {
   position: relative;
   cursor: text;
   display: flex;
@@ -60,18 +61,18 @@
   box-shadow: inset 0 0 0 1px #B0B0B0;
 }
 
-.email-sign-in-form-label label {
+.email-sign-in-form-label label, .sign-in-form-label label, .sign-up-first-name-label label, .sign-up-last-name-label label, .sign-up-email-label label, .sign-up-password-label label {
   position: relative;
   flex: 1 1 0%;
   padding: 0px;
 }
 
-.email-sign-in-form-input {
+.email-sign-in-form-input, .sign-in-form-input, .sign-up-first-name-input, .sign-up-last-name-input, .sign-up-email-input, .sign-up-password-input {
   display: flex;
   box-sizing: border-box;
 }
 
-.email-sign-in-form-input input{
+.email-sign-in-form-input input, .sign-in-form-input input, .sign-up-first-name-input input, .sign-up-last-name-input input, .sign-up-email-input input, .sign-up-password-input input{
   border: none;
   outline: none;
   margin: 26px 12px 6px;
@@ -85,7 +86,7 @@
   width: 100%;
 }
 
-.email-sign-in-page form button{
+.email-submit-button, .sign-in-submit-button, .sign-up-submit-button, .demo-login-button{
   width: 100%;
   margin-top: 16px;
   margin-bottom: 24px;
@@ -103,7 +104,7 @@
   cursor: pointer;
 }
 
-.email-sign-in-page form button span {
+.email-submit-button span, .sign-in-submit-button span, .sign-up-submit-button span, .demo-login-button span {
   font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
   font-weight: 600;
   font-size: 16px;
@@ -114,7 +115,7 @@
 .or-line-block {
   width: 90%;
   text-align: center;
-  border-bottom: 1px solid black;
+  border-bottom: 1px solid #B0B0B0;
   line-height: 0.1em;
   margin: -15px 0 20px;
 }
@@ -122,11 +123,54 @@
 .or-line-block span {
   background: white;
   padding:0 10px; 
+  font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+  font-weight: 400;
+  font-size: 12px;
+  line-height: 0px;
+  color: #222222;
+}
+
+/*sign up page */
+.sign-up-name-container {
+  position: relative;
+  cursor: text;
+  min-height: 108px;
+  width: 100%;
+  margin: 0px;
+  border: none;
+  columns: #222222;
+  border-radius: 8px;
+  box-shadow: inset 0 0 0 1px #B0B0B0;
+}
+
+.sign-up-name-line {
+  box-sizing: border-box;
+  border: 1px solid #B0B0B0;
+  width: 100%;
+}
+
+.sign-up-name-message, .sign-up-email-message, .contract-div {
+  display: flex;
+  color: #717171;
+  font-size: 12px;
+  line-height: 16px;
+  font-family: 'Circular',-apple-system,'BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+  font-weight: 400;
+  margin-top: 8px;
+  margin-bottom: 8px;
+}
+
+.sign-up-email-container {
+  margin-top: 24px;
+  margin-bottom: 24px;
+}
+
+.sign-up-password-label {
+  margin-bottom: 24px;
 }
 
 
-
-
-
-
-
+.demo-login-button {
+  width: 90%;
+  margin: 24px;
+}

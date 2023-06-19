@@ -19,7 +19,7 @@ ApplicationRecord.transaction do
     User.create!(
       first_name: 'Demo', 
       last_name: 'lition', 
-      email: 'demo@user.io', 
+      email: 'demo@user.com', 
       password: 'password'
     )
   

@@ -29,7 +29,16 @@ export const ProfileButton = () => {
     //helper component to handle to show logout if user is logged in
     const LoggedInNav = () => {
         return (
-            <button onClick={handleLogOut}>logout</button>
+            <>
+                {showMenu && (
+                <div className="profile-dropdown">
+                    <ul>
+                        <li><h2 className="logout-dropdown" onClick={handleLogOut}>Log Out</h2></li>
+                    </ul>
+                </div>
+                )} 
+            </>
+
         )
     }
     //helper component to handle if logged out components
