@@ -11,7 +11,7 @@ import { Body } from './components/Body/Body.js';
 function App() {
   return (
     <div className="App">
-      < NavigationBar />
+      
       <Switch>
 
         <Route path="/">
