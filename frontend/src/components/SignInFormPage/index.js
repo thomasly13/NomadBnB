@@ -70,10 +70,16 @@ export function SignInFormPage() {
         setErrors([]);
         const res = await dispatch(signup({ email, firstName, lastName, password }))
 
-        if (res.errors.last_name) setErrors({...errors}, errors.lastName = "Last name is required.")
-        if (res.errors.password) setErrors({...errors}, errors.password = "Password is required.")
-        if (res.errors.first_name) setErrors({...errors}, errors.firstName = "First name is required.")
 
+        if (res.errors.first_name) {
+          setErrors({...errors}, errors.firstName = "First name is required.")
+        };
+        if (res.errors.last_name) {
+          setErrors({...errors}, errors.lastName = "Last name is required.")};
+        if (res.errors.password) {
+          setErrors({...errors}, errors.password = "Password is required.")};
+        if (res.errors.password) {
+          setErrors({...errors}, errors.password = "Password is required.")};
 
 
 
@@ -127,7 +133,7 @@ export function SignInFormPage() {
     };
 
     
-    const SignUpFirstNameError = () => {
+    const SignUpFirstNameError = ({errors}) => {
       return (
         <div className="sign-up-first-name-error">
           <div  style={{ color: "#c13515", fontSize: "16px" }}>
@@ -140,7 +146,7 @@ export function SignInFormPage() {
       )
     }
 
-    const SignUpLastNameError = () => {
+    const SignUpLastNameError = ({errors}) => {
       return (
         <div className="sign-up-last-name-error">
           <div  style={{ color: "#c13515", fontSize: "16px" }}>
@@ -153,7 +159,7 @@ export function SignInFormPage() {
       )
     }
 
-    const SignUpPasswordError = () => {
+    const SignUpPasswordError = ({errors}) => {
       return (
         <div className="sign-up-password-error">
           <div  style={{ color: "#c13515", fontSize: "16px" }}>
@@ -168,18 +174,18 @@ export function SignInFormPage() {
 
 
 
-    const SignUpNameError = () => {
+    const SignUpNameError = ({errors}) => {
       return (
         <>
-          {errors.firstName ? < SignUpFirstNameError /> : null}
-          {errors.lastName ? < SignUpLastNameError /> : null}
+          {errors.firstName ? < SignUpFirstNameError errors={errors}/> : null}
+          {errors.lastName ? < SignUpLastNameError errors={errors}/> : null}
         </>
       )
     }
 
 
-    const newSignUpPage = (
-        <div className="sign-up-page">
+    const NewSignUpPage = ({errors}) => {
+        return (<div className="sign-up-page">
           {console.log(errors)}
           <div className="sign-up-header">
             <h2>Finish signing up</h2>
@@ -216,7 +222,7 @@ export function SignInFormPage() {
                   </label>
                 </div>
               </div>
-              { (errors.firstName || errors.lastName) ? <SignUpNameError /> : <div className="sign-up-name-message">Make sure it matches the name on your government ID.</div> }
+              { (errors.firstName || errors.lastName) ? <SignUpNameError errors={errors}/> : <div className="sign-up-name-message">Make sure it matches the name on your government ID.</div> }
               <div className="sign-up-email-container">
                 <div className="sign-up-email-label">
                   <label>
@@ -246,7 +252,7 @@ export function SignInFormPage() {
                 </label>
               </div>
 
-              { errors.password ? < SignUpPasswordError /> : null}
+              { errors.password ? < SignUpPasswordError errors={errors}/> : null}
               <div className="contract-div">By selecting Agree and continue, I agree to Airbnb’s Terms of Service, Payments Terms of Service, and Nondiscrimination Policy and acknowledge the Privacy Policy.</div>
               <button className="sign-up-submit-button" type="submit">
                 <span>Agree and continue</span> 
@@ -256,7 +262,7 @@ export function SignInFormPage() {
           </div>
     
         </div>   
-      )
+      )}
 
     
 
@@ -359,7 +365,7 @@ export function SignInFormPage() {
 
     
 
-
+    
     const renderForm = () => {                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        
       if (currentForm === 'Email Sign In') {
         return emailSignInPage
@@ -368,7 +374,7 @@ export function SignInFormPage() {
         return existingSignInPage
       }
       else {
-        return newSignUpPage
+        return <NewSignUpPage errors={errors}/>
       };
     }
       

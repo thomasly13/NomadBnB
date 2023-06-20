@@ -32,6 +32,27 @@ ApplicationRecord.transaction do
         password: 'password'
       }) 
     end
+
+    # Create listings 
+    puts 'Creating listings...'
+
+    Listing.create!(
+      name: 'Luxury Beach View Apartment' ,
+      description: 'Just a short stroll from beautiful LindaMar Beach, this large private spacious studio is perfect for your next beach getaway. It has a breathtaking unobstructed  ocean view which can be seen from anywhere in the unit, including the bathroom and shower. Surfboard rental is included with your stay offering a bonus activity for your trip! There is a huge private deck with a wraparound bench, lounge chairs, and a sunbed for your enjoyment while starring at one of the nicest ocean views in California' ,
+      price: 194,
+      address: "223 Stanley Ave, Pacifica, CA 94044",
+      coordinates: ,
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 2,
+      num_of_baths: 1, 
+      num_of_bedrooms: 1,
+      num_of_beds: 1,
+      images: ,
+      owner_id: 1
+
+    
+
+    )
   
     puts "Done!"
   end

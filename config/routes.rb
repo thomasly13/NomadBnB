@@ -7,6 +7,7 @@ Rails.application.routes.draw do
 
     resources :users, only: [:create]
     resource :session, only: [:create, :show, :destroy]
+    resources :listings, only: [:show, :index]
     post 'users/check', to: 'users#check'
     
   end
