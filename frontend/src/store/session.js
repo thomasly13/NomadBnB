@@ -77,7 +77,7 @@ export const signup = (user) => async (dispatch) => {
       })
     });
     const data = await response.json();
-    storeCurrentUser(data.user)
+    if (data.user) storeCurrentUser(data.user)
     if (data.user) dispatch(setCurrentUser(data.user)); 
     return data;
 };

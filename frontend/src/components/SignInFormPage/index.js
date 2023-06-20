@@ -70,18 +70,15 @@ export function SignInFormPage() {
         setErrors([]);
         const res = await dispatch(signup({ email, firstName, lastName, password }))
 
-
-        if (res.errors.first_name) {
+        const resErrors = await res.errors
+        if (resErrors.first_name) {
           setErrors({...errors}, errors.firstName = "First name is required.")
         };
-        if (res.errors.last_name) {
+        if (resErrors.last_name) {
           setErrors({...errors}, errors.lastName = "Last name is required.")};
-        if (res.errors.password) {
+        if (resErrors.password) {
           setErrors({...errors}, errors.password = "Password is required.")};
-        if (res.errors.password) {
-          setErrors({...errors}, errors.password = "Password is required.")};
-
-
+        
 
 
 
@@ -186,7 +183,6 @@ export function SignInFormPage() {
 
     const NewSignUpPage = ({errors}) => {
         return (<div className="sign-up-page">
-          {console.log(errors)}
           <div className="sign-up-header">
             <h2>Finish signing up</h2>
           </div>
