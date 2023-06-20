@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { NavigationBar } from './components/Navigation/Navigation.js';
+import { Body } from './components/Body/Body.js';
 
 
 
@@ -14,7 +15,7 @@ function App() {
       <Switch>
 
         <Route path="/">
-          <LoginFormPage />
+          <Body />
         </Route>
       </Switch>
 
