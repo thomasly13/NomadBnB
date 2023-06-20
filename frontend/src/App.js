@@ -11,6 +11,13 @@ function App() {
   return (
     <div className="App">
       < NavigationBar />
+      <Switch>
+
+        <Route path="/">
+          <LoginFormPage />
+        </Route>
+      </Switch>
+
     </div>
 
   );
