@@ -1,3 +1,4 @@
+import { NavigationBar } from "../Navigation/Navigation"
 
 
 export const Body = () => {
