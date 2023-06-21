@@ -44,7 +44,7 @@ export const ExistingSignInPage = ({email}) => {
         return (
           <div className="errors-container">
             <div className="errorLogo" style={{ color: "#c13515", fontSize: "44px" }}>
-              <i class="fa-sharp fa-solid fa-circle-exclamation"></i>
+              <i className="fa-sharp fa-solid fa-circle-exclamation"></i>
             </div>
             <div className="error-messages">
               <span className="sign-in-bold">Let's try that again</span>

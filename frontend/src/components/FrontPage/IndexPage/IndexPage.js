@@ -36,6 +36,7 @@ export const ListingsIndex = () => {
                             <span className="listing-property-price" >${listing.price} </span>
                             <span className="listing-property-night">night</span>
                         </div>
+                        
 
                     </div>)
 

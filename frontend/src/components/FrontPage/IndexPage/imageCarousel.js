@@ -23,15 +23,18 @@ export const ImageCarousel = ({images}) => {
     }
 
     return (
-        <div className="image-container">
+        <div className="image-container" >
             <div onClick={handleLeftClick} className="left-arrow-button" style={{ color: "black", fontSize: "28.69px"}}>
-                <i class="fa-regular fa-circle-left"></i>
+                <i className="fa-regular fa-circle-left"></i>
             </div>
             <div onClick={handleRightClick} className="right-arrow-button" style={{ color: "black", fontSize: "28.69px"}}>
-                <i class="fa-regular fa-circle-right"></i>
+                <i className="fa-regular fa-circle-right"></i>
             </div>    
             <img src={images[index]} className="index-left-image"/>
         </div>
+
         
     )
 }   
+
+// style={{transform: `translateX(-${index * 100}%)`, transition: "transform 0.5s ease-in-out"}}

@@ -63,7 +63,7 @@ export function SignInFormPage() {
 
       //demo sign in request
       setTimeout( () => {
-        dispatch(login({ email: "demo@user.com" , password: "password" }))}, 2700)
+        dispatch(login({ email: "demo@user.com" , password: "password" }))}, 2500)
     };
 
 

@@ -51,7 +51,7 @@ const listingReducer = (state, action) => {
         case RECEIVE_LISTINGS:
             return { ...nextState, ...action.listings };
         case RECEIVE_LISTING:
-            nextState[action.payload.tea.id] = action.payload.tea
+            nextState[action.payload.listing.id] = action.payload.listing
             return nextState
         default:
             return nextState;
