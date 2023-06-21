@@ -18,6 +18,7 @@ const receiveListings = (listings) => {
 
 //show action 
 const receiveListing = (payload) => {
+
     return {
         type: RECEIVE_LISTING,
         payload
@@ -35,7 +36,8 @@ export const fetchAllListings = () => async (dispatch) => {
 export const fetchListingDetail = (listingId) => async (dispatch) => {
     const response = await fetch(`/api/listings/${listingId}`);
     const data = await response.json();
-    dispatch(receiveListing(data)) ;
+    dispatch(receiveListing(data[listingId])) ;
+
 }
 
 
@@ -51,7 +53,7 @@ const listingReducer = (state, action) => {
         case RECEIVE_LISTINGS:
             return { ...nextState, ...action.listings };
         case RECEIVE_LISTING:
-            nextState[action.payload.listing.id] = action.payload.listing
+            nextState[action.payload.id] = action.payload
             return nextState
         default:
             return nextState;
