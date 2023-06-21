@@ -1,7 +1,7 @@
 .listings-container{
     width: 100%;
     margin: 0px 80px;
-    margin-top: 40px;
+    margin-top: 70px;
     display: flex;
     flex-wrap: wrap;
 }
@@ -45,15 +45,34 @@
 
 .left-arrow-button {
     position: absolute;
+    background: rgba(255, 254, 254, 0.664);
+    border-radius: 50%;
+    line-height: 0px;
+    cursor: pointer;
     top: 160px;
     left: 5px;
+    user-select: none;
+}
+
+.left-arrow-button:hover {
+    background-color: white;
 }
 
 .right-arrow-button {
     position: absolute;
+    background: rgba(255, 254, 254, 0.664);
+    border-radius: 50%;
+    line-height: 0px;
+    cursor: pointer;
     top: 160px;
     right: 30px;
+    user-select: none;
 }
+
+.right-arrow-button:hover {
+    background-color: white;
+}
+
 
 .image-container {
     position: relative;

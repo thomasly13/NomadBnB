@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./ListingsIndex.css"
-
+import { VscChevronLeft } from "react-icons/vsc";
+import { VscChevronRight } from "react-icons/vsc";
 
 
 export const ImageCarousel = ({images}) => {
     const [index, setIndex] = useState(0)
+    const [showButton, setShowButton] = useState(false)
 
     const handleLeftClick = () => {
         if (index === 0) {
@@ -22,14 +24,22 @@ export const ImageCarousel = ({images}) => {
         };
     }
 
+    const handleMouseOver = () => {
+        setShowButton(true)
+    }
+
+    const handleMouseOut = () => [
+        setShowButton(false)
+    ]
+
     return (
-        <div className="image-container" >
-            <div onClick={handleLeftClick} className="left-arrow-button" style={{ color: "black", fontSize: "28.69px"}}>
-                <i className="fa-regular fa-circle-left"></i>
-            </div>
-            <div onClick={handleRightClick} className="right-arrow-button" style={{ color: "black", fontSize: "28.69px"}}>
-                <i className="fa-regular fa-circle-right"></i>
-            </div>    
+        <div className="image-container" onMouseOver={handleMouseOver} onMouseLeave={handleMouseOut}>
+            {showButton === true ?<div onClick={handleLeftClick} className="left-arrow-button" style={{ fontSize: "28px"}}>
+                <VscChevronLeft />
+            </div> : null}
+            {showButton === true ? <div onClick={handleRightClick} className="right-arrow-button" style={{fontSize: "28px"}}>
+                <VscChevronRight />
+            </div> : null }    
             <img src={images[index]} className="index-left-image"/>
         </div>
 

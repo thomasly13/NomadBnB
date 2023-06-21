@@ -1,7 +1,7 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
 import { FrontPageBody } from './components/FrontPage/Body/Body.js';
-
+import "./index.css"
 
 
 
