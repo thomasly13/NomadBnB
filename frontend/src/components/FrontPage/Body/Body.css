@@ -1,0 +1,4 @@
+.front-page-body {
+    display: flex;
+    flex-direction: column;
+}

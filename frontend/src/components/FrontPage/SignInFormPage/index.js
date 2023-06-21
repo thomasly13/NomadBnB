@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { Redirect } from "react-router-dom";
-import { login, signin } from "../../store/session";
+import { login, signin } from "../../../store/session";
 import "./SignIn.css"
 import { NewSignUpPage } from "./SIgnUp";
 import { ExistingSignInPage } from "./LogIn";
@@ -47,7 +47,7 @@ export function SignInFormPage() {
     //demo sign in function
     const handleDemoSignIn = async () => {
       //demo sign in animation
-      setTimeout(()=> { setEmail("d") }, 200);
+      setTimeout(()=> {setEmail("d")}, 200);
       setTimeout(()=> {setEmail("de")}, 400);
       setTimeout(()=> {setEmail("dem")}, 600);
       setTimeout(()=> {setEmail("demo")}, 800);

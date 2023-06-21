@@ -1,10 +1,11 @@
 
-import { logout } from "../../store/session";
+import { logout } from "../../../store/session";
 import React, { useState, useEffect } from "react";
 import { useSelector, useDispatch } from 'react-redux';
 import './ProfileButton.css'
-import { Modal } from "../../context/Modal";
+import { Modal } from "../../../context/Modal";
 import SignInFormPage from "../SignInFormPage";
+
 
 
 

@@ -19,3 +19,8 @@
     cursor: pointer;
     text-decoration: none;
 }
+
+.nav-line {
+    width: 100%;
+    border: 1px solid rgb(228,228,228);
+}

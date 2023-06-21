@@ -1,0 +1,61 @@
+.listings-container{
+    width: 100%;
+    margin: 0px 80px;
+    margin-top: 40px;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.index-left-image {
+    width: 270px;
+    height: 250px;
+    overflow: hidden;
+    margin: 40px  24px 10px 0px;
+    border-radius: 12px;
+
+}
+
+.listing-property {
+    display: flex;
+    flex-direction: column;
+}
+
+.listing-property span {
+    line-height: 19px;
+}
+
+.listing-property-location {
+    font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 600;
+    font-size: 15px;
+    color: #222222;
+    
+}
+
+.listing-property-beds {
+    color: #717171;
+    font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 500;
+    font-size: 15px;
+}
+
+.listing-property-nights {
+    margin-top: 6px;
+}
+
+.left-arrow-button {
+    position: absolute;
+    top: 160px;
+    left: 5px;
+}
+
+.right-arrow-button {
+    position: absolute;
+    top: 160px;
+    right: 30px;
+}
+
+.image-container {
+    position: relative;
+
+}

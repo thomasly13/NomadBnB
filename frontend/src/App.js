@@ -1,7 +1,6 @@
 import React from 'react';
 import { Route, Switch } from "react-router-dom";
-import { NavigationBar } from './components/Navigation/Navigation.js';
-import { Body } from './components/Body/Body.js';
+import { FrontPageBody } from './components/FrontPage/Body/Body.js';
 
 
 
@@ -13,9 +12,8 @@ function App() {
     <div className="App">
       
       <Switch>
-
         <Route path="/">
-          <Body />
+          <FrontPageBody />
         </Route>
       </Switch>
 
