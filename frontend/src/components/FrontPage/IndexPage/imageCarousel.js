@@ -4,9 +4,11 @@ import { VscChevronLeft } from "react-icons/vsc";
 import { VscChevronRight } from "react-icons/vsc";
 
 
-export const ImageCarousel = ({images}) => {
+export const ImageCarousel = ({images, imageIndex}) => {
     const [index, setIndex] = useState(0)
     const [showButton, setShowButton] = useState(false)
+
+
 
     const handleLeftClick = (e) => {
         e.preventDefault();

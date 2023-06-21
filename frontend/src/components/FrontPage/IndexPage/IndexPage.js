@@ -30,7 +30,7 @@ export const ListingsIndex = () => {
                 {listings.map(listing => {
                     return (
                     <NavLink className="listing-property" to={`/listings/${listing.id}`}>
-                        < ImageCarousel images={listing.images}/>
+                        < ImageCarousel images={listing.images} />
                         <span className="listing-property-location">{helper(listing)}</span>
                         {listing.numOfBeds === 1 ? <span className="listing-property-beds">{listing.numOfBeds} bed</span> : <span className="listing-property-beds">{listing.numOfBeds} beds</span>}
                         <div className="listing-property-nights">

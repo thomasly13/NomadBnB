@@ -27,6 +27,16 @@ export const ProfileButton = () => {
         dispatch(logout());
     }
 
+    const handleModalClose = (e) => {
+
+        setShowModal(false);
+    }
+
+    const handleModalOpen = (e) => {
+
+        setShowModal(true);
+    }
+
     //helper component to handle to show logout if user is logged in
     const LoggedInNav = () => {
         return (
@@ -48,18 +58,18 @@ export const ProfileButton = () => {
             <>  
                 {/* if menu is set to true, shows dropdown menu*/}
                 {showMenu && (
-                <div className="profile-dropdown">
+                <div className="profile-dropdown" >
                     <ul>
-                        <li><h2 className="signup-dropdown"onClick={() => setShowModal(true)}>Sign Up</h2></li>
-                        <li><h2 className="login-dropdown"onClick={() => setShowModal(true)}>Log In</h2></li>
+                        <li><h2 className="signup-dropdown" onClick={handleModalOpen}>Sign Up</h2></li>
+                        <li><h2 className="login-dropdown" onClick={handleModalOpen}>Log In</h2></li>
                     </ul>
                 </div>
                 )} 
 
 
                 {showModal && (
-                    <Modal onClose={() => setShowModal(false)}>
-                        <SignInFormPage />
+                    <Modal  onClose={handleModalClose}>
+                        <SignInFormPage  />
                     </Modal>
                 )}
             </>
@@ -100,17 +110,22 @@ export const ProfileButton = () => {
   return (
     <>
 
-        <div onClick={openMenu} className="profileButton">
-            <div className="treeLines" style={{ color: "#595959", fontSize: "16px" }}>
-                <i className="fa-solid fa-bars"></i>
-            </div>  
-            <div className="profilePicture" style={{ color: "#717171", fontSize: "28.69px" }}>
-                <i className="fa-sharp fa-solid fa-circle-user"></i>
-            </div>  
+        <div className="profileButton-menu">
+            <div className="profileButton"onClick={openMenu}>
+                <div  className="treeLines" style={{ color: "#595959", fontSize: "16px" }}>
+                    <i className="fa-solid fa-bars"></i>
+                </div>    
+                <div className="profilePicture" style={{ color: "#717171", fontSize: "28.69px" }}>
+                    <i className="fa-sharp fa-solid fa-circle-user"></i>
+                </div> 
+                
+            </div>
+
+            {sessionLinks} 
         </div>
         
 
-        {sessionLinks}
+        
     </>
   );
 }

@@ -1,5 +1,5 @@
-.main-nav-bar {
-    width: 100%;
+.main-show-nav-bar {
+    width: 1280px;
     display: flex;
     flex-direction: row;
     padding: 0px 80px;
@@ -7,6 +7,14 @@
     align-items: center;
     justify-content: space-between;
     box-sizing: border-box;
+    margin: auto;
+    
+}
+
+.show-nav-header {
+    width: 100%;
+    z-index: 999;
+    background-color: white;
 }
 
 .companyLogo {
@@ -24,13 +32,6 @@
 
 .nav-line {
     width: 100%;
-    border: 1px solid rgb(228,228,228);
+    border: 1px solid rgba(228, 228, 228, 0.562);
     margin-bottom: 0px;
-}
-
-.nav-header {
-    position: fixed;
-    width: 100%;
-    z-index: 999;
-    background-color: white;
 }

@@ -10,10 +10,10 @@
     width: 270px;
     height: 250px;
     overflow: hidden;
-    margin: 40px  24px 10px 0px;
+    margin: 40px 24px 10px 0px;
     border-radius: 12px;
-
 }
+
 
 .listing-property {
     display: flex;
@@ -51,6 +51,7 @@
 .left-arrow-button {
     position: absolute;
     background: rgba(255, 254, 254, 0.664);
+    color: rgba(0, 0, 0, 0.603);
     border-radius: 50%;
     line-height: 0px;
     cursor: pointer;
@@ -61,11 +62,13 @@
 
 .left-arrow-button:hover {
     background-color: white;
+    color: black;
 }
 
 .right-arrow-button {
     position: absolute;
     background: rgba(255, 254, 254, 0.664);
+    color: rgba(0, 0, 0, 0.61);
     border-radius: 50%;
     line-height: 0px;
     cursor: pointer;
@@ -76,8 +79,8 @@
 
 .right-arrow-button:hover {
     background-color: white;
+    color: black;
 }
-
 
 .image-container {
     position: relative;
