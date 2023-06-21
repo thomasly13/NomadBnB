@@ -8,7 +8,8 @@ export const ImageCarousel = ({images}) => {
     const [index, setIndex] = useState(0)
     const [showButton, setShowButton] = useState(false)
 
-    const handleLeftClick = () => {
+    const handleLeftClick = (e) => {
+        e.preventDefault();
         if (index === 0) {
             setIndex(images.length - 1)
         } else {
@@ -16,7 +17,8 @@ export const ImageCarousel = ({images}) => {
         };
     }
 
-    const handleRightClick = () => {
+    const handleRightClick = (e) => {
+        e.preventDefault();
         if (index === images.length - 1) {
             setIndex(0)
         } else {

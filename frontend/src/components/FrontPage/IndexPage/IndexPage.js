@@ -3,11 +3,12 @@ import { useSelector, useDispatch} from "react-redux";
 import { fetchAllListings } from "../../../store/listing";
 import "./ListingsIndex.css"
 import { ImageCarousel } from "./imageCarousel";
+import { NavLink } from "react-router-dom/cjs/react-router-dom.min";
 
 export const ListingsIndex = () => {
 
     const listings = useSelector(state => Object.values(state.listing));
-    
+
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -19,16 +20,16 @@ export const ListingsIndex = () => {
         let location = address.slice(1, 3);
         return location.join(", ")
     };
-    
+
+
     return (
         <>
-            <div className="listings-container">
+            <div className="listings-container" >
 
 
                 {listings.map(listing => {
-                    
                     return (
-                    <div className="listing-property">
+                    <NavLink className="listing-property" to={`/listings/${listing.id}`}>
                         < ImageCarousel images={listing.images}/>
                         <span className="listing-property-location">{helper(listing)}</span>
                         {listing.numOfBeds === 1 ? <span className="listing-property-beds">{listing.numOfBeds} bed</span> : <span className="listing-property-beds">{listing.numOfBeds} beds</span>}
@@ -38,7 +39,7 @@ export const ListingsIndex = () => {
                         </div>
                         
 
-                    </div>)
+                    </NavLink>)
 
                 })}
 

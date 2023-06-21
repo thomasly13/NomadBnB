@@ -18,6 +18,7 @@
 .listing-property {
     display: flex;
     flex-direction: column;
+    text-decoration: none;
 }
 
 .listing-property span {
@@ -29,6 +30,7 @@
     font-weight: 600;
     font-size: 15px;
     color: #222222;
+
     
 }
 
@@ -37,10 +39,13 @@
     font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
     font-weight: 500;
     font-size: 15px;
+
 }
 
 .listing-property-nights {
+    color: black;
     margin-top: 6px;
+    text-decoration: inherit;
 }
 
 .left-arrow-button {
