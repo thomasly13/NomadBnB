@@ -36,6 +36,7 @@ export const fetchAllListings = () => async (dispatch) => {
 export const fetchListingDetail = (listingId) => async (dispatch) => {
     const response = await fetch(`/api/listings/${listingId}`);
     const data = await response.json();
+
     dispatch(receiveListing(data[listingId])) ;
 
 }
