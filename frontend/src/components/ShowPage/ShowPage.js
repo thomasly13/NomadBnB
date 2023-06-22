@@ -1,4 +1,4 @@
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import { useSelector, useDispatch} from "react-redux";
 import { fetchListingDetail } from "../../store/listing";
 import { useParams } from "react-router-dom";
