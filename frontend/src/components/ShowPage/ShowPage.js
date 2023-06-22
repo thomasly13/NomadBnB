@@ -11,12 +11,14 @@ export const ListingShow = () => {
     const {listingId} = useParams();
     const dispatch = useDispatch();
 
-    const listing = useSelector(state => state.listing[listingId]);
+    const [listing, setListing] = useState(undefined)
+
+    setListing(useSelector(state => state.listing[listingId]));
 
 
     useEffect(() => {
         dispatch(fetchListingDetail(listingId))
-    }, [dispatch, state.listing[listingId]])
+    }, [dispatch, listing])
 
 
     return (
