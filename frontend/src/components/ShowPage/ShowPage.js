@@ -4,6 +4,8 @@ import { fetchListingDetail } from "../../store/listing";
 import { useParams } from "react-router-dom";
 import "./ShowPage.css";
 import { ShowPageNavigation } from "./Navigation/ShowPageNavigation";
+import { ShowBody } from "./Body/ShowBody";
+
 
 export const ListingShow = () => {
     const {listingId} = useParams();
@@ -18,10 +20,15 @@ export const ListingShow = () => {
 
 
     return (
-        <div className="show-page-body">
-            < ShowPageNavigation />          
-        </div>
-        
+        <>
+            { listing === undefined ? null :
+                <div className="show-page">
+                    < ShowPageNavigation />    
+                    < ShowBody listing={listing} />      
+                </div>}
+    
+        </>
+
     )
 };
 

@@ -1,0 +1,109 @@
+.show-body {
+    width: 1280px;
+    padding: 0px 80px;
+    box-sizing: border-box;
+    margin: auto;
+
+}
+
+.show-header {
+    padding-top: 24px;
+    box-sizing: border-box;
+}
+
+.listing-name {
+    font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 600;
+    line-height: 30px;
+    font-size: 26px;
+    margin-bottom: 4px;
+}
+
+.listing-location {
+    margin-top: 8px;
+    font-family:'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    text-decoration: underline;
+    color: rgb(34, 34, 34);
+    line-height: 20px;
+}
+
+.show-image-container {
+    display: flex;
+    flex-direction: row;
+    line-height: 0;
+    margin-top: 24px;
+    overflow: hidden;
+    border-radius: 12px;
+
+}
+
+.show-left-image {
+    width: 560px;
+    height: 487.39px;
+}
+
+.show-image {
+    width: 272px;
+    height: 239.69px;
+
+}
+
+.smaller-image-container {
+    display: flex;
+    
+}
+
+.smaller-image-column-1 {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.smaller-image-column-2 {
+    padding-left: 8px;
+    display: flex;
+    flex-direction: column;
+}
+
+.show-image-2{
+    width: 272px;
+    height: 239.69px;
+    padding-top: 8px;
+}
+
+.show-listing-information {
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    padding-top: 48px;
+    padding-bottom: 24px;
+}
+
+.show-listing-owner {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    color: rgb(34, 34, 34);
+    font-weight: 600;
+    font-size: 22px;
+    line-height: 26px;
+    margin-bottom: 8px;
+}
+
+.show-listing-specific-information {
+    display: flex;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 20px;
+    box-sizing: border-box;
+}
+
+.show-body-information-tab {
+    width: 58.333333333333336%;
+}
+
+.information-line {
+    border: 1px solid rgb(221, 221, 221);
+}

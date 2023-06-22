@@ -20,7 +20,7 @@
 .companyLogo {
     display: flex;
     flex-direction: row;
-    font-family: Circular, -apple-system, BlinkMacSystemFont, Roboto, "Helvetica Neue", sans-serif;
+    font-family:" Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
     font-weight: 800;
     font-size: 16px;
     line-height: 20px;
@@ -33,5 +33,6 @@
 .nav-line {
     width: 100%;
     border: 1px solid rgba(228, 228, 228, 0.562);
+    box-sizing: border-box;
     margin-bottom: 0px;
 }
