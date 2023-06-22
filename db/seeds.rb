@@ -20,7 +20,7 @@ ApplicationRecord.transaction do
     # Create one user with an easy to remember username, email, and password:
     User.create!(
       first_name: 'Demo', 
-      last_name: 'lition', 
+      last_name: 'Lition', 
       email: 'demo@user.com', 
       password: 'password'
     )

@@ -20,7 +20,7 @@ export const ListingShow = () => {
         dispatch(fetchListingDetail(listingId))
     }, [])
 
-    debugger
+
     return (
         <>
             { listing === undefined ? null :

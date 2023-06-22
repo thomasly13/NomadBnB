@@ -100,10 +100,108 @@
     box-sizing: border-box;
 }
 
+.show-body-information {
+    display: flex;
+    flex-direction: row;
+}
+
 .show-body-information-tab {
     width: 58.333333333333336%;
+    display: flex;
+    flex-direction: column;
 }
 
 .information-line {
     border: 1px solid rgb(221, 221, 221);
 }
+
+.show-body-description-container {
+    padding-top: 32px;
+    padding-bottom: 48px;
+    
+}
+
+.show-body-description {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    color: black;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    white-space: pre-wrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+.show-listing-highlight-information {
+    display: flex;
+    flex-direction: column;
+    padding-top: 32px;
+    padding-bottom: 32px;
+    gap: 24px;
+} 
+
+.show-listing-superhost {
+    display: flex;
+    flex-direction: row;
+}
+
+.show-listing-location {
+    display: flex;
+    flex-direction: row;
+}
+
+.show-listing-experience {
+    display: flex;
+    flex-direction: row;
+}
+
+.highlight-information-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 16px;
+}
+
+.superlocationIcon {
+    margin-right: 6px;
+}
+
+.highlight-title {
+    color: rgb(34, 34, 34);
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    margin-bottom: 4px;
+}
+
+.highlight-information {
+    color: rgb(113, 113, 113);
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+}
+
+.show-body-reservation {
+    position: relative;
+    width: 33.33333333333333%;
+    margin-left: 8.333333333333332%;
+}
+
+.reservation-container {
+    position: sticky;
+    top: 80px;
+    z-index: 1;
+    width: 100%;
+    padding-right: 1px;
+    padding-bottom: 48px;
+}
+
+.reservation-div {
+    box-sizing: border-box;
+    margin-top: 48px;
+    border: 1px solid rgb(221, 221, 221);
+    border-radius: 12px;
+    padding: 24px;
+    box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+}   
