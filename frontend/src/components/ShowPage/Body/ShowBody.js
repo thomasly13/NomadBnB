@@ -148,6 +148,8 @@ export const ShowBody = ({listing}) => {
                         <br></br>
                         <br></br>
                         <br></br>
+                        <br></br>
+                        <br></br>
                         <h2>Reviews</h2>                        
                     </div>
                     <div className="show-body-reservation">
