@@ -16,7 +16,7 @@ export const ListingShow = () => {
 
     useEffect(() => {
         dispatch(fetchListingDetail(listingId))
-    }, [dispatch])
+    }, [dispatch, listing])
 
 
     return (
