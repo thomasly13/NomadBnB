@@ -15,6 +15,7 @@ Rails.application.routes.draw do
     post 'users/check', to: 'users#check'
     
   end
+
   
   get '*path', to: "static_pages#frontend_index"
 end

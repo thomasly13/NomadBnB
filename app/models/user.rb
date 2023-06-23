@@ -41,5 +41,10 @@ class User < ApplicationRecord
   class_name: :Listing,
   dependent: :destroy
 
+  has_many :reservations,
+  foreign_key: :renter_id,
+  class_name: :Reservation,
+  dependent: :destroy
+
   
 end

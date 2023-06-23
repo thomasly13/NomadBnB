@@ -158,7 +158,7 @@ export const ShowBody = ({listing}) => {
                                 <div className="reservation-title">
                                     <div className="reservation-title-price-night">
                                         <span className="reservation-title-price">${listing.price}</span>
-                                        <span className="reservation-title-night">night</span>
+                                        <span className="reservation-title-night"> night</span>
                                     </div>
                                     <span></span>
                                 </div>

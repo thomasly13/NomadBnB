@@ -1,8 +1,10 @@
-import React from 'react';
+import React, { useEffect } from 'react';
 import { Route, Switch } from "react-router-dom";
 import { FrontPageBody } from './components/FrontPage/Body/Body.js';
 import { ListingShow } from './components/ShowPage/ShowPage.js';
 import "./index.css"
+import { useDispatch } from 'react-redux';
+
 
 
 
@@ -10,14 +12,16 @@ import "./index.css"
 
 //app component
 function App() {
+  
+
   return (
     <div className="App">
       
       <Switch>
-        <Route path="/listings/:listingId">
+        <Route exact path="/listings/:listingId">
           <ListingShow/>
         </Route>
-        <Route path="/">
+        <Route exact path="/">
           <FrontPageBody />
         </Route>
       </Switch>

@@ -3,11 +3,16 @@ class Listing < ApplicationRecord
      :price, :address, :coordinates,
       :amenities, :num_of_guests, :num_of_baths,
        :num_of_bedrooms, :num_of_beds, :owner_id,
-       :images, presence: true
+        presence: true
 
     belongs_to :owner,
     foreign_key: :owner_id,
     class_name: :User
 
-    has_one_attached :photo
+    has_many :reservations,
+    foreign_key: :listing_id,
+    class_name: :Reservation,
+    dependent: :destroy
+
+    has_many_attached :photos
 end
