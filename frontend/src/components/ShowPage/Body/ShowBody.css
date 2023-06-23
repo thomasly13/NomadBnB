@@ -182,6 +182,10 @@
     line-height: 20px;
 }
 
+
+/* Reservation css Page */
+
+
 .show-body-reservation {
     position: relative;
     width: 33.33333333333333%;
@@ -204,4 +208,129 @@
     border-radius: 12px;
     padding: 24px;
     box-shadow: rgba(0, 0, 0, 0.12) 0px 6px 16px;
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
 }   
+.reservation-title {
+    margin-bottom: 24px;
+}
+
+.reservation-title-price {
+    font-weight: 600;
+    color: rgb(34, 34, 34);
+    font-size: 22px;
+    list-style: 26px;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+}
+
+.reservation-title-night {
+    font-weight: 400;
+    color: rgb(34, 34, 34);
+    font-size: 16px;
+    list-style: 22px;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+}
+
+
+
+.reservation-form-container {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.reservation-form-container form {
+    width: 100%;
+}
+
+.reservation-form-input {
+    display: flex;
+    flex-direction: column;
+    border-radius: 8px;
+    border: 1px solid rgb(185,185,185);
+    overflow: hidden;
+}
+.reservation-form-date-container {
+    width: 100%;
+    display: flex;
+    height: 56px;
+}
+
+.reservation-form-guests-container {
+    height: 56px;
+    border-top: 1px solid rgb(185,185,185);
+    position: relative;
+}
+
+.check-in-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+
+
+.check-out-form {
+    width: 50%;
+    display: flex;
+    flex-direction: column;
+    border-left: 2px solid rgb(185,185,185);
+    position: relative;
+    
+}
+.check-out-form input{
+    width: 100%;
+}
+
+.check-in-text, .check-out-text, .guests-text{
+    position: absolute;
+    top: 12px;
+    left: 12px;
+    color: black;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-weight: 600;
+    font-size: 10px;
+    line-height: 12px;
+}
+
+.check-in-input, .check-out-input{
+    padding: 26px 12px 10px;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: rgb(113, 113, 113);
+}
+
+.guests-input  {
+    width: 100%;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 14px;
+    line-height: 18px;
+    color: black;
+    padding: 26px 36px 10px 12px;
+}
+
+.reservation-submit-button {
+    width: 100%;
+    margin-top: 16px;
+    margin-bottom: 24px;
+    color: white;
+    background-image: radial-gradient( circle at center,#FF385C 0%,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100% );
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    border-radius: 8px;
+    border-width: 1px;
+    border-style: solid;
+    padding-top: 14px;
+    padding-bottom: 14px;
+    padding-left: 24px;
+    padding-right: 24px;
+    border: none;
+    background: linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%);
+    cursor: pointer;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 400;
+}

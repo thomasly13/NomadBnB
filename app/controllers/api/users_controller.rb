@@ -21,6 +21,7 @@ class Api::UsersController < ApplicationController
             render json: { checkmark: 'Not Cool'}
         end
     end
+    
 
 
     private

@@ -39,16 +39,18 @@ export const NewSignUpPage = () => {
         const res = await dispatch(signup({ email, firstName, lastName, password }))
 
         //if signup failed, adds errors to their receptive sections
-        if (res.errors.first_name) {
-            setErrors({...errors}, errors.firstName = "First name is required.")
-        };
+
         if (res.errors.last_name) {
-            setErrors({...errors}, errors.lastName = "Last name is required.")};
+              setErrors(state => { return {...state, "lastName": "Last name is required."}})
+          }
+
         if (res.errors.password) {
-            setErrors({...errors}, errors.password = "Password is required.")};
-        if (res.errors.password) {
-            setErrors({...errors}, errors.password = "Password is required.")};   
-          
+          setErrors(state => { return {...state, "password": "Password is required."}})}
+
+        if (res.errors.first_name) {
+          setErrors(state => { return {...state, "firstName": "First name is required."}})
+        };
+        console.log("this is working")
     };
 
     //Sign up First Name Error component

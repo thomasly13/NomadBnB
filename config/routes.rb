@@ -12,6 +12,8 @@ Rails.application.routes.draw do
 
     resources :listings, only: [:show, :index]
 
+    resources :reservations, only: [:index, :show, :create, :destroy, :update]
+
     post 'users/check', to: 'users#check'
     
   end

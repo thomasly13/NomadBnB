@@ -10,4 +10,10 @@ class Reservation < ApplicationRecord
   has_one :owner,
   through: :listing,
   source: :owner
+
+  def self.listing_reservations(listingId)
+    return Reservation.select(:id)
+    .where(listing_id: listingId)
+  end
+  
 end
