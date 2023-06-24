@@ -26,7 +26,7 @@ export const ShowReservation = ({listing}) => {
               <div className="reservation-form-container">
                 <form>
                   <div className="reservation-form-input">
-                    <div className="reservation-form-date-container">
+                    <button className="reservation-form-date-container">
                       <div className="check-in-form">
                         <span className="check-in-text">CHECK-IN</span>
                         <span className="check-in-input">Add date</span>
@@ -35,7 +35,7 @@ export const ShowReservation = ({listing}) => {
                         <span className="check-out-text">CHECKOUT</span>
                         <span className="check-out-input">Add date</span>
                       </div>
-                    </div>
+                    </button>
                     <div className="reservation-form-guests-container">
                       <span className="guests-text">GUESTS</span>
                       { guests === 1 ? <div className="guests-input">{guests} guest</div> : <div className="guests-input">{guests} guests</div> }
