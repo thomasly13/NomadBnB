@@ -1,6 +1,7 @@
 class Api::ReservationsController < ApplicationController
 
-  before_action :require_logged_in
+  before_action :required_logged_in
+  wrap_parameters include: Reservation.attribute_names + ['numOfGuests', 'listingId', 'checkInDate', 'checkOutDate']
 
   def index 
     @reservations = Reservation.listing_reservations(id: params[:id])
@@ -19,8 +20,9 @@ class Api::ReservationsController < ApplicationController
 
   def create
     @reservation = Reservation.new(reservation_params)
+    @reservation.renter_id = current_user.id
 
-    if @reservation
+    if @reservation.save
       render :show 
     else
       render json: { errors: @reservation.errors }, status: 444
@@ -50,6 +52,6 @@ class Api::ReservationsController < ApplicationController
   private 
   
   def reservation_params 
-    params.require(:reservation).permit(:num_of_guests, :listing_id, :renter_id, :check_in_date, :check_out_date)
+    params.require(:reservation).permit(:num_of_guests, :listing_id, :check_out_date, :check_in_date)
   end
 end

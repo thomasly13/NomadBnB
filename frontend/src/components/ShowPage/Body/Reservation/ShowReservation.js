@@ -3,11 +3,14 @@ import { useDispatch } from "react-redux"
 import { ReservationCalendar } from "./ReservationCalendar/ReservationCalendar"
 import "../ShowBody.css"
 import { GuestsDropDown } from "./GuestsDropDown/GuestsDropDown"
+import { postCreateReservation } from "../../../../store/reservation"
 
 
 
 
 export const ShowReservation = ({listing}) => {
+
+  const dispatch = useDispatch();
 
   const [checkInDate, setCheckInDate] = useState();
   const [checkOutDate, setCheckOutDate] = useState();
@@ -36,6 +39,33 @@ export const ShowReservation = ({listing}) => {
 
   const handleCheckoutDate = (date) => {
     setCheckOutDate(`${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`)
+  }
+
+  const intervalGuestsDown = () => {
+    if (guests !== 1) {
+      setGuests(guests - 1)   
+    }
+  }
+
+  const intervalGuestsUp = () => {
+    if (guests !== listing.numOfGuests) {
+      setGuests(guests + 1)   
+    }   
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    debugger
+    const reservationDetails = {
+      numOfGuests: guests,
+      checkInDate: checkInDate,
+      checkOutDate: checkOutDate,
+      listingId: listing.id
+    }
+
+    const res = await dispatch(postCreateReservation(reservationDetails))
+    
+    
   }
 
 
@@ -93,7 +123,7 @@ export const ShowReservation = ({listing}) => {
               </div>
 
               <div className="reservation-form-container">
-                <form>
+                <form onSubmit={handleSubmit}>
                   <div className="reservation-form-input">
                     <button className="reservation-form-date-container" onClick={handleToggleMenu}>
                       <div className="check-in-form">
@@ -109,7 +139,7 @@ export const ShowReservation = ({listing}) => {
                     <div className="reservation-form-guests-container" onClick={handleToggleGuestMenu}>
                       <span className="guests-text">GUESTS</span>
                       { guests === 1 ? <div className="guests-input">{guests} guest</div> : <div className="guests-input">{guests} guests</div> }
-                      {showGuestsMenu && <GuestsDropDown/>}
+                      {showGuestsMenu && <GuestsDropDown guests={guests} listing={listing} intervalGuestsDown={intervalGuestsDown} intervalGuestsUp={intervalGuestsUp}/>}
                     </div>
                                         
                   </div>

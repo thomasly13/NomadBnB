@@ -140,6 +140,7 @@ export const ShowBody = ({listing}) => {
                         <br></br>
                         <h2>Reviews</h2>                        
                     </div>
+                    
                     <ShowReservation listing={listing} />
 
                  
