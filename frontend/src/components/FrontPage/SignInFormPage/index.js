@@ -8,7 +8,7 @@ import { ExistingSignInPage } from "./LogIn";
 
 
 
-export function SignInFormPage() {
+export function SignInFormPage({modalFunction}) {
 
     // gives access to dispatch
     const dispatch = useDispatch();
@@ -31,14 +31,20 @@ export function SignInFormPage() {
     const handleEmailSignInSubmit = async (e) => {
         //stops the default functionality of a form submit
         e.preventDefault();
+        debugger
 
         //makes a request to see if the email is in the database
         const res = await dispatch(signin(email))
+        debugger
         if (res === 'Cool') {
           setcurrentForm("Sign In")
         } else {
           setcurrentForm("Sign Up")
         }   
+    };
+
+    const handleGoBack = (e) => {
+      setcurrentForm("Email Sign In")
     };
 
 
@@ -68,7 +74,11 @@ export function SignInFormPage() {
     //Email Sign In Constant
     const EmailSignInPage = (
       <div className="email-sign-in-page">
+        <div className="exit-button" style={{ color: "#222222", fontSize: "18px" }} onClick={modalFunction}>
+            <i className="fa-solid fa-xmark"></i>
+        </div> 
         <div className="email-sign-in-header">
+ 
             <h2>Log in or sign up </h2>
         </div>
         
@@ -116,10 +126,10 @@ export function SignInFormPage() {
       renderForm = EmailSignInPage
     }
     else if (currentForm === 'Sign In') {
-      renderForm = <ExistingSignInPage email={email}/>
+      renderForm = <ExistingSignInPage email={email} goBack={handleGoBack}/>
     }
     else {
-      renderForm = <NewSignUpPage />
+      renderForm = <NewSignUpPage goBack={handleGoBack} />
     };
     
     

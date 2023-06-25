@@ -58,12 +58,12 @@
       io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-1.jpeg"), 
       filename: "listing1-1.jpeg"
     )
-    puts "listing-2"
+
     listing_1.photos.attach(
       io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-2.jpg"), 
       filename: "listing1-2.jpg"
     )
-    puts "listing-2"
+
     listing_1.photos.attach(
       io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-3.jpeg"), 
       filename: "listing1-3.jpeg"
@@ -81,7 +81,7 @@
       filename: "listing1-6.jpg"
     )
  
-    puts "listing-3"
+
 
     listing_2 = Listing.create!(
       name: 'Coastal Chic: Central Parkside Hideaway' ,
@@ -122,7 +122,7 @@
       filename: "listing2-6.jpg"
     )
 
-    puts "listing-4"
+
 
     listing_3 = Listing.create!(
       name: 'Luxury Beach View Apartment' ,
@@ -162,7 +162,7 @@
       io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-6.jpeg"), 
       filename: "listing3-6.jpg"
     )
-    puts "listing-5"
+
     listing_4 = Listing.create!(
       name: 'Luxury Beach View Apartment' ,
       description: 'Just a short stroll from beautiful LindaMar Beach, this large private spacious studio is perfect for your next beach getaway. It has a breathtaking unobstructed  ocean view which can be seen from anywhere in the unit, including the bathroom and shower. Surfboard rental is included with your stay offering a bonus activity for your trip! There is a huge private deck with a wraparound bench, lounge chairs, and a sunbed for your enjoyment while starring at one of the nicest ocean views in California' ,
@@ -202,7 +202,7 @@
       filename: "listing4-6.jpg"
     )
 
-    puts "listing-5"
+
     listing_5 = Listing.create!(
       name: 'Luxury Beach View Apartment' ,
       description: 'Just a short stroll from beautiful LindaMar Beach, this large private spacious studio is perfect for your next beach getaway. It has a breathtaking unobstructed  ocean view which can be seen from anywhere in the unit, including the bathroom and shower. Surfboard rental is included with your stay offering a bonus activity for your trip! There is a huge private deck with a wraparound bench, lounge chairs, and a sunbed for your enjoyment while starring at one of the nicest ocean views in California' ,

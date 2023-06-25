@@ -4,7 +4,19 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  position: relative;
 }
+
+.exit-button {
+  position: absolute;
+  margin-right: 500px;
+  margin-top: 25px;
+}
+
+.exit-button:hover {
+  cursor: pointer;
+}
+
 
 .email-sign-in-form-container, .sign-in-form-container, .sign-up-form-container{
   width: 100%;

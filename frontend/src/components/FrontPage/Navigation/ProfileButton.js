@@ -18,6 +18,8 @@ export const ProfileButton = () => {
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
     const [showModal, setShowModal] = useState(false);
+
+  
   
     //finds current user
     const sessionUser = useSelector(state => state.session.user);
@@ -28,14 +30,13 @@ export const ProfileButton = () => {
     }
 
     const handleModalClose = (e) => {
-
         setShowModal(false);
     }
 
-    const handleModalOpen = (e) => {
-
+    const handleModalOpen = async (e) => {
         setShowModal(true);
     }
+
 
     //helper component to handle to show logout if user is logged in
     const LoggedInNav = () => {
@@ -68,8 +69,8 @@ export const ProfileButton = () => {
 
 
                 {showModal && (
-                    <Modal  onClose={handleModalClose}>
-                        <SignInFormPage  />
+                    <Modal onClose={handleModalClose}  >
+                        <SignInFormPage modalFunction={handleModalClose}/>
                     </Modal>
                 )}
             </>

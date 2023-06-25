@@ -5,7 +5,7 @@ import { login } from "../../../store/session";
 import "./SignIn.css"
 
 
-export const ExistingSignInPage = ({email}) => {
+export const ExistingSignInPage = ({email, goBack}) => {
 
     // gives access to dispatch
     const dispatch = useDispatch();
@@ -60,35 +60,38 @@ export const ExistingSignInPage = ({email}) => {
     //login page component
     return (
         <div className="sign-in-page">
-        <div className="sign-in-header">
-            <h2>Log in</h2>
-        </div>
+          <div className="exit-button" style={{ color: "#222222", fontSize: "18px" }} onClick={goBack}>
+            <i className="fa-solid fa-chevron-left"></i>
+          </div> 
+          <div className="sign-in-header">
+              <h2>Log in</h2>
+          </div>
 
-        <div className="sign-in-form-container"> 
-            <form onSubmit={handleExistingSignInSubmit}>
-            {errors.password ? < LogInErrors errors={errors} /> : null}
+          <div className="sign-in-form-container"> 
+              <form onSubmit={handleExistingSignInSubmit}>
+              {errors.password ? < LogInErrors errors={errors} /> : null}
 
-            <div className="sign-in-form-label">
-                <label>
-                <div className="sign-in-form-input">
-                    <input
-                        type="password"
-                        value={password}
-                        placeholder="Password"
-                        onChange={(e) => setPassword(e.target.value)}
-                        required
-                    />  
-                </div>
+              <div className="sign-in-form-label">
+                  <label>
+                  <div className="sign-in-form-input">
+                      <input
+                          type="password"
+                          value={password}
+                          placeholder="Password"
+                          onChange={(e) => setPassword(e.target.value)}
+                          required
+                      />  
+                  </div>
 
-                </label>
-            </div>  
+                  </label>
+              </div>  
 
-            <button className="sign-in-submit-button" type="submit">
-                <span>Login</span>
-            </button>
-            
-            </form>
-        </div>
+              <button className="sign-in-submit-button" type="submit">
+                  <span>Login</span>
+              </button>
+              
+              </form>
+          </div>
 
 
         </div>    

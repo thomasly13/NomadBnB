@@ -83,13 +83,16 @@ export const signup = (user) => async (dispatch) => {
 };
 
 export const signin = (email) => async (dispatch) => {
-    const response = await csrfFetch("api/users/check", {
+    debugger
+    const response = await csrfFetch("/api/users/check", {
         method: "POST",
         body: JSON.stringify({
             email
         })
     });
+    debugger
     const data = await response.json();
+    debugger
     return data.checkmark
 };
 

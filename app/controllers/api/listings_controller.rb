@@ -7,13 +7,13 @@ class Api::ListingsController < ApplicationController
 
     def show 
         @listing = Listing.find_by(id: params[:id])
-        
         if @listing 
             render :show 
         else
             render json: { errors: 'Listing not Found'}, status: 422
         end
     end
+
 
     
 end

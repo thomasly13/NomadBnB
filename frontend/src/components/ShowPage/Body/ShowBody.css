@@ -184,7 +184,8 @@
 
 
 /* Reservation css Page */
-
+/* ---------------------*/
+/* ---------------------*/
 
 .show-body-reservation {
     position: relative;
@@ -250,20 +251,26 @@
     flex-direction: column;
     border-radius: 8px;
     border: 1px solid rgb(185,185,185);
-    overflow: hidden;
 }
-.reservation-form-date-container {
-    width: 100%;
-    display: flex;
-    height: 56px;
-    background-color: transparent;
-    border: none;
+.reservation-form-date-container{
+    width: 100% ;
+    display: flex ;
+    height: 56px ;
+    background-color: transparent ;
+    border: none ;
+    position: relative ;
 }
 
 .reservation-form-guests-container {
+    width: 100%;
     height: 56px;
     border-top: 1px solid rgb(185,185,185);
     position: relative;
+}
+
+.reservation-form-guests-container-active {
+    border: 1px solid black;
+    border-radius: 8px;
 }
 
 .check-in-form {
@@ -338,4 +345,79 @@
     font-size: 16px;
     line-height: 20px;
     font-weight: 400;
+}
+
+/* calendar */
+/* -------- */
+/* -------- */
+/* -------- */
+/* -------- */
+
+.reservation-check-in-check-out-calendar-container {
+    height: 460px;
+    width: 661px;
+    z-index: 1;
+    border-radius: 16px;
+    background-color: white;
+    top: -24px;
+    right: -32px;
+    position: absolute;
+    padding: 24px 32px 12px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+    box-sizing: border-box;
+}
+
+.reservation-check-in-check-out-calendar-container .rdrCalendarWrapper{
+    width: 100%;
+}
+
+.rdrMonthName {
+    text-align: center !important;
+    color: black !important;
+    font-size: 16px;
+}
+
+.rdrDateDisplay {
+    width: 100%;
+    margin: 0px !important;
+}
+
+.rdrDateDisplayWrapper {
+    width: 321.33px ;
+    display: flex ;
+    height: 56px ;
+    background-color: transparent ;
+    border: none ;
+    position: relative ;
+    float: right;
+    left: 275.66px;
+    border: 1px solid rgb(185,185,185);
+    border-radius: 8px;
+}
+
+.rdrDateDisplayItem + .rdrDateDisplayItem {
+    margin-left: 0px !important;
+}
+
+.rdrDateDisplayItem input {
+    position: absolute !important;
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif !important;
+    font-size: 15px !important;
+    line-height: 20px !important;
+    font-weight: 200 !important;
+    color: rgb(113, 113, 113) !important;
+    top: 15px;
+    left: -30px;
+}
+
+
+/* guestdrop down */
+/* -------- */
+/* -------- */
+/* -------- */
+/* -------- */
+
+.guest-drop-down {
+    width: 100%;
+    padding: 16px;
 }

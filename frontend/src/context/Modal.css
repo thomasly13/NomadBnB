@@ -22,8 +22,11 @@
   }
   
   #modal-content {
-    position: absolute;
+    position: relative;
     background-color:white;
     border-radius: 12px;
     width: 567px;
   }
+
+
+ 

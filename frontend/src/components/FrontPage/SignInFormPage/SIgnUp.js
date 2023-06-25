@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { signup } from "../../../store/session";
 import "./SignIn.css"
 
-export const NewSignUpPage = () => {
+export const NewSignUpPage = ({goBack}) => {
     // gives access to dispatch
     const dispatch = useDispatch();
 
@@ -107,7 +107,11 @@ export const NewSignUpPage = () => {
     }
     
     //sign up page component
-    return (<div className="sign-up-page">
+    return (
+    <div className="sign-up-page">
+      <div className="exit-button" style={{ color: "#222222", fontSize: "18px" }} onClick={goBack}>
+        <i className="fa-solid fa-chevron-left"></i>
+      </div> 
       <div className="sign-up-header">
         <h2>Finish signing up</h2>
       </div>

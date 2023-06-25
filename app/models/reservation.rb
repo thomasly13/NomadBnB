@@ -1,3 +1,16 @@
+# == Schema Information
+#
+# Table name: reservations
+#
+#  id             :bigint           not null, primary key
+#  num_of_guests  :integer          not null
+#  check_in_date  :date             not null
+#  check_out_date :date             not null
+#  listing_id     :bigint           not null
+#  renter_id      :bigint           not null
+#  created_at     :datetime         not null
+#  updated_at     :datetime         not null
+#
 class Reservation < ApplicationRecord
   belongs_to :listing,
   foreign_key: :listing_id,
