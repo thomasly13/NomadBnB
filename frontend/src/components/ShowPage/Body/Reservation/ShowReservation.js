@@ -1,10 +1,10 @@
-import { useState, useEffect } from "react"
-import { useDispatch } from "react-redux"
-import { ReservationCalendar } from "./ReservationCalendar/ReservationCalendar"
-import "../ShowBody.css"
-import { GuestsDropDown } from "./GuestsDropDown/GuestsDropDown"
-import { postCreateReservation } from "../../../../store/reservation"
-
+import { useState, useEffect } from "react";
+import { useDispatch } from "react-redux";
+import { ReservationCalendar } from "./ReservationCalendar/ReservationCalendar";
+import "../ShowBody.css";
+import { GuestsDropDown } from "./GuestsDropDown/GuestsDropDown";
+import { postCreateReservation } from "../../../../store/reservation";
+import { Redirect } from "react-router-dom";
 
 
 
@@ -12,8 +12,8 @@ export const ShowReservation = ({listing}) => {
 
   const dispatch = useDispatch();
 
-  const [checkInDate, setCheckInDate] = useState();
-  const [checkOutDate, setCheckOutDate] = useState();
+  const [checkInDate, setCheckInDate] = useState("");
+  const [checkOutDate, setCheckOutDate] = useState("");
   const [guests, setGuests] = useState(1);
 
   const [showMenu, setShowMenu] = useState(false)
@@ -53,17 +53,34 @@ export const ShowReservation = ({listing}) => {
     }   
   }
 
+  const dateChanger = (date) => {
+    const newDate = date.split('/');
+    const year = newDate.pop();
+    newDate.unshift(year);
+    return newDate.join("/");
+  }
+
   const handleSubmit = async (e) => {
     e.preventDefault();
-    debugger
+    const newCheckIn = dateChanger(checkInDate);
+    const newCheckOut = dateChanger(checkOutDate);
+
+
+
     const reservationDetails = {
       numOfGuests: guests,
-      checkInDate: checkInDate,
-      checkOutDate: checkOutDate,
+      checkInDate: newCheckIn,
+      checkOutDate: newCheckOut,
       listingId: listing.id
     }
 
+
     const res = await dispatch(postCreateReservation(reservationDetails))
+    debugger
+    if (res.errors === "Awesome Made!") {
+      return <Redirect to="/" />
+    }
+    console.log(res)
     
     
   }
@@ -145,7 +162,7 @@ export const ShowReservation = ({listing}) => {
                   </div>
 
                   <button className="reservation-submit-button" type="submit">
-                    <span >Check availability</span> 
+                    <span >Reserve</span> 
                   </button>                    
                 </form>
 

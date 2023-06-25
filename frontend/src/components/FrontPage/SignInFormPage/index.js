@@ -31,11 +31,11 @@ export function SignInFormPage({modalFunction}) {
     const handleEmailSignInSubmit = async (e) => {
         //stops the default functionality of a form submit
         e.preventDefault();
-        debugger
+
 
         //makes a request to see if the email is in the database
         const res = await dispatch(signin(email))
-        debugger
+
         if (res === 'Cool') {
           setcurrentForm("Sign In")
         } else {

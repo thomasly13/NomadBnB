@@ -23,7 +23,7 @@ class Api::ReservationsController < ApplicationController
     @reservation.renter_id = current_user.id
 
     if @reservation.save
-      render :show 
+      render json: { errors: 'Awesome Made!'}, status: 222
     else
       render json: { errors: @reservation.errors }, status: 444
     end 
