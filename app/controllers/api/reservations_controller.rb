@@ -49,7 +49,6 @@ class Api::ReservationsController < ApplicationController
     end
   end
 
-  private 
   
   def reservation_params 
     params.require(:reservation).permit(:num_of_guests, :listing_id, :check_out_date, :check_in_date)

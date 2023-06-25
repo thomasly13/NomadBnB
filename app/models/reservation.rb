@@ -12,6 +12,10 @@
 #  updated_at     :datetime         not null
 #
 class Reservation < ApplicationRecord
+  validates :num_of_guests, :check_in_date,
+    :check_out_date, :listing_id, :renter_id,presence: true
+
+
   belongs_to :listing,
   foreign_key: :listing_id,
   class_name: :Listing
