@@ -2,8 +2,8 @@ import { useSelector } from "react-redux"
 
 export const ReservationImage = ({reservation}) => {
 
-    const listing = useSelector(state => state.listing[reservation.listingId])
-    debugger
+    const listing = useSelector(state => state.listing[reservation.listingId]);
+
     return (
         <>  
             { listing === undefined ? null :

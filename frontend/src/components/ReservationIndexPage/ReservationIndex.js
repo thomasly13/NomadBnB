@@ -24,9 +24,9 @@ export const ReservationIndex = () => {
             { user === undefined ? null :
                 <div>
                     < ReservationPageNavigation/>
-                    < ReservationIndexBody user={user}/>
+                    < ReservationIndexBody user={user} userId={userId}/>
                     <hr></hr>
-                    < FutureReservationIndexBody user={user} />        
+                    < FutureReservationIndexBody user={user} userId={userId} />        
                 </div>
               
             }

@@ -3,7 +3,6 @@ import { useSelector } from "react-redux"
 import "./ReservationIndexBody.css"
 
 export const ReservationContainerText = ({reservation}) => {
-    debugger
     const listing = useSelector(state => state.listing[reservation.listingId])
 
     const months = {
@@ -44,7 +43,6 @@ export const ReservationContainerText = ({reservation}) => {
     const Date = ({reservation}) => {
         let inDate = reservation.checkInDate.split("-")
         let checkInMonth = months[inDate[1]]
-        debugger
         let outDate = reservation.checkOutDate.split("-")
         let checkoutMonth = months[outDate[1]]
 

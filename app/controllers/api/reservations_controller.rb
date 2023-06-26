@@ -32,18 +32,20 @@ class Api::ReservationsController < ApplicationController
 
   def update 
     @reservation = Reservation.find_by(id: params[:id])
+    @user = current_user
     if current_user.id != @reservation.renter_id
       render json: {errors: 'Unauthorized'}, status: 422 
     else
-      @reservation.update
-      render :show
+      @reservation.update(reservation_params)
+      render 'api/users/show'
     end
   end 
 
   def destroy
     @reservation = Reservation.find_by(id: params[:id])
+    @user = User.find_by(id: params[:user_id])
     if @reservation&.delete 
-      render 'api/listings/index'
+      render 'api/users/show'
     else
       render json: {errors: 'Bro Unauthorized'}, status: 422 
     end

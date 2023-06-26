@@ -82,6 +82,7 @@ export const ShowReservation = ({listing}) => {
 
 
     const res = await dispatch(postCreateReservation(reservationDetails))
+
     if (res.errors === "Awesome Made!") {
 
       return history.push("/");
