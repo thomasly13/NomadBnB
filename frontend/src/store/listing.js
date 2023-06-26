@@ -3,22 +3,22 @@
 
 const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
 const RECEIVE_LISTING = 'RECEIVE_LISTING'
+const RECEIVE_USER = 'RECEIVE_USER'
 
 
 //action controllers
 
 //index action 
-const receiveListings = (listings) => {
+const receiveListings = (payload) => {
     return {
         type: RECEIVE_LISTINGS,
-        listings
+        payload
     }
 }
 
 
 //show action 
 const receiveListing = (payload) => {
-
     return {
         type: RECEIVE_LISTING,
         payload
@@ -36,8 +36,7 @@ export const fetchAllListings = () => async (dispatch) => {
 export const fetchListingDetail = (listingId) => async (dispatch) => {
     const response = await fetch(`/api/listings/${listingId}`);
     const data = await response.json();
-
-    dispatch(receiveListing(data[listingId])) ;
+    dispatch(receiveListing(data)) ;
 
 }
 
@@ -46,16 +45,17 @@ export const fetchListingDetail = (listingId) => async (dispatch) => {
 
 //listing reducer
 const listingReducer = (state, action) => {
-
     Object.freeze(state) 
     const nextState = {...state};
 
     switch (action.type) {
         case RECEIVE_LISTINGS:
-            return { ...nextState, ...action.listings };
+            return { ...nextState, ...action.payload.listings };
         case RECEIVE_LISTING:
-            nextState[action.payload.id] = action.payload
+            nextState[action.payload.listing.id] = action.payload.listing
             return nextState
+        case RECEIVE_USER: 
+            return {...action.payload.listings}
         default:
             return nextState;
     }

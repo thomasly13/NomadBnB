@@ -3,12 +3,15 @@ import thunk from 'redux-thunk';
 import sessionReducer from './session';
 import listingReducer from './listing';
 import userReducer from './user';
+import reservationReducer from './reservation';
+
 
 //root reducer
 const rootReducer = combineReducers({
   session: sessionReducer,
   listing: listingReducer,
-  user: userReducer
+  user: userReducer,
+  reservation: reservationReducer
 });
 
 

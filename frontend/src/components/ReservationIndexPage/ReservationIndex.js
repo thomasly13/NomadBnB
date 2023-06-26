@@ -11,11 +11,6 @@ export const ReservationIndex = () => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.user[userId])
-    
-    let reservations;
-    if (user) {
-        reservations = Object.values(user.reservations)
-    }
 
     useEffect(() => {
         window.scrollTo({top: 0, left:0 , behavior: "smooth"})
@@ -28,7 +23,7 @@ export const ReservationIndex = () => {
             { user === undefined ? null :
                 <div>
                     < ReservationPageNavigation/>
-                    < ReservationIndexBody reservations={reservations}/>                  
+                    < ReservationIndexBody user={user}/>                  
                 </div>
               
             }

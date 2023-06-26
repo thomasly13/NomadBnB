@@ -34,16 +34,16 @@ class Reservation < ApplicationRecord
     .where(listing_id: listingId)
   end
 
-  def self.previous_reservations
-    current_date = Date.today 
-    current_day = current_date.day 
-    current_month = current_date.month 
-    current_year = current_date.year
-    return Reservation.select(*)
-    .where("")
+  def self.previous_reservations(renter_id)
+    return Reservation.includes(:renter)
+    .where("check_out_date <= ?", Date.today)
+    .where(renter: {id: renter_id})
   end 
 
-  # def self.future_reservations 
-  # end 
+  def self.future_reservations(renter_id)
+    return Reservation.includes(:renter)
+    .where("check_in_date >= ?", Date.today)
+    .where(renter: {id: renter_id})
+  end 
   
 end

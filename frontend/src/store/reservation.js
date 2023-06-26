@@ -1,6 +1,6 @@
 import csrfFetch from "./csrf"
 
-
+const RECEIVE_USER = 'RECEIVE_USER'
 const CREATE_RESERVATION = 'CREATE_RESERVATION'
 
 const createReservation = (reservation) => {
@@ -28,3 +28,19 @@ export const postCreateReservation = (reservationDetails) => async (dispatch) =>
     return data
 
 } 
+
+const reservationReducer = (state, action) => {
+    Object.freeze(state);
+    const nextState = {...state};
+
+    switch (action.type) {
+        case RECEIVE_USER:
+            nextState['previousReservations'] = action.payload.reservations.previousReservations;
+            nextState['futureReservations'] = action.payload.reservations.futureReservations;
+            return nextState
+        default: 
+            return nextState
+    }
+}
+
+export default reservationReducer;

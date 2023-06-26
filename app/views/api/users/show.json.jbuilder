@@ -1,18 +1,44 @@
 json.user do
-    json.extract! @user, :id, :email, :first_name, :last_name
-    json.set! "reservations" do 
-        @user.reservations.each do |reservation|
-            json.set! reservation.id do 
-                json.extract! reservation, :id, :check_in_date, :check_out_date
-                json.set! "listing" do 
-                    json.extract! reservation.listing, :id, :name
-                    json.images reservation.listing.photos.map { |file| file.url }
-                    json.set! "owner" do 
-                        json.extract! reservation.owner, :id, :first_name
-                    end
-                end                
-            end
-        end
+    json.set! @user.id do
+        json.extract! @user, :id, :email, :first_name, :last_name        
+    end
 
+    @user.reservations.each do |reservation|
+        json.set! reservation.owner.id do
+            json.extract! reservation.owner, :id, :first_name            
+        end
     end
 end
+
+json.set! 'reservations' do
+    json.set! 'previousReservations' do
+        @user.reservations.previous_reservations(@user.id).each do |reservation|
+            json.set! reservation.id do
+                json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
+            end
+        end        
+    end 
+
+    json.set! 'futureReservations' do 
+        @user.reservations.future_reservations(@user.id).each do |reservation|
+            json.set! reservation.id do
+                json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
+            end
+        end        
+    end
+
+end
+
+json.set! "listings" do 
+    @user.reservations.each do |reservation|
+        json.set! reservation.listing_id do
+            json.extract! reservation.listing, :id, :name
+            json.images reservation.listing.photos.map { |file| file.url }
+            json.set! "owner" do 
+                json.extract! reservation.owner, :id, :first_name
+            end
+        end
+    end
+end
+
+

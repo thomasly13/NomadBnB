@@ -1,10 +1,12 @@
+import { useSelector } from "react-redux";
 import { ShowHeader } from "./Header/ShowHeader";
 import { ShowReservation } from "./Reservation/ShowReservation";
+import { useEffect } from "react";
 import "./ShowBody.css"
 
 
-export const ShowBody = ({listing}) => {
 
+export const ShowBody = ({listing}) => {
     const locationHelper = () => {
         let address = listing.address.split(", ");
         let location = address.slice(1, 3);
@@ -12,15 +14,17 @@ export const ShowBody = ({listing}) => {
     }
 
 
+    const owner = useSelector(state => state.user[listing.ownerId]);
 
     return (
-        <>          
+        <>     
+            {owner === undefined ? null :    
             <div className="show-body">
                 < ShowHeader listing={listing} locationHelper={locationHelper}/>
                 <div className="show-body-information">
                     <div className="show-body-information-tab">
                         <div className="show-listing-information">
-                            <span className="show-listing-owner">Entire home hosted by {listing.owner.firstName} {listing.owner.lastName}</span>
+                            <span className="show-listing-owner">Entire home hosted by {owner.firstName} {owner.lastName}</span>
                             <span className="show-listing-specific-information">{listing.numOfGuests} guests &bull; {listing.numOfBedrooms} bedrooms &bull; {listing.numOfBeds} beds &bull; {listing.numOfBaths} baths</span>
                         </div>
                         <hr className="information-line"></hr>
@@ -32,7 +36,7 @@ export const ShowBody = ({listing}) => {
                                     <i className="fa-solid fa-medal"></i>
                                 </div>
                                 <div className="highlight-information-container">
-                                    <span className="highlight-title">{listing.owner.firstName} {listing.owner.lastName} is a Superhost</span>
+                                    <span className="highlight-title">{owner.firstName} {owner.lastName} is a Superhost</span>
                                     <span className="highlight-information">Superhosts are experienced, highly rated hosts who are committed to providing great stays for guests.</span>                                     
                                 </div>
     
@@ -145,7 +149,7 @@ export const ShowBody = ({listing}) => {
 
                  
                 </div>
-            </div>
+            </div>}
         </>
     )
 }

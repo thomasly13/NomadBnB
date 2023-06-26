@@ -12,7 +12,6 @@ export const ListingShow = () => {
     const dispatch = useDispatch();
 
   
-
     const listing = useSelector(state => state.listing[listingId]);
 
 

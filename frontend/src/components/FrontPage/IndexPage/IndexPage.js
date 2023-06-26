@@ -15,7 +15,9 @@ export const ListingsIndex = () => {
         dispatch(fetchAllListings())
     }, [dispatch])
     
+
     const helper = (listing) => {
+
         let address = listing.address.split(", ");
         let location = address.slice(1, 3);
         return location.join(", ")
