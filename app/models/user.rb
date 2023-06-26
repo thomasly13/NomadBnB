@@ -59,5 +59,10 @@ class User < ApplicationRecord
   class_name: :Reservation,
   dependent: :destroy
 
+  has_many :reservation_listing,
+  through: :reservations,
+  source: :listing,
+  dependent: :destroy
+
   
 end

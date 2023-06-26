@@ -26,11 +26,24 @@ class Reservation < ApplicationRecord
 
   has_one :owner,
   through: :listing,
-  source: :owner
+  source: :owner,
+  dependent: :destroy
 
   def self.listing_reservations(listingId)
     return Reservation.select(:id)
     .where(listing_id: listingId)
   end
+
+  def self.previous_reservations
+    current_date = Date.today 
+    current_day = current_date.day 
+    current_month = current_date.month 
+    current_year = current_date.year
+    return Reservation.select(*)
+    .where("")
+  end 
+
+  # def self.future_reservations 
+  # end 
   
 end

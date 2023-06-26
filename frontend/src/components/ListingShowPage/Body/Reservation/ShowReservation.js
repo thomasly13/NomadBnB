@@ -4,12 +4,16 @@ import { ReservationCalendar } from "./ReservationCalendar/ReservationCalendar";
 import "../ShowBody.css";
 import { GuestsDropDown } from "./GuestsDropDown/GuestsDropDown";
 import { postCreateReservation } from "../../../../store/reservation";
-import { Redirect } from "react-router-dom";
+import { useHistory } from "react-router-dom";
+
+
 
 
 
 export const ShowReservation = ({listing}) => {
 
+
+  const history = useHistory();
   const dispatch = useDispatch();
 
   const [checkInDate, setCheckInDate] = useState("");
@@ -34,11 +38,13 @@ export const ShowReservation = ({listing}) => {
   }
 
   const handleCheckinDate = (date) => {
-    setCheckInDate(`${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`)
+    const actualMonth = date.getMonth() + 1
+    setCheckInDate(`${actualMonth}/${date.getDate()}/${date.getFullYear()}`)
   }
 
   const handleCheckoutDate = (date) => {
-    setCheckOutDate(`${date.getMonth()}/${date.getDate()}/${date.getFullYear()}`)
+    const actualMonth = date.getMonth() + 1
+    setCheckOutDate(`${actualMonth}/${date.getDate()}/${date.getFullYear()}`)
   }
 
   const intervalGuestsDown = () => {
@@ -76,11 +82,10 @@ export const ShowReservation = ({listing}) => {
 
 
     const res = await dispatch(postCreateReservation(reservationDetails))
-    debugger
     if (res.errors === "Awesome Made!") {
-      return <Redirect to="/" />
+
+      return history.push("/");
     }
-    console.log(res)
     
     
   }

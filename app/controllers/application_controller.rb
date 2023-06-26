@@ -28,7 +28,7 @@ class ApplicationController < ActionController::API
 
     def required_logged_in
         if !logged_in?
-            render json: {errors: ['Unauthorized']}, status: 'unauthorized'
+            render json: {errors: ['Unauthorized']}, status: 403
         end
     end
 

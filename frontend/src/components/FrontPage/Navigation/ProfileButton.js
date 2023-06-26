@@ -45,6 +45,7 @@ export const ProfileButton = () => {
                 {showMenu && (
                 <div className="profile-dropdown">
                     <ul>
+                        <li><h2 className="logout-dropdown" onClick={handleLogOut}>Trips</h2></li>
                         <li><h2 className="logout-dropdown" onClick={handleLogOut}>Log Out</h2></li>
                     </ul>
                 </div>
@@ -90,6 +91,8 @@ export const ProfileButton = () => {
     const openMenu = () => {
     if (showMenu) return;
         setShowMenu(true);
+        const profileElement = document.querySelector(".profileButton")
+        profileElement.classList.add("profileButton-active")
     };
   
     //activates whenever the menu boolean changes
@@ -99,7 +102,9 @@ export const ProfileButton = () => {
 
         //function that sets menu to false 
         const closeMenu = () => {
-            setShowMenu(false);   
+            setShowMenu(false);  
+            const profileElement = document.querySelector(".profileButton")
+            profileElement.classList.remove("profileButton-active") 
         };
         
         //adds event listener that closes menu if someone clicks anywhere in the page

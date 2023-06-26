@@ -22,6 +22,7 @@ export const postCreateReservation = (reservationDetails) => async (dispatch) =>
             listingId: listingId,
         })
     });
+    
 
     const data = await response.json();
     return data
