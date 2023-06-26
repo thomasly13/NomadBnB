@@ -1,0 +1,32 @@
+.reservation-image {
+    width: 72px;
+    height: 72px;
+}
+
+.reservation-index-body-container {
+    width: 1600px;
+    padding: 0px 80px;
+    box-sizing: border-box;
+    margin: auto;
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-current-trips-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.current-reservation-container {
+    display: flex;
+}
+
+.current-reservation-container-text {
+    display: flex;
+    flex-direction: column;
+}
+
+.reservation-current-trips {
+    display: flex;
+    flex-wrap: wrap;
+}

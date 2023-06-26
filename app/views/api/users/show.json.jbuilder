@@ -32,11 +32,8 @@ end
 json.set! "listings" do 
     @user.reservations.each do |reservation|
         json.set! reservation.listing_id do
-            json.extract! reservation.listing, :id, :name
+            json.extract! reservation.listing, :id, :name, :address, :owner_id
             json.images reservation.listing.photos.map { |file| file.url }
-            json.set! "owner" do 
-                json.extract! reservation.owner, :id, :first_name
-            end
         end
     end
 end

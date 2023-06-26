@@ -1,9 +1,10 @@
-import { ReservationIndexBody } from "./Body/ReservationIndexBody"
+import { ReservationIndexBody } from "./FutureTrips/ReservationIndexBody"
 import { ReservationPageNavigation } from "./Navigation/ReservationPageNavigation"
 import { useParams } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
 import { useEffect} from "react";
 import { fetchUserDetail } from "../../store/user";
+import { FutureReservationIndexBody } from "./PastTrips/ReservationIndexBody";
 
 
 export const ReservationIndex = () => {
@@ -23,7 +24,9 @@ export const ReservationIndex = () => {
             { user === undefined ? null :
                 <div>
                     < ReservationPageNavigation/>
-                    < ReservationIndexBody user={user}/>                  
+                    < ReservationIndexBody user={user}/>
+                    <hr></hr>
+                    < FutureReservationIndexBody user={user} />        
                 </div>
               
             }
