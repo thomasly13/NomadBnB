@@ -30,13 +30,16 @@ export const ExistingSignInPage = ({email, goBack}) => {
   
         //calls thunk action and gets a response
         const res = await dispatch(login({ email, password }))
-        //sets errors to any errors the response gets
-        if (res.errors.length > 0){
-          setErrors({password: res.errors})
-        } else {
-          setErrors({})
+        //sets errors to any errors the response gets\
+        if (res.errors) {
+          if (res.errors.length > 0){
+            setErrors({password: res.errors})
+          } else {
+            setErrors({})
+          }
+                    
         }
-        
+
     }
 
     //log in errors component

@@ -84,12 +84,17 @@
 .reservation-edit-date-container {
     display: flex;
     justify-content: space-between;
+    margin-top: 20px;
 }
 
 .reservation-edit-check-in-date-container, .reservation-edit-check-out-date-container {
     width: 50%;
     display: flex;
     flex-direction: column;
+    padding-left: 20px;
+}
+.reservation-edit-check-out-date-container {
+    border-left: #757272bb 1px solid;
 }
 
 .reservation-edit-button {
@@ -116,4 +121,42 @@
 
 .background {
     background-color: rgba(0, 0, 0, 0.137) !important;
+}
+
+.reservation-edit-check-date-words {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: black;
+}
+
+.reservation-edit-check-date-words-2 {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #717171;  
+}
+
+.reservation-edit-check-date-words-3 {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 16px;
+    line-height: 20px;
+    font-weight: 600;
+    color: #717171;  
+}
+
+.reservation-edit-guests-container {
+    display: flex;
+    flex-direction: column;
+    margin-left: 20px;
+    margin-right: 20px;
+    align-content: center;
+}
+
+.guest-drop-down-adults-container {
+    align-items: center;
+    display: flex;
+
 }

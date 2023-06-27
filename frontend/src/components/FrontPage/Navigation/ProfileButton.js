@@ -6,15 +6,15 @@ import './ProfileButton.css'
 import { Modal } from "../../../context/Modal";
 import SignInFormPage from "../SignInFormPage";
 import { NavLink, Link } from "react-router-dom/cjs/react-router-dom.min";
-
-
-
+import { useHistory } from "react-router-dom";
 
 
 
 
 export const ProfileButton = () => {
 
+
+    const history = useHistory();
     //gives access to dispatch
     const dispatch = useDispatch();
     const [showMenu, setShowMenu] = useState(false);
@@ -28,6 +28,7 @@ export const ProfileButton = () => {
     //sends a request to log out of the current user
     const handleLogOut = (e) => {
         dispatch(logout());
+        return history.push("/");
     }
 
     const handleModalClose = (e) => {

@@ -7,9 +7,10 @@ class Api::ReviewsController < ApplicationController
     def create 
         @review = Review.new(review_params)
         @review.reviewer_id = current_user.id 
+        @user = current_user
 
         if @review.save
-            render json: {errors: 'Awesome Made Review!'}, status: 222
+            render 'api/users/show'
         else
             render json: { errors: @review.errors }, status: 444
         end

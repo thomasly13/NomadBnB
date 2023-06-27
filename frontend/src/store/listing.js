@@ -4,7 +4,9 @@
 const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
 const RECEIVE_LISTING = 'RECEIVE_LISTING'
 const RECEIVE_USER = 'RECEIVE_USER'
-
+const CREATE_REVIEW = 'CREATE_REVIEW'
+const EDIT_REVIEW = 'EDIT_REVIEW'
+const DELETE_REVIEW = 'DELETE_REVIEW'
 
 //action controllers
 
@@ -55,6 +57,12 @@ const listingReducer = (state, action) => {
             nextState[action.payload.listing.id] = action.payload.listing
             return nextState
         case RECEIVE_USER: 
+            return {...action.payload.listings}
+        case CREATE_REVIEW: 
+            return {...action.payload.listings}
+        case EDIT_REVIEW: 
+            return {...action.payload.listings}
+        case DELETE_REVIEW:
             return {...action.payload.listings}
         default:
             return nextState;

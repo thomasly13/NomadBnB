@@ -15,24 +15,35 @@ json.user do
 end
 
 json.set! 'reservations' do
+
     json.set! 'previousReservations' do
-        @user.reservations.previous_reservations(@user.id).each do |reservation|
-            json.set! reservation.id do
-                json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
-                if reservation.review
-                    json.reviewer_id reservation.review.id
-                else
-                    json.reviewer_id nil
+
+        if @user.reservations.previous_reservations(@user.id).length != 0
+            @user.reservations.previous_reservations(@user.id).each do |reservation|
+                json.set! reservation.id do
+                    json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
+                    if reservation.review
+                        json.reviewId reservation.review.id
+                    else
+                        json.reviewId nil
+                    end
                 end
             end
-        end        
+        else
+            json.reservation nil
+        end         
     end 
 
+
     json.set! 'futureReservations' do 
-        @user.reservations.future_reservations(@user.id).each do |reservation|
-            json.set! reservation.id do
-                json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
+        if @user.reservations.future_reservations(@user.id).length != 0
+            @user.reservations.future_reservations(@user.id).each do |reservation|
+                json.set! reservation.id do
+                    json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
+                end
             end
+        else
+            json.reservation nil
         end        
     end
 

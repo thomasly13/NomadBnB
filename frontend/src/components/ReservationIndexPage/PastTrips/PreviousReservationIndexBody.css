@@ -30,3 +30,8 @@
     display: flex;
     flex-wrap: wrap;
 }
+
+.review-create-rating-container {
+    display: flex;
+
+}

@@ -5,7 +5,9 @@ const CREATE_RESERVATION = 'CREATE_RESERVATION'
 const DELETE_RESERVATION = 'DELETE_RESERVATION'
 const UPDATE_RESERVATION = 'UPDATE_RESERVATION'
 const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
-
+const CREATE_REVIEW = 'CREATE_REVIEW'
+const EDIT_REVIEW = 'EDIT_REVIEW'
+const DELETE_REVIEW = 'DELETE_REVIEW'
 
 const createReservation = (reservation) => {
     return {
@@ -94,6 +96,15 @@ const reservationReducer = (state, action) => {
             nextState['previousReservations'] = action.payload.reservations.previousReservations;
             nextState['futureReservations'] = action.payload.reservations.futureReservations;
             return nextState
+        case CREATE_REVIEW:
+            nextState['previousReservations'] = action.payload.reservations.previousReservations;
+            nextState['futureReservations'] = action.payload.reservations.futureReservations;
+        case EDIT_REVIEW: 
+            nextState['previousReservations'] = action.payload.reservations.previousReservations;
+            nextState['futureReservations'] = action.payload.reservations.futureReservations;
+        case DELETE_REVIEW:
+            nextState['previousReservations'] = action.payload.reservations.previousReservations;
+            nextState['futureReservations'] = action.payload.reservations.futureReservations;           
         default: 
             return nextState
     }

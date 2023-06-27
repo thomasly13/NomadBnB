@@ -129,7 +129,7 @@ export function SignInFormPage({modalFunction}) {
       renderForm = <ExistingSignInPage email={email} goBack={handleGoBack}/>
     }
     else {
-      renderForm = <NewSignUpPage goBack={handleGoBack} />
+      renderForm = <NewSignUpPage emailFiller={email} goBack={handleGoBack} />
     };
     
     

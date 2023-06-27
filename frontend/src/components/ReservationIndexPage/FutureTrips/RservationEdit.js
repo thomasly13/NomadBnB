@@ -49,14 +49,14 @@ export const ReservationEdit = ({reservationId, modalFunction}) => {
                     </div>
                     <div className="reservation-edit-date-container">
                         <div className="reservation-edit-check-in-date-container">
-                            <span>Check-In</span>
-                            <span>{reservation.checkInDate}</span>
-                            <span>3:00 PM</span>
+                            <span className="reservation-edit-check-date-words">Check-In</span>
+                            <span className="reservation-edit-check-date-words-2">{reservation.checkInDate}</span>
+                            <span className="reservation-edit-check-date-words-3">3:00 PM</span>
                         </div>
                         <div className="reservation-edit-check-out-date-container">
-                            <span>Check-Out</span>
-                            <span>{reservation.checkOutDate}</span>
-                            <span>1:00 PM</span>
+                            <span className="reservation-edit-check-date-words">Check-Out</span>
+                            <span className="reservation-edit-check-date-words-2">{reservation.checkOutDate}</span>
+                            <span className="reservation-edit-check-date-words-3">1:00 PM</span>
                         </div>
                     </div>
                     <div className="reservation-edit-guests-container">

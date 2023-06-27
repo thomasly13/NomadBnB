@@ -4,7 +4,7 @@ import { Redirect } from "react-router-dom";
 import { signup } from "../../../store/session";
 import "./SignIn.css"
 
-export const NewSignUpPage = ({goBack}) => {
+export const NewSignUpPage = ({emailFiller, goBack}) => {
     // gives access to dispatch
     const dispatch = useDispatch();
 
@@ -12,7 +12,7 @@ export const NewSignUpPage = ({goBack}) => {
     const sessionUser = useSelector(state => state.session.user);
 
     //states of credentials
-    const [email, setEmail] = useState("");
+    const [email, setEmail] = useState(emailFiller);
     const [firstName, setFirstName] = useState("");
     const [lastName, setLastName] = useState("");
     const [password, setPassword] = useState("");
@@ -39,18 +39,20 @@ export const NewSignUpPage = ({goBack}) => {
         const res = await dispatch(signup({ email, firstName, lastName, password }))
 
         //if signup failed, adds errors to their receptive sections
+        if (res.errors) {
+          if (res.errors.last_name) {
+                setErrors(state => { return {...state, "lastName": "Last name is required."}})
+            }
 
-        if (res.errors.last_name) {
-              setErrors(state => { return {...state, "lastName": "Last name is required."}})
-          }
+          if (res.errors.password) {
+            setErrors(state => { return {...state, "password": "Password is required."}})}
 
-        if (res.errors.password) {
-          setErrors(state => { return {...state, "password": "Password is required."}})}
+          if (res.errors.first_name) {
+            setErrors(state => { return {...state, "firstName": "First name is required."}})
+          };
+          console.log("this is working")          
+        }
 
-        if (res.errors.first_name) {
-          setErrors(state => { return {...state, "firstName": "First name is required."}})
-        };
-        console.log("this is working")
     };
 
     //Sign up First Name Error component

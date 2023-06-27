@@ -6,20 +6,20 @@ import { deleteExistingReservation, fetchShowReservation } from "../../../store/
 import { Modal } from "../../../context/Modal"
 import { useState, useEffect} from "react"
 import { ReservationEdit } from "./RservationEdit"
-import { fetchUserDetail } from "../../../store/user"
 
 
 
 
-export const ReservationIndexBody = ({user, userId}) => {
+
+export const ReservationIndexBody = ({user, userId, reservation}) => {
 
     const [showModal, setShowModal] = useState(false);
     const [resId, setResId] = useState(null);
     const dispatch = useDispatch();
-    debugger
 
 
-    const futureReservations = useSelector(state => Object.values(state.reservation.futureReservations))
+
+    const futureReservations = Object.values(reservation.futureReservations)
     
 
     
@@ -37,7 +37,7 @@ export const ReservationIndexBody = ({user, userId}) => {
 
     return (
         <>
-        { (futureReservations === undefined) ? null : 
+        { (futureReservations === undefined || futureReservations[0] === null) ? null : 
         <main className="reservation-index-body-container">
             <div className="reservation-current-trips-container">
                 <h1 className="reservation-current-title">Trips</h1>

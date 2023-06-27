@@ -11,7 +11,7 @@ export const ReservationIndex = () => {
     const {userId} = useParams();
     const dispatch = useDispatch();
 
-    const user = useSelector(state => state.user[userId])
+    const user = useSelector(state => {return state.session.user})
     const reservation = useSelector(state => state.reservation)
 
     useEffect(() => {
@@ -25,9 +25,9 @@ export const ReservationIndex = () => {
             { user === undefined || Object.keys(reservation).length === 0 ? null :
                 <div>
                     < ReservationPageNavigation/>
-                    < ReservationIndexBody user={user} userId={userId}/>
+                    < ReservationIndexBody user={user} reservation={reservation} userId={userId}/>
                     <hr></hr>
-                    < PastReservationIndexBody user={user} userId={userId} />        
+                    < PastReservationIndexBody user={user} reservation={reservation} userId={userId} />        
                 </div>
               
             }

@@ -1,21 +1,50 @@
 import { useDispatch, useSelector } from "react-redux"
-import "./ReservationIndexBody.css"
+import "./PreviousReservationIndexBody.css"
 import { ReservationImage } from "./ReservationImage"
 import { ReservationContainerText } from "./ReservationContainerText"
-import { fetchUserDetail } from "../../../store/user"
-import { useEffect } from "react"
+
+import { useState, useEffect } from "react"
+import { Modal } from "../../../context/Modal"
+import { ReservationReviewCreate } from "./ReviewForm/ReservationReviewCreate"
+import { ReservationReviewEdit } from "./ReviewForm/ReservationReviewEdit"
 
 
 
-export const PastReservationIndexBody = ({user}) => {
 
-    const previousReservations = useSelector(state => Object.values(state.reservation.previousReservations))
+export const PastReservationIndexBody = ({user, reservation}) => {
 
+    const previousReservations = Object.values(reservation.previousReservations)
+    const [showEditModal, setShowEditModal] = useState(false);
+    const [showCreateModal, setShowCreateModal] = useState(false);
+
+    const [resId, setResId] = useState(null);
+    
+
+
+    const handleEditModalClose = () => {
+        setShowEditModal(false);
+    };
+
+    const handleCreateModalClose = () => {
+        setShowCreateModal(false);
+    };
+
+    const handleCreateModalOpen = async (reservationId) => {
+
+        setResId(reservationId);
+        setShowCreateModal(true);
+    };
+
+    const handleEditModalOpen = async (reservationId) => {
+
+        setResId(reservationId);
+        setShowEditModal(true);
+    };
 
 
     return (
         <>
-        { (previousReservations === undefined) ? null : 
+        { (previousReservations === undefined  || previousReservations[0] === null) ? null : 
         <main className="reservation-index-body-container">
             <div className="reservation-current-trips-container">
                 <h1>Past Trips</h1>
@@ -25,9 +54,20 @@ export const PastReservationIndexBody = ({user}) => {
                             <div className="current-reservation-container">
                                 < ReservationImage reservation={reservation}/>
                                 < ReservationContainerText reservation={reservation} />
+                                {reservation.reviewId ? <button onClick={() => {handleEditModalOpen(reservation.id)}}>Edit</button>  : <button onClick={() => {handleCreateModalOpen(reservation.id)}}>Create</button>}
                             </div>
                         )
                     })}
+                    {showCreateModal && (
+                        <Modal  onClose={handleCreateModalClose}  >
+                            <ReservationReviewCreate reservationId={resId} modalFunction={handleCreateModalClose}/>
+                        </Modal>
+                    )} 
+                    {showEditModal && (
+                        <Modal  onClose={handleEditModalClose}  >
+                            < ReservationReviewEdit reservationId={resId} modalFunction={handleEditModalClose}/>
+                        </Modal>
+                    )}  
                 </div>
 
             </div>

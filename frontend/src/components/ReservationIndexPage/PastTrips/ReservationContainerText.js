@@ -1,6 +1,6 @@
 
 import { useSelector } from "react-redux"
-import "./ReservationIndexBody.css"
+import "./PreviousReservationIndexBody.css"
 
 export const ReservationContainerText = ({reservation}) => {
     const listing = useSelector(state => state.listing[reservation.listingId])
@@ -64,8 +64,6 @@ export const ReservationContainerText = ({reservation}) => {
                 <Host listing={listing} />
                 <Date reservation={reservation} />
             </div>
-            {reservation.reviewerId ? <button>Edit</button>  : <button>Create</button>}
-            {reservation.reviewerId ? <button>Delete</button>  : null}
         </>
     )
 }
