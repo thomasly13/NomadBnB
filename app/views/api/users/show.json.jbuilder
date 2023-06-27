@@ -19,6 +19,11 @@ json.set! 'reservations' do
         @user.reservations.previous_reservations(@user.id).each do |reservation|
             json.set! reservation.id do
                 json.extract! reservation, :id, :num_of_guests, :check_in_date, :check_out_date, :listing_id, :renter_id
+                if reservation.review
+                    json.reviewer_id reservation.review.id
+                else
+                    json.reviewer_id nil
+                end
             end
         end        
     end 

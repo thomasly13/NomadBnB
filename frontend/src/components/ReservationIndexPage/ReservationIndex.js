@@ -19,7 +19,7 @@ export const ReservationIndex = () => {
         dispatch(fetchUserDetail(userId))
     }, [])
 
-    debugger
+
     return (
         <>
             { user === undefined || Object.keys(reservation).length === 0 ? null :

@@ -5,6 +5,7 @@ import "./ReservationIndexBody.css"
 export const ReservationContainerText = ({reservation}) => {
     const listing = useSelector(state => state.listing[reservation.listingId])
 
+
     const months = {
         "01": 'Jan',
         "02": 'Feb',
@@ -63,6 +64,8 @@ export const ReservationContainerText = ({reservation}) => {
                 <Host listing={listing} />
                 <Date reservation={reservation} />
             </div>
+            {reservation.reviewerId ? <button>Edit</button>  : <button>Create</button>}
+            {reservation.reviewerId ? <button>Delete</button>  : null}
         </>
     )
 }

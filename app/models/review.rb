@@ -12,7 +12,7 @@
 #  updated_at     :datetime         not null
 #
 class Review < ApplicationRecord
-    validates :rating, :listing_id, :renter_id, :reservation_id, presence: true
+    validates :rating, :listing_id, :reviewer_id, :reservation_id, presence: true
     validates :body, length: {in: 0..255}
 
     belongs_to :listing, 

@@ -81,7 +81,6 @@ export const deleteExistingReservation = (reservationId, userId) => async (dispa
 const reservationReducer = (state, action) => {
     Object.freeze(state);
     const nextState = {...state};
-    debugger
     switch (action.type) {
         case RECEIVE_USER:
             nextState['previousReservations'] = action.payload.reservations.previousReservations;

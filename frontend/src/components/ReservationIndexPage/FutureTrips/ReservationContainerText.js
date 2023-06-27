@@ -5,7 +5,7 @@ import "./ReservationIndexBody.css"
 export const ReservationContainerText = ({reservation}) => {
 
     const listing = useSelector(state => state.listing[reservation.listingId])
-    debugger
+
     const months = {
         "01": 'Jan',
         "02": 'Feb',
@@ -31,7 +31,6 @@ export const ReservationContainerText = ({reservation}) => {
     }
 
     const Host = ({listing}) => {
-        debugger
         const owner = useSelector(state => state.user[listing.ownerId])
 
         return (

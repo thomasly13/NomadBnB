@@ -4,6 +4,8 @@ import sessionReducer from './session';
 import listingReducer from './listing';
 import userReducer from './user';
 import reservationReducer from './reservation';
+import reviewReducer from './review';
+
 
 
 //root reducer
@@ -11,7 +13,8 @@ const rootReducer = combineReducers({
   session: sessionReducer,
   listing: listingReducer,
   user: userReducer,
-  reservation: reservationReducer
+  reservation: reservationReducer,
+  review: reviewReducer
 });
 
 

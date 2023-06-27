@@ -29,7 +29,7 @@ class Reservation < ApplicationRecord
   source: :owner,
   dependent: :destroy
 
-  has_many :reviews,
+  has_one :review,
   foreign_key: :reservation_id,
   class_name: :Review,
   dependent: :destroy
