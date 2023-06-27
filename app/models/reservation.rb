@@ -13,7 +13,7 @@
 #
 class Reservation < ApplicationRecord
   validates :num_of_guests, :check_in_date,
-    :check_out_date, :listing_id, :renter_id,presence: true
+    :check_out_date, :listing_id, :renter_id, presence: true
 
 
   belongs_to :listing,
@@ -27,6 +27,11 @@ class Reservation < ApplicationRecord
   has_one :owner,
   through: :listing,
   source: :owner,
+  dependent: :destroy
+
+  has_many :reviews,
+  foreign_key: :reservation_id,
+  class_name: :Review,
   dependent: :destroy
 
   def self.listing_reservations(listingId)

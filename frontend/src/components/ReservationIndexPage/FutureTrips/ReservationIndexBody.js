@@ -40,7 +40,7 @@ export const ReservationIndexBody = ({user, userId}) => {
         { (futureReservations === undefined) ? null : 
         <main className="reservation-index-body-container">
             <div className="reservation-current-trips-container">
-                <h1 className="reservation-title">Trips</h1>
+                <h1 className="reservation-current-title">Trips</h1>
                 <div className="reservation-current-trips">
                     {futureReservations.map(reservation => {
                         return (

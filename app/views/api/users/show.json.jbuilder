@@ -1,3 +1,4 @@
+
 json.user do
     json.set! "currentUser" do 
         json.extract! @user, :id, :email, :first_name, :last_name       
@@ -41,4 +42,11 @@ json.set! "listings" do
     end
 end
 
+json.set! "reviews" do 
+    @user.reviews.each do |review|
+        json.set! review.id do 
+            json.extract! review, :id, :rating, :body, :listing_id, :reviewer_id, :reservation_id
+        end
+    end
+end
 

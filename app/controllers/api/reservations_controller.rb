@@ -28,7 +28,6 @@ class Api::ReservationsController < ApplicationController
     else
       render json: { errors: @reservation.errors }, status: 444
     end 
-
   end
 
   def update 

@@ -14,6 +14,7 @@ Rails.application.routes.draw do
 
     resources :reservations, only: [:index, :show, :create, :destroy, :update]
 
+    resources :reviews, only: [:create, :destroy, :update]
     post 'users/check', to: 'users#check'
     
   end
