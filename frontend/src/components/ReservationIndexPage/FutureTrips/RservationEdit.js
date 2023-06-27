@@ -4,10 +4,11 @@ import "./ReservationIndexBody.css"
 import { updateExistingReservation } from "../../../store/reservation";
 
 
-export const ReservationEdit = ({reservation, modalFunction}) => {
+export const ReservationEdit = ({reservationId, modalFunction}) => {
 
     const dispatch = useDispatch();
-
+    const reservation = useSelector(state => state.reservation.futureReservations[reservationId])
+    
     const [guests, setGuests] = useState(reservation.numOfGuests)
 
 

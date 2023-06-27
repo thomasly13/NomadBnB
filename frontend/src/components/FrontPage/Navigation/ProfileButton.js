@@ -5,6 +5,7 @@ import { useSelector, useDispatch } from 'react-redux';
 import './ProfileButton.css'
 import { Modal } from "../../../context/Modal";
 import SignInFormPage from "../SignInFormPage";
+import { NavLink, Link } from "react-router-dom/cjs/react-router-dom.min";
 
 
 
@@ -45,7 +46,8 @@ export const ProfileButton = () => {
                 {showMenu && (
                 <div className="profile-dropdown">
                     <ul>
-                        <li><h2 className="logout-dropdown" onClick={handleLogOut}>Trips</h2></li>
+                        {console.log(sessionUser)}
+                        <li><Link to={`/users/${sessionUser.id}/reservations`}>Trips</Link></li>
                         <li><h2 className="logout-dropdown" onClick={handleLogOut}>Log Out</h2></li>
                     </ul>
                 </div>
@@ -92,7 +94,7 @@ export const ProfileButton = () => {
     if (showMenu) return;
         setShowMenu(true);
         const profileElement = document.querySelector(".profileButton")
-        profileElement.classList.add("profileButton-active")
+        if (profileElement) profileElement.classList.add("profileButton-active")
     };
   
     //activates whenever the menu boolean changes
@@ -104,7 +106,7 @@ export const ProfileButton = () => {
         const closeMenu = () => {
             setShowMenu(false);  
             const profileElement = document.querySelector(".profileButton")
-            profileElement.classList.remove("profileButton-active") 
+            if (profileElement) profileElement.classList.remove("profileButton-active") 
         };
         
         //adds event listener that closes menu if someone clicks anywhere in the page

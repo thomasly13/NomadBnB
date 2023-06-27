@@ -11,7 +11,4 @@
             json.extract! listing.owner, :id, :first_name, :last_name
         end        
     end
-
-
-
 end

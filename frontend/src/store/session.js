@@ -9,6 +9,7 @@ const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
 //action controllers
 //login action
 const setCurrentUser = (user) => {
+
     return {
         type: SET_CURRENT_USER,
         payload: user
@@ -48,8 +49,9 @@ export const login = (user) => async (dispatch) => {
         })
     });
     const data = await response.json();
-    storeCurrentUser(data.user)
-    if (data.user) dispatch(setCurrentUser(data.user)); 
+    storeCurrentUser(data.user.currentUser)
+
+    if (data.user.currentUser) dispatch(setCurrentUser(data.user.currentUser)); 
 
     return data;
 };

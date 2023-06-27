@@ -4,6 +4,8 @@ const RECEIVE_USER = 'RECEIVE_USER'
 const CREATE_RESERVATION = 'CREATE_RESERVATION'
 const DELETE_RESERVATION = 'DELETE_RESERVATION'
 const UPDATE_RESERVATION = 'UPDATE_RESERVATION'
+const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
+
 
 const createReservation = (reservation) => {
     return {
@@ -11,7 +13,6 @@ const createReservation = (reservation) => {
         reservation
     }
 }
-
 const deleteReservation = (payload) => {
 
     return {
@@ -80,7 +81,7 @@ export const deleteExistingReservation = (reservationId, userId) => async (dispa
 const reservationReducer = (state, action) => {
     Object.freeze(state);
     const nextState = {...state};
-
+    debugger
     switch (action.type) {
         case RECEIVE_USER:
             nextState['previousReservations'] = action.payload.reservations.previousReservations;

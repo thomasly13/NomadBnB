@@ -2,23 +2,35 @@ import { useDispatch, useSelector } from "react-redux"
 import "./ReservationIndexBody.css"
 import { ReservationImage } from "./ReservationImage"
 import { ReservationContainerText } from "./ReservationContainerText"
-import { deleteExistingReservation } from "../../../store/reservation"
+import { deleteExistingReservation, fetchShowReservation } from "../../../store/reservation"
 import { Modal } from "../../../context/Modal"
-import { useState } from "react"
+import { useState, useEffect} from "react"
 import { ReservationEdit } from "./RservationEdit"
+import { fetchUserDetail } from "../../../store/user"
+
+
 
 
 export const ReservationIndexBody = ({user, userId}) => {
 
     const [showModal, setShowModal] = useState(false);
+    const [resId, setResId] = useState(null);
     const dispatch = useDispatch();
+    debugger
+
+
     const futureReservations = useSelector(state => Object.values(state.reservation.futureReservations))
     
-    const handleModalOpen = async (e) => {
+
+    
+    const handleModalOpen = async (reservationId) => {
+
+        setResId(reservationId);
         setShowModal(true);
+
     };
 
-    const handleModalClose = (e) => {
+    const handleModalClose = (userId) => {
         setShowModal(false);
     };
 
@@ -32,21 +44,25 @@ export const ReservationIndexBody = ({user, userId}) => {
                 <div className="reservation-current-trips">
                     {futureReservations.map(reservation => {
                         return (
-                            <div className="current-reservation-container">
-                                < ReservationImage reservation={reservation}/>
-                                < ReservationContainerText reservation={reservation} />
-                                <button onClick={() => { dispatch(deleteExistingReservation(reservation.id, userId))}}>Delete</button>
-                                <button onClick={handleModalOpen}>
-                                    Edit
-                                </button>
-                                {showModal && (
-                                    <Modal onClose={handleModalClose}  >
-                                        <ReservationEdit reservation={reservation} modalFunction={handleModalClose}/>
-                                    </Modal>
-                                )}
-                            </div>
+                            <>
+                                <div className="current-reservation-container">
+                                    < ReservationImage reservation={reservation}/>
+                                    < ReservationContainerText reservation={reservation} />
+                                    <button onClick={() => { dispatch(deleteExistingReservation(reservation.id, userId))}}>Delete</button>
+                                    <button onClick={() => {handleModalOpen(reservation.id)}}>
+                                        Edit
+                                    </button>
+
+                                </div>
+                            </>
+
                         )
                     })}
+                    {showModal && (
+                        <Modal  onClose={() => {handleModalClose()}}  >
+                            <ReservationEdit reservationId={resId} modalFunction={handleModalClose}/>
+                        </Modal>
+                    )}             
                 </div>
 
             </div>

@@ -33,7 +33,7 @@ export const ShowReservation = ({listing}) => {
     e.preventDefault();
     if (showGuestsMenu) return;
     const element = document.querySelector(".reservation-form-guests-container")
-    element.classList.add("reservation-form-guests-container-active")
+    if (element) element.classList.add("reservation-form-guests-container-active")
     setShowGuestsMenu(true);
   }
 
@@ -120,7 +120,7 @@ export const ShowReservation = ({listing}) => {
         const current_target = document.querySelector(".reservation-form-guests-container");
         const current_children = Array.from(current_target.querySelectorAll("*"))
         const element = document.querySelector(".reservation-form-guests-container")
-        element.classList.remove("reservation-form-guests-container-active")
+        if (element) element.classList.remove("reservation-form-guests-container-active")
 
         if (e.target === current_target || current_children.includes(e.target)) {return};
         setShowGuestsMenu(false);   

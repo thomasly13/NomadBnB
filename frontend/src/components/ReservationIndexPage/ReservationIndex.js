@@ -4,7 +4,7 @@ import { useParams } from "react-router-dom";
 import { useSelector, useDispatch} from "react-redux";
 import { useEffect} from "react";
 import { fetchUserDetail } from "../../store/user";
-import { FutureReservationIndexBody } from "./PastTrips/ReservationIndexBody";
+import { PastReservationIndexBody } from "./PastTrips/ReservationIndexBody";
 
 
 export const ReservationIndex = () => {
@@ -12,21 +12,22 @@ export const ReservationIndex = () => {
     const dispatch = useDispatch();
 
     const user = useSelector(state => state.user[userId])
+    const reservation = useSelector(state => state.reservation)
 
     useEffect(() => {
         window.scrollTo({top: 0, left:0 , behavior: "smooth"})
         dispatch(fetchUserDetail(userId))
     }, [])
 
-
+    debugger
     return (
         <>
-            { user === undefined ? null :
+            { user === undefined || Object.keys(reservation).length === 0 ? null :
                 <div>
                     < ReservationPageNavigation/>
                     < ReservationIndexBody user={user} userId={userId}/>
                     <hr></hr>
-                    < FutureReservationIndexBody user={user} userId={userId} />        
+                    < PastReservationIndexBody user={user} userId={userId} />        
                 </div>
               
             }

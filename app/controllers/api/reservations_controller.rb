@@ -5,6 +5,7 @@ class Api::ReservationsController < ApplicationController
 
   def index 
     @reservations = Reservation.listing_reservations(id: params[:id])
+
     render :index
   end
 

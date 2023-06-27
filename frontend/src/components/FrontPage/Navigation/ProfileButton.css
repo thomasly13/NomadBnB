@@ -41,6 +41,7 @@
 
 .signup-dropdown, .login-dropdown, .logout-dropdown {
     font-weight: 400;
+    text-decoration: none;
 }
 
 .signup-dropdown:hover, .login-dropdown:hover, .logout-dropdown:hover {

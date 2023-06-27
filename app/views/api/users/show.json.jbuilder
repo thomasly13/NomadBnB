@@ -1,6 +1,9 @@
 json.user do
+    json.set! "currentUser" do 
+        json.extract! @user, :id, :email, :first_name, :last_name       
+    end
     json.set! @user.id do
-        json.extract! @user, :id, :email, :first_name, :last_name        
+             
     end
 
     @user.reservations.each do |reservation|
