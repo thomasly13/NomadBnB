@@ -2,24 +2,23 @@ import { useDispatch,  useSelector} from "react-redux"
 import { useState} from "react"
 import { deleteExistingReview, editExistingReview } from "../../../../store/review";
 
-export const ReservationPreviousEdit = ({reservation}) => {
+export const ReservationPreviousEdit = ({reservation, review}) => {
 
     const dispatch = useDispatch();
-    debugger
-    const review = useSelector(state => state.review[reservation.reviewId])
-    debugger
+   
+
     const [rating, setRating] = useState(review ? review.rating : 1);
 
     const [body, setBody] = useState(review ? review.body : "");
 
     const handleEdit = async (e) => {
         e.preventDefault();
-
         const revBody = {
             body: body,
             rating: rating,
             listingId: reservation.listingId,
-            reservationId: reservation.id
+            reservationId: reservation.id,
+            id: reservation.reviewId
         }
 
         const res = await dispatch(editExistingReview(revBody))

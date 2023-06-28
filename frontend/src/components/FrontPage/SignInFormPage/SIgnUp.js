@@ -49,8 +49,7 @@ export const NewSignUpPage = ({emailFiller, goBack}) => {
 
           if (res.errors.first_name) {
             setErrors(state => { return {...state, "firstName": "First name is required."}})
-          };
-          console.log("this is working")          
+          };      
         }
 
     };

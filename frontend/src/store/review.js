@@ -5,6 +5,7 @@ const RECEIVE_USER = 'RECEIVE_USER'
 const CREATE_REVIEW = 'CREATE_REVIEW'
 const EDIT_REVIEW = 'EDIT_REVIEW'
 const DELETE_REVIEW = 'DELETE_REVIEW'
+const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION'
 
 const createReview = (payload) => {
     return {
@@ -15,7 +16,7 @@ const createReview = (payload) => {
 
 const editReview = (payload) => {
     return {
-        type: CREATE_REVIEW,
+        type: EDIT_REVIEW,
         payload
     }
 }
@@ -80,7 +81,9 @@ const reviewReducer = (state, action) => {
         case EDIT_REVIEW:
             return {...action.payload.reviews};
         case DELETE_REVIEW:
-            return {...action.payload.reviews};        
+            return {...action.payload.reviews};
+        case RECEIVE_RESERVATION:
+            return {...action.payload.reviews}     
         default:
             return nextState;
     }

@@ -52,6 +52,7 @@ export const updateExistingReservation = (reservationDetails) => async(dispatch)
 
     
     const data = await response.json();
+
     dispatch(updateReservation(data))
 }
 
@@ -88,6 +89,7 @@ export const deleteExistingReservation = (reservationId, userId) => async (dispa
 }
 
 const reservationReducer = (state, action) => {
+
     Object.freeze(state);
     const nextState = {...state};
     switch (action.type) {
@@ -104,16 +106,13 @@ const reservationReducer = (state, action) => {
             nextState['futureReservations'] = action.payload.reservations.futureReservations;
             return nextState
         case CREATE_REVIEW:
-            nextState['previousReservations'] = action.payload.reservations.previousReservations;
-            nextState['futureReservations'] = action.payload.reservations.futureReservations;
-            return nextState
+            nextState[action.payload.reservation.id] = action.payload.reservation
+            return nextState   
         case EDIT_REVIEW: 
-            nextState['previousReservations'] = action.payload.reservations.previousReservations;
-            nextState['futureReservations'] = action.payload.reservations.futureReservations;
-            return nextState
+            nextState[action.payload.reservation.id] = action.payload.reservation
+            return nextState   
         case DELETE_REVIEW:
-            nextState['previousReservations'] = action.payload.reservations.previousReservations;
-            nextState['futureReservations'] = action.payload.reservations.futureReservations; 
+            nextState[action.payload.reservation.id] = action.payload.reservation
             return nextState
         case RECEIVE_RESERVATION:
             nextState[action.payload.reservation.id] = action.payload.reservation

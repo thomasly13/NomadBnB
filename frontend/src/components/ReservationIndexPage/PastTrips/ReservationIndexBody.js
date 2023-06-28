@@ -2,16 +2,18 @@ import { useDispatch, useSelector } from "react-redux"
 import "./PreviousReservationIndexBody.css"
 import { ReservationImage } from "./ReservationImage"
 import { ReservationContainerText } from "./ReservationContainerText"
-
 import { useState, useEffect } from "react"
 import { Modal } from "../../../context/Modal"
 import { ReservationReviewCreate } from "./ReviewForm/ReservationReviewCreate"
 import { ReservationReviewEdit } from "./ReviewForm/ReservationReviewEdit"
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
 
 
 
 
 export const PastReservationIndexBody = ({user, reservation}) => {
+
+    const history = useHistory();
 
     const previousReservations = Object.values(reservation.previousReservations)
     const [showEditModal, setShowEditModal] = useState(false);
@@ -51,7 +53,7 @@ export const PastReservationIndexBody = ({user, reservation}) => {
                 <div className="reservation-current-trips">
                     {previousReservations.map(reservation => {
                         return (
-                            <div className="current-reservation-container" onClick={reservation.reviewId ? () => {handleEditModalOpen(reservation.id)} : () => {handleCreateModalOpen(reservation.id)}} >
+                            <div className="current-reservation-container"  onClick={() => {history.push(`/users/${user.id}/reservations/${reservation.id}`)}} >
                                 < ReservationImage reservation={reservation}/>
                                 < ReservationContainerText reservation={reservation} />
                             </div>

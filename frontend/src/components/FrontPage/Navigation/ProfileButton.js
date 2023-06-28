@@ -47,7 +47,6 @@ export const ProfileButton = () => {
                 {showMenu && (
                 <div className="profile-dropdown">
                     <ul>
-                        {console.log(sessionUser)}
                         <li><Link to={`/users/${sessionUser.id}/reservations`}>Trips</Link></li>
                         <li><h2 className="logout-dropdown" onClick={handleLogOut}>Log Out</h2></li>
                     </ul>

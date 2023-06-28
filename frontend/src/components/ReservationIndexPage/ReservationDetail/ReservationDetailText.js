@@ -1,4 +1,4 @@
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import "./ReservationDetail.css"
 import { useState } from "react";
 import { deleteExistingReservation, updateExistingReservation } from "../../../store/reservation";
@@ -7,7 +7,10 @@ import { ReservationPreviousEdit } from "./ReviewForm/ReservationPreviousReviewE
 
 export const ReservationDetailText = ({reservation, user, listing}) => {
 
-    
+
+    const review = useSelector( state => state.review[reservation.reviewId])
+
+  
     const months = {
         "01": 'Jan',
         "02": 'Feb',
@@ -22,6 +25,8 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
         "11": 'Nov',
         "12": 'Dec'
     }
+
+
     const splitInDate = reservation.checkInDate.split('-');
     const splitOutDate = reservation.checkOutDate.split('-');
     const wordInDate = `${months[splitInDate[1]]} ${splitInDate[2]}, ${splitInDate[0]}`
@@ -117,6 +122,7 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
 
                     </div>     
                 </div>}
+                {reservation.previous === false ?  
                 <div className="reservation-edit-cool-buttons">
                     { edit ? <button onClick={handleUpdate} className="reservation-edit-button">
                         <span>Finish Edit</span> 
@@ -129,10 +135,11 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
                         Cancel Event
                     </button>                      
                 </div>
-
-                < ReservationPreviousCreate reservation={reservation}/>
-                < ReservationPreviousEdit reservation={reservation}/>
-
+                    :
+                    <>
+                        {reservation.reviewId ? < ReservationPreviousEdit reservation={reservation} review={review}/>  : < ReservationPreviousCreate reservation={reservation} review={review}/>}
+                    </>
+                }
             </div>
 
         </>

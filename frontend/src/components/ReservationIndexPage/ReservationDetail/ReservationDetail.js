@@ -15,7 +15,7 @@ export const ReservationDetail = () => {
     const reservation = useSelector(state => state.reservation[reservationId])
     const listing = useSelector(state => (reservation ? state.listing[reservation.listingId] : null))
 
-
+   
     useEffect(() => {
         window.scrollTo({top: 0, left:0 , behavior: "smooth"})
         dispatch(fetchReceiveReservation(reservationId))
@@ -30,8 +30,11 @@ export const ReservationDetail = () => {
         )
     }
 
+
+
     let defaultProps;
     let coordinates;
+    
     (listing ? coordinates = listing.coordinates.split(' ') : coordinates = null)
 
     if (listing) {
@@ -61,7 +64,6 @@ export const ReservationDetail = () => {
                             defaultCenter={defaultProps.center}
                             defaultZoom={defaultProps.zoom}
                         >
-                            {console.log(coordinates)}
                             <CoolMarker
                             lat={coordinates[0]}
                             lng={coordinates[1]}

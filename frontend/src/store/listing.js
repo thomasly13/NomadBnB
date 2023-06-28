@@ -48,6 +48,7 @@ export const fetchListingDetail = (listingId) => async (dispatch) => {
 
 //listing reducer
 const listingReducer = (state, action) => {
+
     Object.freeze(state) 
     const nextState = {...state};
     switch (action.type) {
@@ -59,11 +60,14 @@ const listingReducer = (state, action) => {
         case RECEIVE_USER: 
             return {...action.payload.listings}
         case CREATE_REVIEW: 
-            return {...action.payload.listings}
+            nextState[action.payload.listing.id] = action.payload.listing
+            return nextState
         case EDIT_REVIEW: 
-            return {...action.payload.listings}
+            nextState[action.payload.listing.id] = action.payload.listing
+            return nextState
         case DELETE_REVIEW:
-            return {...action.payload.listings}
+            nextState[action.payload.listing.id] = action.payload.listing
+            return nextState
         case RECEIVE_RESERVATION:
             nextState[action.payload.listing.id] = action.payload.listing
             return nextState

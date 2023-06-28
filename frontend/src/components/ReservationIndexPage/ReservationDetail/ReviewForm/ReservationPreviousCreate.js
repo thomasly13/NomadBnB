@@ -2,7 +2,7 @@ import { useDispatch} from "react-redux"
 import { useState} from "react"
 import { createNewReview } from "../../../../store/review";
 
-export const ReservationPreviousCreate = ({reservation}) => {
+export const ReservationPreviousCreate = ({reservation, review}) => {
 
     const dispatch = useDispatch();
 

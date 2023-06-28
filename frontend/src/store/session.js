@@ -118,7 +118,6 @@ const initialState = {
 
 //session reducer that controls the actions
 const sessionReducer = (state = initialState, action) => {
-
     Object.freeze(state) 
     const nextState = {...state};
 

@@ -43,11 +43,14 @@ const userReducer = (state, action) => {
             nextState[action.payload.owner.id] = action.payload.owner
             return nextState
         case CREATE_REVIEW:
-            return {...action.payload.user}
+            nextState[action.payload.user.id] = action.payload.user
+            return nextState
         case EDIT_REVIEW:
-            return {...action.payload.user}
+            nextState[action.payload.user.id] = action.payload.user
+            return nextState
         case DELETE_REVIEW: 
-            return {...action.payload.user}
+            nextState[action.payload.user.id] = action.payload.user
+            return nextState
         case RECEIVE_RESERVATION:
             nextState[action.payload.user.id] = action.payload.user
             return nextState

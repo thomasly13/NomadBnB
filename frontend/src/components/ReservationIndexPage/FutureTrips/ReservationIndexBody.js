@@ -6,6 +6,7 @@ import { Modal } from "../../../context/Modal"
 import { useState} from "react"
 import { ReservationEdit } from "./RservationEdit"
 import { ReservationDetail } from "../ReservationDetail/ReservationDetail"
+import { useHistory } from "react-router-dom"
 
 
 
@@ -16,7 +17,7 @@ export const ReservationIndexBody = ({user, userId, reservation}) => {
     const [showModal, setShowModal] = useState(false);
     const [resId, setResId] = useState(null);
     const dispatch = useDispatch();
-
+    const history = useHistory();
 
 
     const futureReservations = Object.values(reservation.futureReservations)
@@ -45,19 +46,14 @@ export const ReservationIndexBody = ({user, userId, reservation}) => {
                     {futureReservations.map(reservation => {
                         return (
                             <>
-                                <div className="current-reservation-container" onClick={() => {handleModalOpen(reservation.id)}}>
+                                <div className="current-reservation-container" onClick={() => {history.push(`/users/${userId}/reservations/${reservation.id}`)}}>
                                     < ReservationImage reservation={reservation}/>
                                     < ReservationContainerText reservation={reservation} />
                                 </div>
                             </>
 
                         )
-                    })}
-                    {showModal && (
-                        <Modal  onClose={() => {handleModalClose()}}  >
-                            <ReservationEdit reservationId={resId} userId={userId} modalFunction={handleModalClose} />
-                        </Modal>
-                    )}             
+                    })}      
                 </div>
 
             </div>

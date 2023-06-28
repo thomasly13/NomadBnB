@@ -8,9 +8,9 @@ class Api::ReviewsController < ApplicationController
         @review = Review.new(review_params)
         @review.reviewer_id = current_user.id 
         @user = current_user
-
+        @reservation = Reservation.find_by(id: params[:reservation_id])
         if @review.save
-            render 'api/users/show'
+            render 'api/reservations/show'
         else
             render json: { errors: @review.errors }, status: 444
         end
@@ -19,20 +19,23 @@ class Api::ReviewsController < ApplicationController
 
     def update 
         @review = Review.find_by(id: params[:id])
+        @reservation = Reservation.find_by(id: params[:reservation_id])
         @user = current_user
         if current_user.id != @review.reviewer_id
             render json: {errors: 'Unauthorized'}, status: 422 
         else
             @review.update(review_params)
-            render 'api/users/show'
+            render 'api/reservations/show'
         end          
     end 
 
     def destroy
         @review = Review.find_by(id: params[:id])
+ 
+        @reservation = Reservation.find_by(id: @review.reservation_id)
         @user = current_user
         if current_user.id == @review.reviewer_id && @review&.delete
-            render 'api/users/show'
+            render 'api/reservations/show'
         else
             render json: {errors: "Unauthorized"}, status: 422 
         end
