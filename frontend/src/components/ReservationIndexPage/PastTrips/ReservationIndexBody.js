@@ -47,14 +47,13 @@ export const PastReservationIndexBody = ({user, reservation}) => {
         { (previousReservations === undefined  || previousReservations[0] === null) ? null : 
         <main className="reservation-index-body-container">
             <div className="reservation-current-trips-container">
-                <h1>Past Trips</h1>
+                <h1 className="reservation-current-title">Past Trips</h1>
                 <div className="reservation-current-trips">
                     {previousReservations.map(reservation => {
                         return (
-                            <div className="current-reservation-container">
+                            <div className="current-reservation-container" onClick={reservation.reviewId ? () => {handleEditModalOpen(reservation.id)} : () => {handleCreateModalOpen(reservation.id)}} >
                                 < ReservationImage reservation={reservation}/>
                                 < ReservationContainerText reservation={reservation} />
-                                {reservation.reviewId ? <button onClick={() => {handleEditModalOpen(reservation.id)}}>Edit</button>  : <button onClick={() => {handleCreateModalOpen(reservation.id)}}>Create</button>}
                             </div>
                         )
                     })}

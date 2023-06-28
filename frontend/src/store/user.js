@@ -1,4 +1,4 @@
-import { defaultInputRanges } from "react-date-range";
+
 
 const RECEIVE_USER = 'RECEIVE_USER'
 const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'

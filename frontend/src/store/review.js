@@ -74,13 +74,13 @@ const reviewReducer = (state, action) => {
         case RECEIVE_LISTING:
             return {...action.payload.reviews};
         case RECEIVE_USER:
-            return {...action.payload.reviews}
+            return {...action.payload.reviews};
         case CREATE_REVIEW:
             return {...action.payload.reviews};
         case EDIT_REVIEW:
             return {...action.payload.reviews};
         case DELETE_REVIEW:
-            return {...action.payload.reviews} ;        
+            return {...action.payload.reviews};        
         default:
             return nextState;
     }

@@ -45,14 +45,9 @@ export const ReservationIndexBody = ({user, userId, reservation}) => {
                     {futureReservations.map(reservation => {
                         return (
                             <>
-                                <div className="current-reservation-container">
+                                <div className="current-reservation-container" onClick={() => {handleModalOpen(reservation.id)}}>
                                     < ReservationImage reservation={reservation}/>
                                     < ReservationContainerText reservation={reservation} />
-                                    <button onClick={() => { dispatch(deleteExistingReservation(reservation.id, userId))}}>Delete</button>
-                                    <button onClick={() => {handleModalOpen(reservation.id)}}>
-                                        Edit
-                                    </button>
-
                                 </div>
                             </>
 
@@ -60,7 +55,7 @@ export const ReservationIndexBody = ({user, userId, reservation}) => {
                     })}
                     {showModal && (
                         <Modal  onClose={() => {handleModalClose()}}  >
-                            <ReservationEdit reservationId={resId} modalFunction={handleModalClose}/>
+                            <ReservationEdit reservationId={resId} userId={userId} modalFunction={handleModalClose} />
                         </Modal>
                     )}             
                 </div>

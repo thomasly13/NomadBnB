@@ -17,7 +17,7 @@ export const ReservationIndex = () => {
     useEffect(() => {
         window.scrollTo({top: 0, left:0 , behavior: "smooth"})
         dispatch(fetchUserDetail(userId))
-    }, [])
+    }, [dispatch, userId])
 
 
     return (
@@ -26,7 +26,6 @@ export const ReservationIndex = () => {
                 <div>
                     < ReservationPageNavigation/>
                     < ReservationIndexBody user={user} reservation={reservation} userId={userId}/>
-                    <hr></hr>
                     < PastReservationIndexBody user={user} reservation={reservation} userId={userId} />        
                 </div>
               

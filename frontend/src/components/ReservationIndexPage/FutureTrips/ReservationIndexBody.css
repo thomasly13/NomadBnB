@@ -24,6 +24,7 @@
     width: 33.333333333%;
     box-sizing: border-box;
     padding: 12px 0px;
+    cursor: pointer;
 }
 
 .current-reservation-container-text {
@@ -65,7 +66,7 @@
 }
 
 .reservation-edit-image-container {
-    width: 100%;
+    width: 537px;
     height: 400px;
     overflow: hidden;
 }
@@ -79,12 +80,18 @@
 .reservation-edit-container {
     display: flex;
     flex-direction: column;
+    background-color: #E7E7E7;
+    align-items: self-end;
+    overflow-y: scroll;
 }
 
 .reservation-edit-date-container {
     display: flex;
     justify-content: space-between;
-    margin-top: 20px;
+    width: 537px;
+    padding-top: 10px;
+    margin-bottom: 20px;
+    background-color: white;
 }
 
 .reservation-edit-check-in-date-container, .reservation-edit-check-out-date-container {
@@ -94,12 +101,12 @@
     padding-left: 20px;
 }
 .reservation-edit-check-out-date-container {
-    border-left: #757272bb 1px solid;
+    border-left: #E7E7E7 1px solid;
 }
 
 .reservation-edit-button {
-    width: 100%;
-    margin-top: 16px;
+    align-self: center;
+    width: 80%;
     margin-bottom: 24px;
     color: white;
     background-image: radial-gradient( circle at center,#FF385C 0%,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100% );
@@ -152,11 +159,40 @@
     flex-direction: column;
     margin-left: 20px;
     margin-right: 20px;
-    align-content: center;
 }
 
-.guest-drop-down-adults-container {
+.guest-drop-down-adults-container-1 {
     align-items: center;
     display: flex;
+    text-align: center;
+    margin-bottom: 20px;
+    justify-content: center;
+}
 
+.adults-text-1 {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+.guest-drop-down-adults-container-1 * {
+    margin: 10px;
+}
+
+.guest-drop-down-adults-container-1 span {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: black;
+}
+
+.reservation-information-payment-information-container {
+    display: flex;
+    flex-direction: column;
+    width: 517px;
+    background-color: white;
+    padding-left: 20px;
 }

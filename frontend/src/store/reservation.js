@@ -1,20 +1,13 @@
 import csrfFetch from "./csrf"
 
 const RECEIVE_USER = 'RECEIVE_USER'
-const CREATE_RESERVATION = 'CREATE_RESERVATION'
 const DELETE_RESERVATION = 'DELETE_RESERVATION'
 const UPDATE_RESERVATION = 'UPDATE_RESERVATION'
-const RECEIVE_LISTINGS = 'RECEIVE_LISTINGS'
 const CREATE_REVIEW = 'CREATE_REVIEW'
 const EDIT_REVIEW = 'EDIT_REVIEW'
 const DELETE_REVIEW = 'DELETE_REVIEW'
 
-const createReservation = (reservation) => {
-    return {
-        type: CREATE_RESERVATION,
-        reservation
-    }
-}
+
 const deleteReservation = (payload) => {
 
     return {
@@ -31,7 +24,7 @@ const updateReservation = (payload) => {
 }
 
 export const updateExistingReservation = (reservationDetails) => async(dispatch) => {
-    const {numOfGuests, checkInDate, checkOutDate, listingId, id, renterId} = reservationDetails;
+    const {numOfGuests, checkInDate, checkOutDate, listingId, id} = reservationDetails;
 
     const response = await csrfFetch(`/api/reservations/${id}`, {
         method: 'PATCH',
@@ -99,12 +92,15 @@ const reservationReducer = (state, action) => {
         case CREATE_REVIEW:
             nextState['previousReservations'] = action.payload.reservations.previousReservations;
             nextState['futureReservations'] = action.payload.reservations.futureReservations;
+            return nextState
         case EDIT_REVIEW: 
             nextState['previousReservations'] = action.payload.reservations.previousReservations;
             nextState['futureReservations'] = action.payload.reservations.futureReservations;
+            return nextState
         case DELETE_REVIEW:
             nextState['previousReservations'] = action.payload.reservations.previousReservations;
-            nextState['futureReservations'] = action.payload.reservations.futureReservations;           
+            nextState['futureReservations'] = action.payload.reservations.futureReservations; 
+            return nextState          
         default: 
             return nextState
     }

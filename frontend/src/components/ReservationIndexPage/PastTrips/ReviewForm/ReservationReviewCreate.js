@@ -36,8 +36,23 @@ export const ReservationReviewCreate = ({reservationId, modalFunction}) => {
                     <div className="reservation-edit-image-container" >
                         <img src={listing.images[0]} className="reservation-edit-image"></img>                           
                     </div>
+                    <div className="reservation-edit-image-container" >
+                        <img src={listing.images[0]} className="reservation-edit-image"></img>                           
+                    </div>
+                    <div className="reservation-edit-date-container">
+                        <div className="reservation-edit-check-in-date-container">
+                            <span className="reservation-edit-check-date-words">Check-In</span>
+                            <span className="reservation-edit-check-date-words-2">{reservation.checkInDate}</span>
+                            <span className="reservation-edit-check-date-words-3">3:00 PM</span>
+                        </div>
+                        <div className="reservation-edit-check-out-date-container">
+                            <span className="reservation-edit-check-date-words">Check-Out</span>
+                            <span className="reservation-edit-check-date-words-2">{reservation.checkOutDate}</span>
+                            <span className="reservation-edit-check-date-words-3">1:00 PM</span>
+                        </div>
+                    </div>
                     <form onSubmit={handleCreate}>
-                        <span>Rate your Stay</span>
+                        <span className="rate-your-stay">Rate your Stay</span>
                         <div className="review-create-rating-container">
                             <div onClick={() => {setRating(1)}}>
                                 {rating > 0 ? <div style={{ color: "#ecd041", fontSize: "44px" }}>
@@ -90,7 +105,7 @@ export const ReservationReviewCreate = ({reservationId, modalFunction}) => {
                            />
 
                         <button className="reservation-edit-button" type="submit">
-                            <span>Finish Review</span> 
+                            <span>Submit Review</span> 
                         </button> 
 
                     </form>

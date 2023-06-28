@@ -35,3 +35,26 @@
     display: flex;
 
 }
+
+.rate-your-stay {
+    display: flex;
+    flex-direction: row;
+    font-family:"Circular", "-apple-system", "BlinkMacSystemFont", "Roboto", "Helvetica Neue", sans-serif;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 20px;
+    color: black;
+    align-items: center;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.review-create-container form {
+    padding-left: 20px;
+    padding-right: 20px;
+}
+
+.review-create-container {
+    max-height: 700px;
+    overflow-y: scroll;
+}
