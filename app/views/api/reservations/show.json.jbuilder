@@ -1,6 +1,11 @@
 json.listing do 
     json.extract! @reservation.listing, :id, :name, :description, :price, :address, :coordinates, :amenities, :num_of_guests, :num_of_baths, :num_of_bedrooms, :num_of_beds, :owner_id
     json.images @reservation.listing.photos.map { |file| file.url }   
+    if @reservation.review
+        json.reviewId @reservation.review.id
+    else
+        json.reviewId nil
+    end
 end
 
 json.reservation do 

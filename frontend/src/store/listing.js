@@ -50,7 +50,6 @@ export const fetchListingDetail = (listingId) => async (dispatch) => {
 const listingReducer = (state, action) => {
     Object.freeze(state) 
     const nextState = {...state};
-
     switch (action.type) {
         case RECEIVE_LISTINGS:
             return { ...nextState, ...action.payload.listings };

@@ -34,7 +34,6 @@ const updateReservation = (payload) => {
 export const fetchReceiveReservation = (reservationId) => async dispatch => {
     const response = await fetch(`/api/reservations/${reservationId}`)
     const data = await response.json();
-    debugger
     dispatch(receiveReservation(data))
 }
 

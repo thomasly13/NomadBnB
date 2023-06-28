@@ -2,7 +2,8 @@ import { useDispatch } from "react-redux";
 import "./ReservationDetail.css"
 import { useState } from "react";
 import { deleteExistingReservation, updateExistingReservation } from "../../../store/reservation";
-
+import { ReservationPreviousCreate } from "./ReviewForm/ReservationPreviousCreate";
+import { ReservationPreviousEdit } from "./ReviewForm/ReservationPreviousReviewEdit";
 
 export const ReservationDetailText = ({reservation, user, listing}) => {
 
@@ -25,7 +26,11 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
     const splitOutDate = reservation.checkOutDate.split('-');
     const wordInDate = `${months[splitInDate[1]]} ${splitInDate[2]}, ${splitInDate[0]}`
     const wordOutDate = `${months[splitOutDate[1]]} ${splitOutDate[2]}, ${splitOutDate[0]}`
-    
+
+    const jsInDate = new Date(`${months[splitInDate[1]]}/${splitInDate[2]}/${splitInDate[0]}`)
+    const jsOutDate = new Date(`${months[splitOutDate[1]]}/${splitOutDate[2]}/${splitOutDate[0]}`)
+    const nights = (jsOutDate.getTime() - jsInDate.getTime()) / (1000 * 3600 * 24)
+
 
     const dispatch = useDispatch();
 
@@ -54,13 +59,12 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
             listingId: reservation.listingId,
             id: reservation.id
         }
-        const res = await dispatch(updateExistingReservation(reservationDetails))   
+        const res = await dispatch(updateExistingReservation(reservationDetails))
+        setEdit(false)   ;
     };
 
     const handleDelete = async (e) => {
-
         const res = dispatch(deleteExistingReservation(reservation.id, user.id));
-
     }
 
     const handleEditToggle = () => {
@@ -76,23 +80,27 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
                 </div>
                 <div className="reservation-edit-date-container">
                     <div className="reservation-edit-check-in-date-container">
-                        <span className="reservation-edit-check-date-words">Check-In</span>
+                        <span className="reservation-edit-check-date-words">Check-in</span>
                         <span className="reservation-edit-check-date-words-2">{wordInDate}</span>
                         <span className="reservation-edit-check-date-words-3">3:00 PM</span>
                     </div>
                     <div className="reservation-edit-check-out-date-container">
-                        <span className="reservation-edit-check-date-words">Check-Out</span>
+                        <span className="reservation-edit-check-date-words">Checkout</span>
                         <span className="reservation-edit-check-date-words-2">{wordOutDate}</span>
                         <span className="reservation-edit-check-date-words-3">1:00 PM</span>
                     </div>
                 </div>
+                <div className="reservation-about-home-details-container">
+                    <span className="payment-big-title">About the Home</span>
+                    <span className="reservation-about-home-address">Address: {listing.address}</span>
+                    <span className="reservation-about-home-description">{listing.description}</span>
+                </div>
                 <div className="reservation-information-payment-information-container">
                     <span className="payment-big-title">Payment Info</span>
-                    <span>Nights</span>
-                    <span>Night number</span>
-                    <span>Total Cost</span>
-                    <span>Cost per night times nights</span>
+                    <span className="reservation-information-payment-total-cost">Total Cost</span>
+                    <span className="reservation-information-payment-total-cost-money">${listing.price} &#215; {nights} nights = ${nights * listing.price}</span>
                 </div>
+
                 { !edit ? null : 
                 <div className="reservation-edit-guests-container">
                     <div className="guest-drop-down-adults-container-1">
@@ -109,16 +117,22 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
 
                     </div>     
                 </div>}
-                { edit ? <button onClick={handleUpdate} className="reservation-edit-button">
-                    <span>Finish Edit</span> 
-                </button> :
-                <button onClick={handleEditToggle} className="reservation-edit-button">
-                    <span>Edit Event</span>
-                </button>}
+                <div className="reservation-edit-cool-buttons">
+                    { edit ? <button onClick={handleUpdate} className="reservation-edit-button">
+                        <span>Finish Edit</span> 
+                    </button> :
+                    <button onClick={handleEditToggle} className="reservation-edit-button">
+                        <span>Edit Event</span>
+                    </button>}
 
-                <button onClick={handleDelete} className="reservation-edit-button">
-                    Cancel Event
-                </button>  
+                    <button onClick={handleDelete} className="reservation-edit-button">
+                        Cancel Event
+                    </button>                      
+                </div>
+
+                < ReservationPreviousCreate reservation={reservation}/>
+                < ReservationPreviousEdit reservation={reservation}/>
+
             </div>
 
         </>

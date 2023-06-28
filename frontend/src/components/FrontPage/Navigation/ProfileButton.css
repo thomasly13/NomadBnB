@@ -26,6 +26,7 @@
     position: absolute;
     width: 240px;
     top: 35px;
+    z-index: 9999;
 }
 
 .profileButton-active {

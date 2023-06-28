@@ -35,7 +35,8 @@ const userReducer = (state, action) => {
         case DELETE_RESERVATION:
             return {...action.payload.user}
         case UPDATE_RESERVATION:
-            return {...action.payload.user}
+            nextState[action.payload.user.id] = action.payload.user
+            return nextState
         case RECEIVE_LISTINGS:
             return {...action.payload.owners}
         case RECEIVE_LISTING:

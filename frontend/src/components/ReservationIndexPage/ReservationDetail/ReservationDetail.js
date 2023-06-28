@@ -33,7 +33,7 @@ export const ReservationDetail = () => {
     let defaultProps;
     let coordinates;
     (listing ? coordinates = listing.coordinates.split(' ') : coordinates = null)
-    debugger
+
     if (listing) {
         defaultProps = {
             center: {
@@ -44,7 +44,7 @@ export const ReservationDetail = () => {
         };        
     }
 
-    debugger
+
       return (
         // Important! Always set the container height explicitly
         <>  
