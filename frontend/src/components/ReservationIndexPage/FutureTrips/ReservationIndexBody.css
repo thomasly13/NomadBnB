@@ -80,15 +80,16 @@
 .reservation-edit-container {
     display: flex;
     flex-direction: column;
-    background-color: #E7E7E7;
     align-items: self-end;
     overflow-y: scroll;
+    margin-left: 20px;
+    box-sizing: border-box;
 }
 
 .reservation-edit-date-container {
     display: flex;
     justify-content: space-between;
-    width: 537px;
+    width: 100%;
     padding-top: 10px;
     margin-bottom: 20px;
     background-color: white;
@@ -132,9 +133,9 @@
 
 .reservation-edit-check-date-words {
     font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
-    font-size: 20px;
+    font-size: 15px;
     line-height: 30px;
-    font-weight: 600;
+    font-weight: 400;
     color: black;
 }
 
@@ -143,14 +144,14 @@
     font-size: 16px;
     line-height: 20px;
     font-weight: 600;
-    color: #717171;  
+    color: black;  
 }
 
 .reservation-edit-check-date-words-3 {
     font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
-    font-size: 16px;
+    font-size: 15px;
     line-height: 20px;
-    font-weight: 600;
+    font-weight: 400;
     color: #717171;  
 }
 
@@ -189,10 +190,10 @@
     color: black;
 }
 
-.reservation-information-payment-information-container {
-    display: flex;
-    flex-direction: column;
-    width: 517px;
-    background-color: white;
-    padding-left: 20px;
+.payment-big-title {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 20px;
+    line-height: 24px;
+    font-weight: 600;
+    color: rgb(5, 5, 5);
 }

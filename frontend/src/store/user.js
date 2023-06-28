@@ -8,6 +8,8 @@ const UPDATE_RESERVATION = 'UPDATE_RESERVATION'
 const CREATE_REVIEW = 'CREATE_REVIEW'
 const EDIT_REVIEW = 'EDIT_REVIEW'
 const DELETE_REVIEW = 'DELETE_REVIEW'
+const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION'
+
 
 const receiveUser = (payload) => {
     return {
@@ -45,6 +47,9 @@ const userReducer = (state, action) => {
             return {...action.payload.user}
         case DELETE_REVIEW: 
             return {...action.payload.user}
+        case RECEIVE_RESERVATION:
+            nextState[action.payload.user.id] = action.payload.user
+            return nextState
         default: 
             return nextState;
     }

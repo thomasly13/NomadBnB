@@ -1,11 +1,19 @@
 import csrfFetch from "./csrf"
 
 const RECEIVE_USER = 'RECEIVE_USER'
+const RECEIVE_RESERVATION = 'RECEIVE_RESERVATION'
 const DELETE_RESERVATION = 'DELETE_RESERVATION'
 const UPDATE_RESERVATION = 'UPDATE_RESERVATION'
 const CREATE_REVIEW = 'CREATE_REVIEW'
 const EDIT_REVIEW = 'EDIT_REVIEW'
 const DELETE_REVIEW = 'DELETE_REVIEW'
+
+const receiveReservation = (payload) => {
+    return {
+        type: RECEIVE_RESERVATION,
+        payload
+    }
+}
 
 
 const deleteReservation = (payload) => {
@@ -21,6 +29,13 @@ const updateReservation = (payload) => {
         type: UPDATE_RESERVATION,
         payload
     }
+}
+
+export const fetchReceiveReservation = (reservationId) => async dispatch => {
+    const response = await fetch(`/api/reservations/${reservationId}`)
+    const data = await response.json();
+    debugger
+    dispatch(receiveReservation(data))
 }
 
 export const updateExistingReservation = (reservationDetails) => async(dispatch) => {
@@ -100,7 +115,10 @@ const reservationReducer = (state, action) => {
         case DELETE_REVIEW:
             nextState['previousReservations'] = action.payload.reservations.previousReservations;
             nextState['futureReservations'] = action.payload.reservations.futureReservations; 
-            return nextState          
+            return nextState
+        case RECEIVE_RESERVATION:
+            nextState[action.payload.reservation.id] = action.payload.reservation
+            return nextState   
         default: 
             return nextState
     }

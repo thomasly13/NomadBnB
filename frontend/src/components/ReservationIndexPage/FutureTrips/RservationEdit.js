@@ -73,7 +73,7 @@ export const ReservationEdit = ({reservationId, modalFunction, userId}) => {
                         </div>
                     </div>
                     <div className="reservation-information-payment-information-container">
-                        <span>Payment Info</span>
+                        <span className="payment-big-title">Payment Info</span>
                         <span>Nights</span>
                         <span>Night number</span>
                         <span>Total Cost</span>

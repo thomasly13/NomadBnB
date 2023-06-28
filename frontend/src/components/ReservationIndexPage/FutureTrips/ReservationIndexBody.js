@@ -1,11 +1,11 @@
-import { useDispatch, useSelector } from "react-redux"
+import { useDispatch } from "react-redux"
 import "./ReservationIndexBody.css"
 import { ReservationImage } from "./ReservationImage"
 import { ReservationContainerText } from "./ReservationContainerText"
-import { deleteExistingReservation, fetchShowReservation } from "../../../store/reservation"
 import { Modal } from "../../../context/Modal"
-import { useState, useEffect} from "react"
+import { useState} from "react"
 import { ReservationEdit } from "./RservationEdit"
+import { ReservationDetail } from "../ReservationDetail/ReservationDetail"
 
 
 

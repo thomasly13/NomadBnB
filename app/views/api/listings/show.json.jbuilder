@@ -6,7 +6,7 @@ end
 json.set! 'owner' do 
     json.extract! @listing.owner, :id, :first_name, :last_name    
 end
-
+ 
 json.set! "reviews" do 
     @listing.reviews.each do |review|
         json.set! review.id do 
