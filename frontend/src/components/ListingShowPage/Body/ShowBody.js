@@ -41,7 +41,7 @@ export const ShowBody = ({listing}) => {
 
 
     const owner = useSelector(state => state.user[listing.ownerId]);
-    debugger
+
     const reviews = useSelector(state => Object.values(state.review))
     return (
         <>     

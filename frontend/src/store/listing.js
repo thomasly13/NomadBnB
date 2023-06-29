@@ -48,7 +48,7 @@ export const fetchListingDetail = (listingId) => async (dispatch) => {
 
 //listing reducer
 const listingReducer = (state, action) => {
-    debugger
+
     Object.freeze(state) 
     const nextState = {...state};
     switch (action.type) {

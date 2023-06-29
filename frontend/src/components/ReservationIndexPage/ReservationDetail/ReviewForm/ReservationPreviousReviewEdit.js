@@ -10,7 +10,7 @@ export const ReservationPreviousEdit = ({reservation, review}) => {
     const history = useHistory()
     const dispatch = useDispatch();
    
-    debugger
+
     const [rating, setRating] = useState(review ? review.rating : 1);
 
     const [body, setBody] = useState(review ? review.body : "");

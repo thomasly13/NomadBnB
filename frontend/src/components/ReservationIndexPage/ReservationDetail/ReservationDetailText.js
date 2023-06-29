@@ -4,9 +4,12 @@ import { useState } from "react";
 import { deleteExistingReservation, updateExistingReservation } from "../../../store/reservation";
 import { ReservationPreviousCreate } from "./ReviewForm/ReservationPreviousCreate";
 import { ReservationPreviousEdit } from "./ReviewForm/ReservationPreviousReviewEdit";
+import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
+
 
 export const ReservationDetailText = ({reservation, user, listing}) => {
 
+    const history = useHistory();
 
     const review = useSelector( state => state.review[reservation.reviewId])
 
@@ -36,7 +39,6 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
     const jsOutDate = new Date(`${months[splitOutDate[1]]}/${splitOutDate[2]}/${splitOutDate[0]}`)
 
     const nights = Math.floor((jsOutDate.getTime() - jsInDate.getTime()) / (1000 * 3600 * 24))
-    debugger
 
     const dispatch = useDispatch();
 
@@ -71,6 +73,7 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
 
     const handleDelete = async (e) => {
         const res = dispatch(deleteExistingReservation(reservation.id, user.id));
+        history.push(`/users/${reservation.renterId}/reservations`)
     }
 
     const handleEditToggle = () => {

@@ -5,7 +5,6 @@ import { useSelector, useDispatch } from 'react-redux';
 import './ProfileButton.css'
 import { Modal } from "../../../context/Modal";
 import SignInFormPage from "../SignInFormPage";
-import { NavLink, Link } from "react-router-dom/cjs/react-router-dom.min";
 import { useHistory } from "react-router-dom";
 
 

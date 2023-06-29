@@ -32,6 +32,13 @@
       email: 'demo@user.com', 
       password: 'password'
     )
+
+    User.create!(
+      first_name: 'Hanna', 
+      last_name: 'Darwish', 
+      email: 'hanna@user.com', 
+      password: 'password'
+    )
   
     # More users
     30.times do 
@@ -131,122 +138,667 @@
 
 
     listing_3 = Listing.create!(
-      name: 'Luxury Beach View Apartment' ,
-      description: 'Just a short stroll from beautiful LindaMar Beach, this large private spacious studio is perfect for your next beach getaway. It has a breathtaking unobstructed  ocean view which can be seen from anywhere in the unit, including the bathroom and shower. Surfboard rental is included with your stay offering a bonus activity for your trip! There is a huge private deck with a wraparound bench, lounge chairs, and a sunbed for your enjoyment while starring at one of the nicest ocean views in California' ,
-      price: 194,
-      address: "223 Stanley Ave, Pacifica, California, 94044",
-      coordinates: '37.59493551449619 -122.51057679479852',
+      name: 'Coastal Chic: Central Parkside Hideaway' ,
+      description: 'Relax in a safe, quiet, friendly neighborhood on your trip to San Francisco in the Parkside/Sunset district. Very safe and family-friendly neighborhood, close to Ocean Beach, Golden Gate Park, local restaurants, and malls. Perfect for families, trips with friends, or business travelers looking to work, relax, and explore San Francisco. Plenty of street parking, easy access to public transportation (29 and L Muni line), and plenty of Uber/Lyft options to get around the city as well!' ,
+      price: 304,
+      address: "1506 29th Ave, San Francisco, CA 94122",
+      coordinates: '37.759343024254854 -122.48728974957982',
       amenities: "Wifi Kitchen Beach",
-      num_of_guests: 2,
+      num_of_guests: 8,
       num_of_baths: 1, 
-      num_of_bedrooms: 1,
-      num_of_beds: 1,
+      num_of_bedrooms: 3,
+      num_of_beds: 4,
       owner_id: 3
     );
 
     listing_3.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-1.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-3/listing-3-1.jpeg"), 
       filename: "listing3-1.jpg"
     )
     listing_3.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-2.jpg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-3/listing-3-2.jpeg"), 
       filename: "listing3-2.jpg"
     )
     listing_3.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-3.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-3/listing-3-3.jpeg"), 
       filename: "listing3-3.jpg"
     )
     listing_3.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-4.jpg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-3/listing-3-4.jpeg"), 
       filename: "listing3-4.jpg"
     )
     listing_3.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-5.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-3/listing-3-5.jpeg"), 
       filename: "listing3-5.jpg"
     )
-    listing_3.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-6.jpeg"), 
-      filename: "listing3-6.jpg"
-    )
 
+    puts 'Creating listings 4'
     listing_4 = Listing.create!(
-      name: 'Luxury Beach View Apartment' ,
-      description: 'Just a short stroll from beautiful LindaMar Beach, this large private spacious studio is perfect for your next beach getaway. It has a breathtaking unobstructed  ocean view which can be seen from anywhere in the unit, including the bathroom and shower. Surfboard rental is included with your stay offering a bonus activity for your trip! There is a huge private deck with a wraparound bench, lounge chairs, and a sunbed for your enjoyment while starring at one of the nicest ocean views in California' ,
-      price: 194,
-      address: "223 Stanley Ave, Pacifica, California, 94044",
-      coordinates: '37.59493551449619 -122.51057679479852',
+      name: 'Waterfront Tiburon with 180°view' ,
+      description: 'Ranch style one story home divided into a main 2 bedroom 2 bath house and a fully equipped mother-in-law suite with uninterrupted water views from almost every room and a long deck stretching across the entire property. The home offers direct water access via stairs from the deck. This is an older home (the bathrooms in particular are a bit out of date) but we love it because the home has great character and charm and stunning views. If you prefer very modern houses, this may not be for you. However, all furnishings, mattresses, appliances, etc are brand new and the home is immaculately cleaned. The waterfront is extremely peaceful and private. The staircase down to the water is long and would not be ideal for very small children or people with impaired mobility. However for everyone else, we highly recommend you grab some wine and head down there for sunset, or coffee for sunrise is even more stunning.' ,
+      price: 471,
+      address: "1415-1417 43rd Ave, San Francisco, CA 94122",
+      coordinates: '37.7576889948196 -122.50550329456419',
       amenities: "Wifi Kitchen Beach",
-      num_of_guests: 2,
-      num_of_baths: 1, 
-      num_of_bedrooms: 1,
-      num_of_beds: 1,
+      num_of_guests: 7,
+      num_of_baths: 3, 
+      num_of_bedrooms: 4,
+      num_of_beds: 4,
       owner_id: 4
     );
 
     listing_4.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-1.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-4/listing-4-1.jpeg"), 
       filename: "listing4-1.jpg"
     )
     listing_4.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-2.jpg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-4/listing-4-2.jpeg"), 
       filename: "listing4-2.jpg"
     )
     listing_4.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-3.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-4/listing-4-3.jpeg"), 
       filename: "listing4-3.jpg"
     )
     listing_4.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-4.jpg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-4/listing-4-4.webp"), 
       filename: "listing4-4.jpg"
     )
     listing_4.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-5.jpeg"), 
-      filename: "listing4-5.jpg"
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-4/listing-4-5.webp"), 
+      filename: "listing3-5.jpg"
     )
-    listing_4.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-6.jpeg"), 
-      filename: "listing4-6.jpg"
-    )
-
 
     listing_5 = Listing.create!(
-      name: 'Luxury Beach View Apartment' ,
-      description: 'Just a short stroll from beautiful LindaMar Beach, this large private spacious studio is perfect for your next beach getaway. It has a breathtaking unobstructed  ocean view which can be seen from anywhere in the unit, including the bathroom and shower. Surfboard rental is included with your stay offering a bonus activity for your trip! There is a huge private deck with a wraparound bench, lounge chairs, and a sunbed for your enjoyment while starring at one of the nicest ocean views in California' ,
-      price: 194,
-      address: "223 Stanley Ave, Pacifica, California, 94044",
-      coordinates: '37.59493551449619 -122.51057679479852',
+      name: 'Serenity House Whit BBQ Near SF Airport' ,
+      description: "Welcome to Serenity House, your perfect retreat in San Francisco. Our beautiful 3-bedroom house boasts stunning views of the San Francisco Bay , providing a serene and relaxing ambiance. Our large outdoor BBQ area is perfect for hosting fun gatherings with family and friends. Each bedroom is designed for your comfort. Located in a quiet and friendly neighborhood, Serenity House offers easy access to San Francisco's top attractions, making it the perfect home base for your stay." ,
+      price: 354,
+      address: "1550 46th Ave, San Francisco, CA 94122",
+      coordinates: '37.76028551221444 -122.50293691134891',
       amenities: "Wifi Kitchen Beach",
-      num_of_guests: 2,
+      num_of_guests: 8,
       num_of_baths: 1, 
-      num_of_bedrooms: 1,
-      num_of_beds: 1,
+      num_of_bedrooms: 3,
+      num_of_beds: 4,
       owner_id: 5
     );
-    
+
     listing_5.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-1.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-5/listing-5-1.jpeg"), 
       filename: "listing5-1.jpg"
     )
     listing_5.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-2.jpg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-5/listing-5-2.jpeg"), 
       filename: "listing5-2.jpg"
     )
     listing_5.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-3.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-5/listing-5-3.jpeg"), 
       filename: "listing5-3.jpg"
     )
     listing_5.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-4.jpg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-5/listing-5-4.jpeg"), 
       filename: "listing5-4.jpg"
     )
     listing_5.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-5.jpeg"), 
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-5/listing-5-5.jpeg"), 
       filename: "listing5-5.jpg"
     )
-    listing_5.photos.attach(
-      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-1/listing1-6.jpeg"), 
-      filename: "listing5-6.jpg"
+
+    puts 'Creating listings 6'
+    listing_6 = Listing.create!(
+      name: 'Spectacular Ocean View Retreat' ,
+      description: "Spectacular Ocean view zen retreat. Breath the ocean air, view sunrise/set. In walking distance to Mussel Rock beach for cliff gliding/breach walk/picnic, conveniently located 15 mins from San Francisco,  it is about 15 mins away from San Francisco, Moscone center, Ferry building; 20 mins from Silicon Valley. Close to Olympic Country club, mussel rock, Fort Funston and Many shopping places, restaurants are in surrounding area. Long term rental is possible, please contact us" ,
+      price: 255,
+      address: "1334 47th Ave, San Francisco, CA 94122",
+      coordinates: '37.76164127902247 -122.5069379486968',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 9,
+      num_of_baths: 2.5, 
+      num_of_bedrooms: 3,
+      num_of_beds: 3,
+      owner_id: 6
+    );
+
+    listing_6.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-6/listing-6-1.jpeg"), 
+      filename: "listing6-1.jpg"
     )
+    listing_6.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-6/listing-6-2.jpeg"), 
+      filename: "listing6-2.jpg"
+    )
+    listing_6.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-6/listing-6-3.jpeg"), 
+      filename: "listing6-3.jpg"
+    )
+    listing_6.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-6/listing-6-4.jpeg"), 
+      filename: "listing6-6.jpg"
+    )
+    listing_6.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-6/listing-6-5.jpeg"), 
+      filename: "listing6-5.jpg"
+    )
+
+    listing_7 = Listing.create!(
+      name: 'Luxurious Bayview Treehouse: Hot Tub, 15 min to SF' ,
+      description: "Immerse yourself in an architectural gem that balances modern elegance and rustic allure. Our four-bedroom, three-bathroom sanctuary is your secluded escape amidst expansive greenery, a canvas for unforgettable moments." ,
+      price: 521,
+      address: "Johnstone Dr, San Francisco, CA 94131",
+      coordinates: '37.75803112235651 -122.45563289627265',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 6,
+      num_of_baths: 3, 
+      num_of_bedrooms: 2,
+      num_of_beds: 3,
+      owner_id: 7
+    );
+
+    puts 'Creating listings 7'
+    listing_7.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-7/lsiting-7-1.jpeg"), 
+      filename: "listing7-1.jpg"
+    )
+    listing_7.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-7/listing-7-2.jpeg"), 
+      filename: "listing7-2.jpg"
+    )
+    listing_7.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-7/listing-7-3.jpeg"), 
+      filename: "listing7-3.jpg"
+    )
+    listing_7.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-7/listing-7-4.jpeg"), 
+      filename: "listing7-7.jpg"
+    )
+    listing_7.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-7/lsiting-7-5.jpeg"), 
+      filename: "listing7-5.jpg"
+    )
+
+
+    puts 'Creating listings 8'
+
+    listing_8 = Listing.create!(
+      name: 'Ocean/Beach Front 🏖🌊w/ Sweeping Oceanviews🌅🐳🪂' ,
+      description: "Escape to our oceanfront sanctuary, just 15 mins from SF and SFO. Set on the second floor of a duplex, the large windows offer breathtaking ocean views. Relax to the sound of waves and the scent of the sea; embark on memorable activities like whale watching, surfing, gliding, or simply savoring stunning sunsets. Beach access is just across the street. Recently remodeled, our home boasts new smart appliances and technologies. Immerse yourself in coastal bliss at our enchanting retreat." ,
+      price: 342,
+      address: "Great Hwy, San Francisco, CA 94121",
+      coordinates: '37.77482192204646 -122.51096200677',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 6,
+      num_of_baths: 1, 
+      num_of_bedrooms: 2,
+      num_of_beds: 4,
+      owner_id: 8
+    );
+
+    listing_8.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-8/listing-8-1.jpeg"), 
+      filename: "listing8-1.jpg"
+    )
+    listing_8.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-8/listing-8-2.jpeg"), 
+      filename: "listing8-2.jpg"
+    )
+    listing_8.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-8/listing-8-3.jpeg"), 
+      filename: "listing8-3.jpg"
+    )
+    listing_8.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-8/listing-8-4.jpeg"), 
+      filename: "listing8-4.jpg"
+    )
+    listing_8.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-8/listing-8-5.jpeg"), 
+      filename: "listing8-5.jpg"
+    )
+
+    puts 'Creating listings 9'
+
+    listing_9 = Listing.create!(
+      name: 'Marbella Lane - Rejuvenating Coastal Oasis' ,
+      description: "Tucked in the tranquil picturesque valley of Vallemar, this premium Lindahl cedar home offers serenity & convenience, with quick access to many traveling points. This home has a stylish cabin interior design, the spacious living room features skylights and large windows, with direct access to the backyard deck & a hot tub. Enjoy a cuppa while admiring the miraculous beauty of the forest & mountains surrounding you; might even catch the occasional spotting of a deer or fox." ,
+      price: 464,
+      address: "550 48th Ave, San Francisco, CA 94121",
+      coordinates: '37.778040904173814 -122.50908090168522',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 8,
+      num_of_baths: 3, 
+      num_of_bedrooms: 3,
+      num_of_beds: 4,
+      owner_id: 9
+    );
+
+    listing_9.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-9/listing-9-1.jpeg"), 
+      filename: "listing9-1.jpg"
+    )
+    listing_9.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-9/listing-9-2.jpeg"), 
+      filename: "listing9-2.jpg"
+    )
+    listing_9.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-9/listing-9-3.jpeg"), 
+      filename: "listing9-3.jpg"
+    )
+    listing_9.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-9/listing-9-4.jpeg"), 
+      filename: "listing9-4.jpg"
+    )
+    listing_9.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-9/listing-9-5.jpeg"), 
+      filename: "listing9-5.jpg"
+    )
+
+    listing_10 = Listing.create!(
+      name: 'Oceanfront Boho Retreat - Pacific Sunset Views 🌅🌊🐳' ,
+      description: "Remodeled oceanfront home with sweeping Pacific views and whale watching! Ultra clean and comfortable. The perfect cozy boho getaway for couples, families and travelers. 3 bed, 1 bath." ,
+      price: 464,
+      address: "798 Great Hwy, San Francisco, CA 94121",
+      coordinates: '37.773434375018375 -122.51067433600103',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 7,
+      num_of_baths: 1, 
+      num_of_bedrooms: 3,
+      num_of_beds: 5,
+      owner_id: 10
+    );
+
+    listing_10.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-10/listing-10-1.jpeg"), 
+      filename: "listing10-1.jpg"
+    )
+    listing_10.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-10/listing-10-2.png"), 
+      filename: "listing10-2.jpg"
+    )
+    listing_10.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-10/listing-10-3.png"), 
+      filename: "listing10-3.jpg"
+    )
+    listing_10.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-10/listing-10-4.png"), 
+      filename: "listing10-4.jpg"
+    )
+    listing_10.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-10/listing-10-5.png"), 
+      filename: "listing10-5.jpg"
+    )
+
+    puts 'Creating listings 11'
+
+    listing_11 = Listing.create!(
+      name: 'Bright spacious top of the hill with bay views' ,
+      description: "Top of the hill house with beautiful bay views.
+      Literally steps away from the park, go hiking as soon as you leave the front door.
+      Multiple rooms with bay views.
+      Has a parking space and street parking.
+      There are 2 porches and a backyard.
+      There are 3 bedrooms and 3 bathrooms. The master bedroom has beautiful bay views.
+      The house is in a safe cul de sac, so expect it to be extremely quiet.
+      15 minute drive to the airport.
+      Bayshore caltrain is a ~20 minute walk or 5 minute drive away." ,
+      price: 300,
+      address: "782 43rd Ave, San Francisco, CA 94121",
+      coordinates: '37.773957966800985 -122.50342634090312',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 5,
+      num_of_baths: 3, 
+      num_of_bedrooms: 3,
+      num_of_beds: 3,
+      owner_id: 11
+    );
+
+    
+    listing_11.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-11/listing-11-1.jpeg"), 
+      filename: "listing11-1.jpg"
+    )
+    listing_11.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-11/listing-11-2.jpeg"), 
+      filename: "listing11-2.jpg"
+    )
+    listing_11.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-11/listing-11-3.jpeg"), 
+      filename: "listing11-3.jpg"
+    )
+    listing_11.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-11/listing-11-4.jpeg"), 
+      filename: "listing11-4.jpg"
+    )
+    listing_11.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-11/listing-11-5.jpeg"), 
+      filename: "listing11-5.jpg"
+    )
+
+    listing_12 = Listing.create!(
+      name: '2BR 2 BA High End Exclusive Use in SOMA/Moscone' ,
+      description: "Exclusive Use Sunny 2 BR 2 BA condo in downtown SF, walking distance to shops/gym/grocery, restaurants/club district; Parking in garage extra fee. All high end appliances, flat screens in living room/master BR with wifi/Netflix. Both BA full premium tiled walk in showers. Owner's bedroom is in the rear of the house with a separate entrance. Owner will not access exclusive use area and remains behind locked door. You get the exclusive use of two out of three total bedrooms." ,
+      price: 395,
+      address: "746 27th Ave, San Francisco, CA 94121",
+      coordinates: '37.775324950692195 -122.48637687669368',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 4,
+      num_of_baths: 2, 
+      num_of_bedrooms: 2,
+      num_of_beds: 2,
+      owner_id: 12
+    );
+
+    listing_12.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-12/listing-12-1.png"), 
+      filename: "listing12-1.jpg"
+    )
+    listing_12.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-12/listing-12-2.png"), 
+      filename: "listing12-2.jpg"
+    )
+    listing_12.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-12/listing-12-3.png"), 
+      filename: "listing12-3.jpg"
+    )
+    listing_12.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-12/listing-12-4.png"), 
+      filename: "listing12-4.jpg"
+    )
+    listing_12.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-12/listing-12-5.png"), 
+      filename: "listing12-5.jpg"
+    )
+
+    puts 'Creating listings 13'
+    listing_13 = Listing.create!(
+      name: 'Modern Noe Valley home with private deck' ,
+      description: "This tastefully done house is perfect for both work-from-home teams traveling to the Bay area or family and friends on a relaxing holiday. With hi-speed Wi-Fi (gigabit) throughout the house and backyard, and brightly lit rooms, you can work from any corner of the house. If you feel like exploring the neighborhood, you're within a 5 minute walk from cafes and restaurants. Walgreens is a 2 min walk, whole Foods and Starbucks are a 7 minute walk." ,
+      price: 605,
+      address: "636 20th Ave, San Francisco, CA 94121",
+      coordinates: '37.775971290942906 -122.47888067382294',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 6,
+      num_of_baths: 2, 
+      num_of_bedrooms: 3,
+      num_of_beds: 3,
+      owner_id: 13
+    );
+
+    listing_13.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-13/listing-13-1.jpeg"), 
+      filename: "listing13-1.jpg"
+    )
+    listing_13.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-13/listing-13-2.jpeg"), 
+      filename: "listing13-2.jpg"
+    )
+    listing_13.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-13/listing-13-3.jpeg"), 
+      filename: "listing13-3.jpg"
+    )
+    listing_13.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-13/listing-13-4.jpeg"), 
+      filename: "listing13-4.jpg"
+    )
+    listing_13.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-13/listing-13-5.jpeg"), 
+      filename: "listing13-5.jpg"
+    )
+
+    listing_14 = Listing.create!(
+      name: 'Secluded Home with Views of Skyline and Twin Peaks' ,
+      description: "Discover a quiet, secluded retreat at the end of a small cul-de-sac on the north slope of Bernal Heights. With just one immediate neighbor, a huge yard, and a mini park across the street, this semi-detached home offers discreet & peaceful living not often found in the city. Enjoy Bernal's small-town vibe from the comfort of an updated abode featuring views of the skyline & Twin Peaks. You'll love the living space with two bay windows and lots of natural light." ,
+      price: 420,
+      address: "267 Buena Vista Ave W, San Francisco, CA 94117",
+      coordinates: '37.76805482376914 -122.4391050998598',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 11,
+      num_of_baths: 2, 
+      num_of_bedrooms: 3,
+      num_of_beds: 6,
+      owner_id: 14
+    );
+
+    listing_14.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-14/listing-14-1.jpeg"), 
+      filename: "listing14-1.jpg"
+    )
+    listing_14.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-14/listing-14-2.jpeg"), 
+      filename: "listing14-2.jpg"
+    )
+    listing_14.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-14/listing-14-3.jpeg"), 
+      filename: "listing14-3.jpg"
+    )
+    listing_14.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-14/listing-14-4.jpeg"), 
+      filename: "listing14-4.jpg"
+    )
+    listing_14.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-14/listing-14-5.jpeg"), 
+      filename: "listing14-5.jpg"
+    )
+
+    puts 'Creating listings 15'
+    listing_15 = Listing.create!(
+      name: 'Bluff top ocean view home' ,
+      description: "Brand New Custom-built Home on the bluffs overlooking the Pacific Ocean, Linda Mar Bay and surfer's beach. Amenities minutes away. Surf and play at the beach with access to stunning hiking trails. Beautiful hardwood flooring, gourmet kitchen w/ huge quartz covered breakfast bar. Plenty of light and views of mountains and Linda Mar Bay. Floor to ceiling windows open to the sounds of the ocean. Spacious master suite has a covered deck to enjoy the panoramic ocean view to the Marin Headlands." ,
+      price: 641,
+      address: "663 Marina Blvd, San Francisco, CA 94123",
+      coordinates: '37.80530568985513 -122.44478332295458',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 6,
+      num_of_baths: 3, 
+      num_of_bedrooms: 3,
+      num_of_beds: 3,
+      owner_id: 15
+    );
+
+    listing_15.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-15/listing-15-1.jpeg"), 
+      filename: "listing15-1.jpg"
+    )
+    listing_15.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-15/listing-15-2.jpeg"), 
+      filename: "listing15-2.jpg"
+    )
+    listing_15.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-15/listing-15-3.jpeg"), 
+      filename: "listing15-3.jpg"
+    )
+    listing_15.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-15/listing-15-4.jpeg"), 
+      filename: "listing15-4.jpg"
+    )
+    listing_15.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-15/listing-15-5.jpeg"), 
+      filename: "listing15-5.jpg"
+    )
+
+    listing_16 = Listing.create!(
+      name: 'Marbella Lane - Chic Abode w/Mountain Skyline' ,
+      description: "Enjoy this luxurious 3-bedroom home with spectacular canyon views. Located in the sought-after Pacifica neighborhood with a modern and sophisticated interior design. This home offers breathtaking sceneries & amazingly beautiful Canyon View. Catch the breathtaking views of the sunrise and sunset on the deck." ,
+      price: 379,
+      address: "123 Marina Blvd, San Francisco, CA 94123",
+      coordinates: '37.80518022363021 -122.43445510047452',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 6,
+      num_of_baths: 3, 
+      num_of_bedrooms: 3,
+      num_of_beds: 3,
+      owner_id: 16
+    );
+
+    listing_16.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-16/listing-16-1.jpeg"), 
+      filename: "listing16-1.jpg"
+    )
+    listing_16.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-16/listing-16-2.jpeg"), 
+      filename: "listing16-2.jpg"
+    )
+    listing_16.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-16/listign-16-3.jpeg"), 
+      filename: "listing16-3.jpg"
+    )
+    listing_16.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-16/listing-16-4.jpeg"), 
+      filename: "listing16-4.jpg"
+    )
+    listing_16.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-16/listing-16-5.jpeg"), 
+      filename: "listing16-5.jpg"
+    )
+
+    puts 'Creating listings 17'
+
+    listing_17 = Listing.create!(
+      name: 'Bright 2 Bd with Ocean Views. Near GGP, Lands End' ,
+      description: "Beautiful, bright 2 bedroom, 1 bath flat with breathtaking Ocean Views. Great location with easy access to nature and public transportation. 2 blocks from Golden Gate park, 4 blocks from great cafes, bakeries, restaurants on the Balboa street corridor. 8 blocks from Ocean Beach and about 10 blocks to Lands End hiking trail, historic Sutro Baths and grocery store. Easy access to public transportation for downtown San Francisco, the Golden Gate Bridge and all parts of San Francisco." ,
+      price: 247,
+      address: "195 Seal Rock Dr, San Francisco, CA 94121",
+      coordinates: '37.780610555499614 -122.50952900033091',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 4,
+      num_of_baths: 1, 
+      num_of_bedrooms: 2,
+      num_of_beds: 2,
+      owner_id: 17
+    );
+
+    listing_17.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-17/listing-17-1.jpeg"), 
+      filename: "listing17-1.jpg"
+    )
+    listing_17.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-17/listing-17-2.jpeg"), 
+      filename: "listing17-2.jpg"
+    )
+    listing_17.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-17/listing-17-3.jpeg"), 
+      filename: "listing17-3.jpg"
+    )
+    listing_17.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-17/listing-17-4.jpeg"), 
+      filename: "listing17-4.jpg"
+    )
+    listing_17.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-17/listing-17-5.jpeg"), 
+      filename: "listing17-5.jpg"
+    )
+
+    listing_18 = Listing.create!(
+      name: 'NEW! Retreat w/Relaxing Hot Tub Sauna Pool Table!' ,
+      description: "This resort like retreat features a relaxing hot tub, outdoor patio seating with firepit, sauna, bbq grill, Olhaussen professional pool table & all the essentials. Watch the dancing flames of the fireplace while enjoying quality time with your friends & family while dining in the great room with the kitchen, dining area, half bath, & family room on the ground floor. The upstairs  features 4 bedrooms, 2 full baths, w/one of them being a primary suite. 20 min to SFO and 25 min to the heart of SF!" ,
+      price: 405,
+      address: "522 42nd Ave, San Francisco, CA 94121",
+      coordinates: '37.77878563942331 -122.50260275550045',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 16,
+      num_of_baths: 2, 
+      num_of_bedrooms: 4,
+      num_of_beds: 6,
+      owner_id: 18
+    );
+
+    listing_18.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-18/listing-18-1.jpeg"), 
+      filename: "listing18-1.jpg"
+    )
+    listing_18.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-18/listing-18-2.jpeg"), 
+      filename: "listing18-2.jpg"
+    )
+    listing_18.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-18/listing-18-3.jpeg"), 
+      filename: "listing18-3.jpg"
+    )
+    listing_18.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-18/listing-18-4.jpeg"), 
+      filename: "listing18-4.jpg"
+    )
+    listing_18.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-18/listing-18-5.jpeg"), 
+      filename: "listing18-5.jpg"
+    )
+
+    puts 'Creating listings 19'
+
+    listing_19 = Listing.create!(
+      name: 'Hiking, Biking & Bay Area Views!' ,
+      description: "This beautiful home in the east bay hills boasts spectacular views of the entire bay area, from San Jose to Marin.  It is a short walk or drive from many miles of trails for hiking, horseback riding and mountain biking.  It also provides immediate access to many miles of the bay area's best road biking on Skyline Boulevard." ,
+      price: 385,
+      address: "738 46th Ave, San Francisco, CA 94121",
+      coordinates: '37.77458482922109 -122.5067221353389',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 8,
+      num_of_baths: 2, 
+      num_of_bedrooms: 4,
+      num_of_beds: 4,
+      owner_id: 19
+    );
+
+    listing_19.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-19/listing-19-1.jpeg"), 
+      filename: "listing19-1.jpg"
+    )
+    listing_19.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-19/listing-19-2.jpeg"), 
+      filename: "listing19-2.jpg"
+    )
+    listing_19.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-19/listing-19-3.jpeg"), 
+      filename: "listing19-3.jpg"
+    )
+    listing_19.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-19/listing-19-4.jpeg"), 
+      filename: "listing19-4.jpg"
+    )
+    listing_19.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-19/listing-19-5.jpeg"), 
+      filename: "listing19-5.jpg"
+    )
+
+    puts 'Creating listings 20'
+
+    listing_20 = Listing.create!(
+      name: 'San Francisco-Pacifica -Ocean Front French Cottage' ,
+      description: "Welcome to this Luxurious & Cozy Beach home with direct Ocean Views -15 Minutes to downtown San Francisco and SFO Airport. Ideal for a relaxing family vacation, romantic or working getaway!! Modern 2 bedroom 2 baths with fully equipped kitchen. Warm and cozy facing the ocean and steps to the Pacifica beach and fishing pier, board walk, Sharp Park and short walk to the historic Sharp Park Golf Course. Plenty of walking trails. Please check out the wonderful reviews from my guests!" ,
+      price: 320,
+      address: "1580 Great Hwy, San Francisco, CA 94122",
+      coordinates: '37.75697771508774 -122.50872872035947',
+      amenities: "Wifi Kitchen Beach",
+      num_of_guests: 6,
+      num_of_baths: 2, 
+      num_of_bedrooms: 2,
+      num_of_beds: 4,
+      owner_id: 20
+    );
+
+    listing_20.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-20/listing-20-1.jpeg"), 
+      filename: "listing20-1.jpg"
+    )
+    listing_20.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-20/listing-20-2.jpeg"), 
+      filename: "listing20-2.jpg"
+    )
+    listing_20.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-20/listing-20-3.jpeg"), 
+      filename: "listing20-3.jpg"
+    )
+    listing_20.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-20/listing-20-4.jpeg"), 
+      filename: "listing20-4.jpg"
+    )
+    listing_20.photos.attach(
+      io: URI.open("https://nomadbnb-dev.s3.us-west-1.amazonaws.com/listing-20/listing-20-5.jpeg"), 
+      filename: "listing20-5.jpg"
+    )
+
+
+
+
+
+
 
     puts "making reviews and resevations"
 
