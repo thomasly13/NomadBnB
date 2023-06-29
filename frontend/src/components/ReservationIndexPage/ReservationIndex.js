@@ -16,6 +16,7 @@ export const ReservationIndex = () => {
 
     useEffect(() => {
         window.scrollTo({top: 0, left:0 , behavior: "smooth"})
+        debugger
         dispatch(fetchUserDetail(userId))
     }, [dispatch, userId])
 

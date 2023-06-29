@@ -21,7 +21,7 @@ end
 json.set! 'reviews' do 
     if @reservation.review
         json.set! @reservation.review.id do 
-            json.extract! @reservation.review, :rating, :listing_id, :reviewer_id, :reservation_id
+            json.extract! @reservation.review, :rating, :listing_id, :reviewer_id, :reservation_id, :body
         end     
     else
         json.reviewId nil

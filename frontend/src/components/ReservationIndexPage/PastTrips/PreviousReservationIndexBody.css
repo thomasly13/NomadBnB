@@ -33,7 +33,7 @@
 
 .review-create-rating-container {
     display: flex;
-
+    margin-bottom: 25px;
 }
 
 .rate-your-stay {
@@ -47,6 +47,7 @@
     align-items: center;
     cursor: pointer;
     text-decoration: none;
+    margin-bottom: 20px;
 }
 
 .review-create-container form {

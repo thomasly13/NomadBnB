@@ -367,7 +367,7 @@
     right: -32px;
     position: absolute;
     padding: 24px 32px 12px;
-    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;
+    box-shadow: rgba(0, 0, 0, 0.2) 0px 6px 20px;;
     box-sizing: border-box;
 }
 
@@ -565,4 +565,11 @@
 
 .review-title-container-1 * {
     margin-right: 5px;
+}
+
+.cool-map {
+    height: 60vh;
+    width: 100%;
+    box-shadow: 0 2px 16px rgba(0,0,0,0.12);;
+    margin-bottom: 40px;
 }

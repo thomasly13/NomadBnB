@@ -119,7 +119,8 @@ export const ShowBody = ({listing}) => {
                                     <>
                                         <div>
                                             <div className="review-title-container">
-                                                <span>{review.reviewer.first_name}</span>
+                                                {review.reviewer ? 
+                                                <span>{review.reviewer.first_name}</span> : null }
                                                 <div className="cool-container">
                                                     <span>{review.rating}</span>
                                                     <div  style={{ color: "#ecd041", fontSize: "25px" }}>
@@ -133,91 +134,25 @@ export const ShowBody = ({listing}) => {
                                     </>
                                 )
                             })}
-                        </div>
-                        <hr className="information-line"></hr>
-                        <div style={{ height: '90.2vh', width: '100vw' }}>
-                        <GoogleMapReact
-                                bootstrapURLKeys={{ key:  "AIzaSyCL1buWaa613e2kJz-1qY5HBNNZamJaWG8" }}
-                                defaultCenter={defaultProps.center}
-                                defaultZoom={defaultProps.zoom}
-                            >
-                                <CoolMarker
-                                lat={coordinates[0]}
-                                lng={coordinates[1]}
-                                text="My Marker"
-                                />
-                        </GoogleMapReact>
-                        </div>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <br></br>
-                        <h2>Reviews</h2>                        
+                        </div>                       
                     </div>
                     
                     <ShowReservation listing={listing} />
 
                  
+                </div>
+                <div className="cool-map">
+                    <GoogleMapReact
+                            bootstrapURLKeys={{ key:  "AIzaSyCL1buWaa613e2kJz-1qY5HBNNZamJaWG8" }}
+                            defaultCenter={defaultProps.center}
+                            defaultZoom={defaultProps.zoom}
+                        >
+                            <CoolMarker
+                            lat={coordinates[0]}
+                            lng={coordinates[1]}
+                            text="My Marker"
+                            />
+                    </GoogleMapReact>
                 </div>
             </div>}
         </>

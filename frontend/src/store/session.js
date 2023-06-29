@@ -127,14 +127,14 @@ const initialState = {
 const sessionReducer = (state = initialState, action) => {
     Object.freeze(state) 
     const nextState = {...state};
-
+    debugger
     switch (action.type) {
         case SIGN_UP_CURRENT_USER:
-            return { nextState, user: action.payload};
+            return { ...nextState, user: action.payload};
         case SET_CURRENT_USER:
-            return { nextState, user: action.payload.currentUser };
+            return { ...nextState, user: action.payload.currentUser };
         case REMOVE_CURRENT_USER:
-            return { nextState, user: null };
+            return { ...nextState, user: null };
         default:
             return nextState;
     }

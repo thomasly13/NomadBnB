@@ -19,6 +19,7 @@ const receiveUser = (payload) => {
 }
 
 export const fetchUserDetail = (userId) => async (dispatch) => {
+    debugger
     const response = await fetch(`/api/users/${userId}`);
     const data = await response.json();
 

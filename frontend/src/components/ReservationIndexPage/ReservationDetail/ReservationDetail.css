@@ -93,3 +93,23 @@
     padding-top: 25px;
     margin-bottom: -20px;
 }
+
+.super-cool-edit-container {
+    width: 100%;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    padding-top: 25px;
+    margin-bottom: -20px;
+    padding-left: 20px;
+    box-sizing: border-box;
+}
+
+.super-duper-cool-text-area {
+    resize: none;
+    margin-bottom: 25px;
+}
+
+.super-duper-cool-text-area:focus {
+    outline: 1px solid black;
+}

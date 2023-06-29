@@ -6,6 +6,7 @@ import "./index.css"
 import { useDispatch } from 'react-redux';
 import { ReservationIndex } from './components/ReservationIndexPage/ReservationIndex.js';
 import { ReservationDetail } from './components/ReservationIndexPage/ReservationDetail/ReservationDetail.js';
+import { CoolFooter } from './components/Footer/footer.js';
 
 
 
@@ -33,6 +34,7 @@ function App() {
           <FrontPageBody />
         </Route>
       </Switch>
+      {/* <CoolFooter /> */}
 
     </div>
 

@@ -3,17 +3,23 @@ import { ReservationImage } from "./ReservationImage"
 import { ReservationContainerText } from "./ReservationContainerText"
 import { useState, useEffect } from "react"
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min"
+import { useDispatch } from "react-redux"
+import { login, logout } from "../../../store/session"
 
 
 export const PastReservationIndexBody = ({user, reservation}) => {
-
+    const dispatch = useDispatch();
     const history = useHistory();
 
     const previousReservations = Object.values(reservation.previousReservations)
 
-    const toHome = (e) => {
+
+
+    const handleDemo = async (e) => {
         e.preventDefault();
-        history.push("/")
+        dispatch(logout());
+        dispatch(login({ email: "demo@user.com" , password: "password" }))
+        history.push("/users/1/reservations")
     }
 
     return (
@@ -27,9 +33,9 @@ export const PastReservationIndexBody = ({user, reservation}) => {
                     <div className="coolHand" style={{ color: "#ff385c", fontSize: "48px" }}>
                         <i className="fa-solid fa-hand-peace"></i>
                     </div>
-                    <span className="state-searching-title">No past trips...yet!</span>
-                    <span className="state-searching-description">Time to dust off your bads and start planning your next adventure</span>
-                    <button onClick={toHome} className="start-searching-button">Start Searching</button>
+                    <span className="state-searching-title">No past trips...try our demo!</span>
+                    <span className="state-searching-description">Click below to be logged out and logged into our demo user </span>
+                    <button onClick={handleDemo} className="start-searching-button">Demo User</button>
 
                     
                 </div> :
