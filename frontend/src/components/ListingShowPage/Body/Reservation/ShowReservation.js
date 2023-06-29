@@ -29,6 +29,10 @@ export const ShowReservation = ({listing}) => {
     setShowMenu(true);
   }
 
+  const closeGuestMenu = () => {
+    setShowGuestsMenu(false)
+  }
+
   const handleToggleGuestMenu = (e) => {
     e.preventDefault();
     if (showGuestsMenu) return;
@@ -162,7 +166,7 @@ export const ShowReservation = ({listing}) => {
                     <div className="reservation-form-guests-container" onClick={handleToggleGuestMenu}>
                       <span className="guests-text">GUESTS</span>
                       { guests === 1 ? <div className="guests-input">{guests} guest</div> : <div className="guests-input">{guests} guests</div> }
-                      {showGuestsMenu && <GuestsDropDown guests={guests} listing={listing} intervalGuestsDown={intervalGuestsDown} intervalGuestsUp={intervalGuestsUp}/>}
+                      {showGuestsMenu && <GuestsDropDown guests={guests} listing={listing} intervalGuestsDown={intervalGuestsDown} intervalGuestsUp={intervalGuestsUp} coolMethod={closeGuestMenu}/>}
                     </div>
                                         
                   </div>

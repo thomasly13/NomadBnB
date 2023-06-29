@@ -2,7 +2,7 @@ import "../../ShowBody.css"
 
 
 
-export const GuestsDropDown = ({guests, listing, intervalGuestsDown, intervalGuestsUp}) => {
+export const GuestsDropDown = ({guests, listing, intervalGuestsDown, intervalGuestsUp, coolMethod}) => {
     return (
         <div className="guest-drop-down">
             <div className="guest-drop-down-adults-container">
@@ -51,7 +51,7 @@ export const GuestsDropDown = ({guests, listing, intervalGuestsDown, intervalGue
                 </div>  
             </div>
             <span className="disclaimer">This place has a maximum of {listing.numOfGuests} guests, not including infants.</span>
-            <span className="close-button">Close</span>
+            <span className="close-button" onClick={coolMethod}>Close</span>
         </div>
     )
 }

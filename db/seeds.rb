@@ -39,9 +39,65 @@
       email: 'hanna@user.com', 
       password: 'password'
     )
+
+    1.times do 
+      User.create!({
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.unique.email,
+        password: 'password'
+      }) 
+    end
+
+    User.create!(
+      first_name: 'Jasvneet', 
+      last_name: 'Kaur', 
+      email: 'hanna@user.com', 
+      password: 'password'
+    )
+
   
     # More users
-    30.times do 
+    7.times do 
+      User.create!({
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.unique.email,
+        password: 'password'
+      }) 
+    end
+
+    User.create!(
+      first_name: 'Akea', 
+      last_name: 'Jamesbradley', 
+      email: 'Akea@user.com', 
+      password: 'password'
+    )
+
+    User.create!(
+      first_name: 'Shanna', 
+      last_name: 'Le', 
+      email: 'Shanna@user.com', 
+      password: 'password'
+    )
+
+    3.times do 
+      User.create!({
+        first_name: Faker::Name.first_name,
+        last_name: Faker::Name.last_name,
+        email: Faker::Internet.unique.email,
+        password: 'password'
+      }) 
+    end
+
+    User.create!(
+      first_name: 'Matt', 
+      last_name: 'Dawg', 
+      email: 'Shanna@user.com', 
+      password: 'password'
+    )
+
+    20.times do 
       User.create!({
         first_name: Faker::Name.first_name,
         last_name: Faker::Name.last_name,
@@ -1057,5 +1113,175 @@
       reviewer_id: 1,
       reservation_id: 16
     )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2021/10/15",
+      check_out_date: "2022/01/14",
+      listing_id: 4,
+      renter_id: 2,
+    );
+
+    Review.create!(
+      rating: 3,
+      body: "Average stay. The apartment was clean, but the furnishings were outdated. The host was responsive, but the noise from the construction nearby was bothersome.",
+      listing_id: 4,
+      reviewer_id: 2,
+      reservation_id: 17
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2021/07/12",
+      check_out_date: "2021/10/09",
+      listing_id: 4,
+      renter_id: 15,
+    );
+
+    Review.create!(
+      rating: 4,
+      body:  "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 4,
+      reviewer_id: 15,
+      reservation_id: 18
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 22,
+    );
+
+    Review.create!(
+      rating: 5,
+      body:  "Exceptional hospitality! The host was incredibly welcoming and the accommodation exceeded our expectations.",
+      listing_id: 4,
+      reviewer_id: 22,
+      reservation_id: 19
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2021/08/25",
+      check_out_date: "2021/11/25",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 2,
+      body:  "Disappointing stay. The property was not as described, and the host was unresponsive to our complaints.",
+      listing_id: 4,
+      reviewer_id: 21,
+      reservation_id: 20
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2021/09/03",
+      check_out_date: "2021/12/01",
+      listing_id: 5,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 2,
+      body:  "Disappointing stay. The property was not as described, and the host was unresponsive to our complaints.",
+      listing_id: 5,
+      reviewer_id: 1,
+      reservation_id: 21
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/01",
+      check_out_date: "2022/12/19",
+      listing_id: 4,
+      renter_id: 1,
+    );
+    
 
     puts "Done!"
