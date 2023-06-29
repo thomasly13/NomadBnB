@@ -4,7 +4,7 @@ import csrfFetch from './csrf';
 //action Types
 const SET_CURRENT_USER = 'session/setCurrentUser';
 const REMOVE_CURRENT_USER = 'session/removeCurrentUser';
-
+const SIGN_UP_CURRENT_USER = 'SIGN_UP_CURRENT_USER'
 
 //action controllers
 //login action
@@ -15,6 +15,13 @@ const setCurrentUser = (user) => {
         payload: user
     };
 };
+
+const setSignUpUser = (user) => {
+    return {
+        type: SIGN_UP_CURRENT_USER,
+        payload: user
+    }
+}
 
 //logout action
 const removeCurrentUser = () => {
@@ -51,7 +58,7 @@ export const login = (user) => async (dispatch) => {
     const data = await response.json();
     storeCurrentUser(data.user.currentUser)
 
-    if (data.user.currentUser) dispatch(setCurrentUser(data.user.currentUser)); 
+    if (data.user.currentUser) dispatch(setSignUpUser(data.user.currentUser)); 
 
     return data;
 };
@@ -105,7 +112,7 @@ export const restoreSession = () => async dispatch => {
     storeCSRFToken(response);
     const data = await response.json();
     storeCurrentUser(data.user);
-    dispatch(setCurrentUser(data.user));
+    dispatch(setSignUpUser(data.user));
     return response;
 };
 
@@ -122,8 +129,10 @@ const sessionReducer = (state = initialState, action) => {
     const nextState = {...state};
 
     switch (action.type) {
+        case SIGN_UP_CURRENT_USER:
+            return { nextState, user: action.payload};
         case SET_CURRENT_USER:
-            return { nextState, user: action.payload };
+            return { nextState, user: action.payload.currentUser };
         case REMOVE_CURRENT_USER:
             return { nextState, user: null };
         default:

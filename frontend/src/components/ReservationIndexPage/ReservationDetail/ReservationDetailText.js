@@ -34,8 +34,9 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
 
     const jsInDate = new Date(`${months[splitInDate[1]]}/${splitInDate[2]}/${splitInDate[0]}`)
     const jsOutDate = new Date(`${months[splitOutDate[1]]}/${splitOutDate[2]}/${splitOutDate[0]}`)
-    const nights = (jsOutDate.getTime() - jsInDate.getTime()) / (1000 * 3600 * 24)
 
+    const nights = Math.floor((jsOutDate.getTime() - jsInDate.getTime()) / (1000 * 3600 * 24))
+    debugger
 
     const dispatch = useDispatch();
 

@@ -23,6 +23,7 @@ export const ProfileButton = () => {
   
   
     //finds current user
+  
     const sessionUser = useSelector(state => state.session.user);
 
     //sends a request to log out of the current user
@@ -39,6 +40,10 @@ export const ProfileButton = () => {
         setShowModal(true);
     }
 
+    const handleTrip = async (e) => {
+        history.push(`/users/${sessionUser.id}/reservations`)
+    }
+
 
     //helper component to handle to show logout if user is logged in
     const LoggedInNav = () => {
@@ -47,7 +52,7 @@ export const ProfileButton = () => {
                 {showMenu && (
                 <div className="profile-dropdown">
                     <ul>
-                        <li><Link to={`/users/${sessionUser.id}/reservations`}>Trips</Link></li>
+                        <li><h2 className="logout-dropdown" onClick={handleTrip}>Trips</h2></li>
                         <li><h2 className="logout-dropdown" onClick={handleLogOut}>Log Out</h2></li>
                     </ul>
                 </div>

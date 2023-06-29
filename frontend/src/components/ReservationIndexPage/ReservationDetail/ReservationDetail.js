@@ -8,6 +8,7 @@ import { fetchReceiveReservation } from "../../../store/reservation";
 
 
 export const ReservationDetail = () => {
+
     const {userId} = useParams();
     const {reservationId} = useParams();
     const dispatch = useDispatch();

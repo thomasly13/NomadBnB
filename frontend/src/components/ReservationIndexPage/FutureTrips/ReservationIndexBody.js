@@ -2,10 +2,7 @@ import { useDispatch } from "react-redux"
 import "./ReservationIndexBody.css"
 import { ReservationImage } from "./ReservationImage"
 import { ReservationContainerText } from "./ReservationContainerText"
-import { Modal } from "../../../context/Modal"
 import { useState} from "react"
-import { ReservationEdit } from "./RservationEdit"
-import { ReservationDetail } from "../ReservationDetail/ReservationDetail"
 import { useHistory } from "react-router-dom"
 
 
@@ -14,34 +11,38 @@ import { useHistory } from "react-router-dom"
 
 export const ReservationIndexBody = ({user, userId, reservation}) => {
 
-    const [showModal, setShowModal] = useState(false);
-    const [resId, setResId] = useState(null);
-    const dispatch = useDispatch();
     const history = useHistory();
 
 
     const futureReservations = Object.values(reservation.futureReservations)
     
-
-    
-    const handleModalOpen = async (reservationId) => {
-
-        setResId(reservationId);
-        setShowModal(true);
-
-    };
-
-    const handleModalClose = (userId) => {
-        setShowModal(false);
-    };
-
+    const toHome = (e) => {
+        e.preventDefault();
+        history.push("/")
+    }
 
     return (
         <>
-        { (futureReservations === undefined || futureReservations[0] === null) ? null : 
+        { (futureReservations === undefined) ? null 
+        : 
         <main className="reservation-index-body-container">
             <div className="reservation-current-trips-container">
                 <h1 className="reservation-current-title">Trips</h1>
+                { futureReservations[0] === null ? 
+                <div className="reservation-current-trips-1">
+                    <div className="coolHand" style={{ color: "#ff385c", fontSize: "48px" }}>
+                        <i className="fa-solid fa-hand-peace"></i>
+                    </div>
+                    <span className="state-searching-title">No trips booked...yet!</span>
+                    <span className="state-searching-description">Time to dust off your bads and start planning your next adventure</span>
+                    <button onClick={toHome} className="start-searching-button">Start Searching</button>
+
+                    
+                </div> 
+
+
+
+                : 
                 <div className="reservation-current-trips">
                     {futureReservations.map(reservation => {
                         return (
@@ -54,7 +55,7 @@ export const ReservationIndexBody = ({user, userId, reservation}) => {
 
                         )
                     })}      
-                </div>
+                </div>}
 
             </div>
 

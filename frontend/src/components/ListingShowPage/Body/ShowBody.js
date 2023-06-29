@@ -2,6 +2,7 @@ import { useSelector } from "react-redux";
 import { ShowHeader } from "./Header/ShowHeader";
 import { ShowReservation } from "./Reservation/ShowReservation";
 import { useEffect } from "react";
+import GoogleMapReact from 'google-map-react';
 import "./ShowBody.css"
 
 
@@ -13,12 +14,38 @@ export const ShowBody = ({listing}) => {
         return location.join(", ")
     }
 
+    const CoolMarker = () => {
+        return (
+            <div className="houseIcon" style={{ color: "#ffffff", fontSize: "21px" }}>
+                <i className="fa-solid fa-house-chimney"></i>
+            </div>   
+        )
+    }
+
+
+    let defaultProps;
+    let coordinates;
+    
+    (listing ? coordinates = listing.coordinates.split(' ') : coordinates = null)
+
+    if (listing) {
+        defaultProps = {
+            center: {
+            lat: parseFloat(coordinates[0]),
+            lng: parseFloat(coordinates[1])
+            },
+            zoom: 16
+        };        
+    }
+
+
 
     const owner = useSelector(state => state.user[listing.ownerId]);
-
+    debugger
+    const reviews = useSelector(state => Object.values(state.review))
     return (
         <>     
-            {owner === undefined ? null :    
+            {owner === undefined || reviews === undefined ? null :    
             <div className="show-body">
                 < ShowHeader listing={listing} locationHelper={locationHelper}/>
                 <div className="show-body-information">
@@ -70,14 +97,57 @@ export const ShowBody = ({listing}) => {
                         <hr className="information-line"></hr>
                         
                         <div className="show-body-description-container">
+                            <span className="show-listing-owner">About the home</span>
                             <span className="show-body-description">{listing.description}</span>
                         </div>
 
                         <hr className="information-line"></hr>
 
-                        <h2>Rest of body</h2>
-                        <h2>Reviews</h2>
-                        <h2>Maps</h2>
+                        <div className="reviews-container">
+                            <div className="review-title-container-1">
+                                <div  style={{ color: "#ecd041", fontSize: "25px" }}>
+                                    <i className="fa-solid fa-star"></i>
+                                </div>
+                                <span>{listing.review}</span>
+                                <span>&#x2022;</span>
+                                <h2 >{reviews.length} Reviews </h2>
+  
+                            </div>
+                            
+                            {reviews.map( (review) => {
+                                return (
+                                    <>
+                                        <div>
+                                            <div className="review-title-container">
+                                                <span>{review.reviewer.first_name}</span>
+                                                <div className="cool-container">
+                                                    <span>{review.rating}</span>
+                                                    <div  style={{ color: "#ecd041", fontSize: "25px" }}>
+                                                        <i className="fa-solid fa-star"></i>
+                                                    </div>                                                 
+                                                </div>  
+                                            </div>
+
+                                            <span className="review-body">{review.body}</span>
+                                        </div>
+                                    </>
+                                )
+                            })}
+                        </div>
+                        <hr className="information-line"></hr>
+                        <div style={{ height: '90.2vh', width: '100vw' }}>
+                        <GoogleMapReact
+                                bootstrapURLKeys={{ key:  "AIzaSyCL1buWaa613e2kJz-1qY5HBNNZamJaWG8" }}
+                                defaultCenter={defaultProps.center}
+                                defaultZoom={defaultProps.zoom}
+                            >
+                                <CoolMarker
+                                lat={coordinates[0]}
+                                lng={coordinates[1]}
+                                text="My Marker"
+                                />
+                        </GoogleMapReact>
+                        </div>
                         <br></br>
                         <br></br>
                         <br></br>

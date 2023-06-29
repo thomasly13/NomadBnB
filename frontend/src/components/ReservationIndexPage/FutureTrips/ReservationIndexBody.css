@@ -38,6 +38,8 @@
 
 }
 
+
+
 .reservation-host, .reservation-date {
     margin-top: 2px;
     font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
@@ -187,3 +189,47 @@
     color: black;
 }
 
+
+.reservation-current-trips-1 {
+    width: 90%;
+    height: 230px;
+    border: #DDDDDD 1px solid;
+    border-radius: 12px;
+    padding: 32px;
+    display: flex;
+    flex-direction: column;
+}
+
+.start-searching-button {
+    width: 162px;
+    height: 48px;
+    border-radius: 8px;
+    color: white;
+    border: none;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    background-image: radial-gradient( circle at center,#FF385C 0%,#e61e4d 27.5%,#e31c5f 40%,#d70466 57.5%,#bd1e59 75%,#bd1e59 100% );
+    background: linear-gradient(to right,#E61E4D 0%,#E31C5F 50%,#D70466 100%);
+    cursor: pointer;
+}
+
+.state-searching-title {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 20px;
+    line-height: 30px;
+    font-weight: 600;
+    color: black;
+    padding-top: 15px;
+    padding-bottom: 15px;
+}
+
+.state-searching-description {
+    font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;
+    font-size: 15px;
+    line-height: 20px;
+    font-weight: 400;
+    max-width: 300px;
+    color: rgb(113,113,113);
+    padding-bottom: 25px;
+}
