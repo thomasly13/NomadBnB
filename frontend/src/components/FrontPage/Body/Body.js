@@ -8,6 +8,7 @@ export const FrontPageBody = () => {
         <div className="front-page-body">
             < NavigationBar />
             < ListingsIndex />
+            
         </div>
         
     )

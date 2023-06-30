@@ -22,6 +22,7 @@ export const ShowReservation = ({listing}) => {
 
   const [showMenu, setShowMenu] = useState(false)
   const [showGuestsMenu, setShowGuestsMenu] = useState(false)
+  const [errors, setErrors] = useState(false)
 
   const handleToggleMenu = (e) => {
     e.preventDefault();
@@ -49,6 +50,7 @@ export const ShowReservation = ({listing}) => {
   const handleCheckoutDate = (date) => {
     const actualMonth = date.getMonth() + 1
     setCheckOutDate(`${actualMonth}/${date.getDate()}/${date.getFullYear()}`)
+    setShowMenu(false)
   }
 
   const intervalGuestsDown = () => {
@@ -86,10 +88,13 @@ export const ShowReservation = ({listing}) => {
 
 
     const res = await dispatch(postCreateReservation(reservationDetails))
+    debugger
 
     if (res.errors === "Awesome Made!") {
 
       return history.push("/");
+    } else {
+      setErrors(true);
     }
     
     
@@ -173,7 +178,17 @@ export const ShowReservation = ({listing}) => {
 
                   <button className="reservation-submit-button" type="submit">
                     <span >Reserve</span> 
-                  </button>                    
+                  </button>
+                  {errors ?
+                  <div className="cool-errors">
+                    <div  style={{ color: "#c13515", fontSize: "16px" }}>
+                        <i className="fa-sharp fa-solid fa-circle-exclamation"></i>
+                    </div>
+                    
+                    <div >
+                        <span className="sign-up-error">Log in to reserve a listing</span>        
+                    </div>
+                  </div> : null }                
                 </form>
 
 

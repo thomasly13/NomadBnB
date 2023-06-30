@@ -20,8 +20,12 @@ export const ReservationCalendar = ({handleCheckinDate, handleCheckoutDate, endi
 
     const handleSelect = (date) => {
         setDateState([date.selection]);
-        handleCheckinDate(date.selection.startDate);
-        handleCheckoutDate(date.selection.endDate);
+        handleCheckinDate(date.selection.startDate);            
+
+
+        if ( date.selection.endDate !== date.selection.startDate) {
+            handleCheckoutDate(date.selection.endDate);
+        }
     }
 
     return (
