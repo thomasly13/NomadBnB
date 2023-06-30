@@ -45,7 +45,7 @@ export const ShowBody = ({listing}) => {
     const reviews = useSelector(state => Object.values(state.review))
     return (
         <>     
-            {owner === undefined || reviews === undefined ? null :    
+            {(owner === undefined || owner === null) || (reviews === undefined || reviews === null) ? null :    
             <div className="show-body">
                 < ShowHeader listing={listing} locationHelper={locationHelper}/>
                 <div className="show-body-information">
@@ -116,7 +116,8 @@ export const ShowBody = ({listing}) => {
                             
                             {reviews.map( (review) => {
                                 return (
-                                    <>
+                                    <>  
+                                        {review ? 
                                         <div>
                                             <div className="review-title-container">
                                                 {review.reviewer ? 
@@ -130,7 +131,7 @@ export const ShowBody = ({listing}) => {
                                             </div>
 
                                             <span className="review-body">{review.body}</span>
-                                        </div>
+                                        </div> : null }
                                     </>
                                 )
                             })}

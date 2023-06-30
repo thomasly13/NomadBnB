@@ -52,7 +52,7 @@
     User.create!(
       first_name: 'Jasvneet', 
       last_name: 'Kaur', 
-      email: 'hanna@user.com', 
+      email: 'jas@user.com', 
       password: 'password'
     )
 
@@ -93,7 +93,7 @@
     User.create!(
       first_name: 'Matt', 
       last_name: 'Dawg', 
-      email: 'Shanna@user.com', 
+      email: 'matt@user.com', 
       password: 'password'
     )
 
@@ -922,6 +922,7 @@
       reservation_id: 4
     )
 
+    puts 'cool'
     Reservation.create!(
       num_of_guests: 2,
       check_in_date: "2023/04/19",
@@ -993,6 +994,8 @@
       listing_id: 2,
       renter_id: 22,
     );
+
+    puts 'cool 1'
 
     Review.create!(
       rating: 4,
@@ -1130,6 +1133,8 @@
       reservation_id: 17
     )
 
+    
+    puts 'cool 4'
     Reservation.create!(
       num_of_guests: 2,
       check_in_date: "2021/07/12",
@@ -1194,94 +1199,1131 @@
       reservation_id: 21
     )
 
-    Reservation.create!(
-      num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
-    );
+    puts 'cool 6'
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
+      check_in_date: "2021/07/12", 
+      check_out_date: "2021/10/09",
+      listing_id: 5,
+      renter_id: 2,
     );
 
-    Reservation.create!(
-      num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
-    );
-
-    Reservation.create!(
-      num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
-    );
+    
+    Review.create!(
+      rating: 3, body: "Average stay. The apartment was clean, but the furnishings were outdated. The host was responsive, but the noise from the construction nearby was bothersome.",
+      listing_id: 5,
+      reviewer_id: 2,
+      reservation_id: 22
+    )
 
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
+      check_in_date: "2021/08/25", check_out_date: "2021/11/25" ,
+      listing_id: 5,
+      renter_id: 27,
     );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 5,
+      reviewer_id: 27,
+      reservation_id: 23
+    )
+
+
+    puts 'cool 5'
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
+      check_in_date: "2021/09/03", check_out_date: "2021/12/01",
+      listing_id: 5,
+      renter_id: 23,
     );
+
+    Review.create!(
+      rating: 5, body: "An unforgettable experience! The host was exceptional, going above and beyond to ensure our comfort. The apartment was spacious, clean, and had breathtaking views.",
+      listing_id: 5,
+      reviewer_id: 23,
+      reservation_id: 24
+    )
+
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
+      check_in_date: "2021/10/07", check_out_date: "2022/01/07",
+      listing_id: 5,
+      renter_id: 22,
     );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The photos were misleading, and the actual apartment was smaller and poorly maintained. The host was unresponsive to our concerns." ,
+      listing_id: 5,
+      reviewer_id: 22,
+      reservation_id: 25
+    )
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
+      check_in_date: "2021/11/09", check_out_date: "2022/02/09",
+      listing_id: 6,
       renter_id: 1,
     );
 
-    Reservation.create!(
-      num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
-    );
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had all the necessary amenities and the host was helpful.",
+      listing_id: 6,
+      reviewer_id: 1,
+      reservation_id: 26
+    )
+
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
-      renter_id: 1,
+      check_in_date: "2021/12/22", check_out_date: "2022/03/22" ,
+      listing_id: 6,
+      renter_id: 27,
     );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had all the necessary amenities and the host was helpful.",
+      listing_id: 6,
+      reviewer_id: 27,
+      reservation_id: 27
+    )
+
 
     Reservation.create!(
       num_of_guests: 2,
-      check_in_date: "2022/05/01",
-      check_out_date: "2022/12/19",
-      listing_id: 4,
+      check_in_date: "2022/01/16", check_out_date: "2022/06/16",
+      listing_id: 6,
+      renter_id: 11,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had all the necessary amenities and the host was helpful.",
+      listing_id: 6,
+      reviewer_id: 11,
+      reservation_id: 28
+    )
+
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/02/18", check_out_date: "2022/05/18" ,
+      listing_id: 6,
+      renter_id: 6,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had all the necessary amenities and the host was helpful.",
+      listing_id: 6,
+      reviewer_id: 6,
+      reservation_id: 29
+    )
+
+    puts 'cool 8'
+
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/03/10", check_out_date: "2022/06/10",
+      listing_id: 6,
+      renter_id: 21,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had all the necessary amenities and the host was helpful.",
+      listing_id: 6,
+      reviewer_id: 12,
+      reservation_id: 30
+    )
+
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/04/29", check_out_date: "2022/07/29",
+      listing_id: 7,
       renter_id: 1,
     );
+
+    Review.create!(
+      rating: 3, body: "Decent accommodation. The location was good, but the noise from the neighbors was a bit disruptive.", 
+      listing_id: 7,
+      reviewer_id: 1,
+      reservation_id: 31
+    )
+
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 7,
+      renter_id: 4,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our stay. The host was friendly and accommodating. The apartment was clean and comfortable, although the Wi-Fi signal was weak at times." ,
+      listing_id: 7,
+      reviewer_id: 24,
+      reservation_id: 32
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 7,
+      renter_id: 27,
+    );
+
+    Review.create!(
+      rating: 5, body: "Absolutely loved it! The host was friendly, and the apartment was clean, comfortable, and beautifully decorated." ,
+      listing_id: 7,
+      reviewer_id: 27,
+      reservation_id: 33
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 7,
+      renter_id: 12,
+    );
+
+    Review.create!(
+      rating: 4, body: "Good experience overall. The host provided clear instructions, and the apartment had a nice view." ,
+      listing_id: 7,
+      reviewer_id: 12,
+      reservation_id: 34
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 7,
+      renter_id: 13,
+    );
+
+    Review.create!(
+      rating: 5, body: "Outstanding stay! The property exceeded our expectations, and the host was incredibly accommodating.",
+      listing_id: 7,
+      reviewer_id: 13,
+      reservation_id: 35
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 8,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 2, body: "Not up to par. The apartment was poorly maintained and lacked basic amenities. The host was unresponsive to our concerns.",
+      listing_id: 8,
+      reviewer_id: 1,
+      reservation_id: 36
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 8,
+      renter_id: 18,
+    );
+
+    Review.create!(
+      rating: 5, body: "Fantastic stay! The host was welcoming, and the apartment was clean, spacious, and had a great location.",
+      listing_id: 8,
+      reviewer_id: 18,
+      reservation_id: 37
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 8,
+      renter_id: 8,
+    );
+
+    Review.create!(
+      rating: 3, body: "Average accommodation. The apartment was clean, but the furniture was outdated. The host was responsive, but the noise from the neighbors was bothersome at times.",
+      listing_id: 8,
+      reviewer_id: 8,
+      reservation_id: 38
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 8,
+      renter_id: 14,
+    );
+
+    Review.create!(
+      rating: 4, body: "Good experience overall. The host was friendly and provided useful tips for exploring the city. The apartment was comfortable, although the bathroom could have been cleaner.",
+      listing_id: 8,
+      reviewer_id: 14,
+      reservation_id: 39
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 8,
+      renter_id: 22,
+    );
+
+    Review.create!(
+      rating: 2, body: "Below expectations. The photos were misleading, and the actual apartment was smaller and in need of maintenance. The host was unresponsive to our inquiries." ,
+      listing_id: 8,
+      reviewer_id: 22,
+      reservation_id: 40
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 9,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had a convenient location and comfortable beds. The host was helpful and provided prompt communication throughout our stay.",
+      listing_id: 9,
+      reviewer_id: 1,
+      reservation_id: 41
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 9,
+      renter_id: 26,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had a convenient location and comfortable beds. The host was helpful and provided prompt communication throughout our stay.",
+      listing_id: 9,
+      reviewer_id: 26,
+      reservation_id: 42
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 9,
+      renter_id: 2,
+    );
+
+    Review.create!(
+      rating: 5, body: "Absolutely loved it! The host was warm and welcoming, and the apartment was clean, spacious, and beautifully designed. Would definitely stay here again in the future.",
+      listing_id: 9,
+      reviewer_id: 2,
+      reservation_id: 43
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 9,
+      renter_id: 15,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment had a good location, but the noise from the nearby construction was disruptive. The host was responsive to our needs.",
+      listing_id: 9,
+      reviewer_id: 15,
+      reservation_id: 44
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 9,
+      renter_id: 19,
+    );
+
+    Review.create!(
+      rating: 5, body: "A wonderful experience! The host was attentive and provided excellent recommendations for local attractions. The apartment was immaculate and had stunning views.",
+      listing_id: 9,
+      reviewer_id: 19,
+      reservation_id: 45
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 10,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyable stay. The host was friendly and accommodating. The apartment was clean and comfortable, although the kitchen could have been better equipped." ,
+      listing_id: 10,
+      reviewer_id: 1,
+      reservation_id: 46
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 10,
+      renter_id: 23,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyable stay. The host was friendly and accommodating. The apartment was clean and comfortable, although the kitchen could have been better equipped." ,
+      listing_id: 10,
+      reviewer_id: 23,
+      reservation_id: 47
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 10,
+      renter_id: 27,
+    );
+
+    Review.create!(
+      rating: 1, body: "Awful experience. The apartment was dirty and smelled bad. The host was unresponsive and did not address our complaints." ,
+      listing_id: 10,
+      reviewer_id: 27,
+      reservation_id: 48
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 10,
+      renter_id: 25,
+    );
+
+    Review.create!(
+      rating: 5, body: "Exceptional stay! The host was amazing and provided outstanding hospitality. The apartment was clean, spacious, and had a great location." ,
+      listing_id: 10,
+      reviewer_id: 25,
+      reservation_id: 49
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 10,
+      renter_id: 22,
+    );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The apartment was not as described, and the host was unhelpful. Would not recommend.",
+      listing_id: 4,
+      reviewer_id: 22,
+      reservation_id: 50
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 11,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment was clean, but the noise from the street was bothersome. The host was responsive, but could have been more helpful.",
+      listing_id: 11,
+      reviewer_id: 1,
+      reservation_id: 51
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 11,
+      renter_id: 7,
+    );
+
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment was clean, but the noise from the street was bothersome. The host was responsive, but could have been more helpful.",
+      listing_id: 11,
+      reviewer_id: 7,
+      reservation_id: 52
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 11,
+      renter_id: 16,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment was clean, but the noise from the street was bothersome. The host was responsive, but could have been more helpful.",
+      listing_id: 11,
+      reviewer_id: 16,
+      reservation_id: 53
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 11,
+      renter_id: 4,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment was clean, but the noise from the street was bothersome. The host was responsive, but could have been more helpful.",
+      listing_id: 11,
+      reviewer_id: 4,
+      reservation_id: 54
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 11,
+      renter_id: 20,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment was clean, but the noise from the street was bothersome. The host was responsive, but could have been more helpful.",
+      listing_id: 11,
+      reviewer_id: 20,
+      reservation_id: 55
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 12,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 5, body: "An amazing experience! The host was attentive and helpful, and the apartment was beautifully decorated and had breathtaking views. Would definitely stay here again!",
+      listing_id: 12,
+      reviewer_id: 1,
+      reservation_id: 56
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 12,
+      renter_id: 22,
+    );
+
+    Review.create!(
+      rating: 2, body: "Not recommended. The apartment was not clean upon arrival, and the host was unresponsive to our concerns. Overall, the experience was disappointing and frustrating.",
+      listing_id: 12,
+      reviewer_id: 22,
+      reservation_id: 57
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 12,
+      renter_id: 24,
+    );
+
+    Review.create!(
+      rating: 4, body: "Good value for the price. The apartment was clean and had all the necessary amenities. The host was friendly and provided helpful local tips.",
+      listing_id: 12,
+      reviewer_id: 24,
+      reservation_id: 58
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 12,
+      renter_id: 12,
+    );
+
+    Review.create!(
+      rating: 5, body: "Highly recommend this place! The host was fantastic, providing excellent recommendations for local attractions. The apartment was clean, comfortable, and beautifully decorated.",
+      listing_id: 12,
+      reviewer_id: 12,
+      reservation_id: 59
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 12,
+      renter_id: 17,
+    );
+
+    Review.create!(
+      rating: 3, body: "Average stay. The apartment was clean, but the furnishings were outdated. The host was responsive, but the noise from the construction nearby was bothersome.",
+      listing_id: 12,
+      reviewer_id: 17,
+      reservation_id: 60
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 13,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 13,
+      reviewer_id: 1,
+      reservation_id: 61
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 13,
+      renter_id: 27,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 13,
+      reviewer_id: 27,
+      reservation_id: 62
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 13,
+      renter_id: 11,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 13,
+      reviewer_id: 11,
+      reservation_id: 63
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 2,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 13,
+      reviewer_id: 2,
+      reservation_id: 64
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 13,
+      renter_id: 5,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyed our time here. The location was convenient, and the host provided helpful recommendations. The only downside was the limited parking availability in the area.",
+      listing_id: 13,
+      reviewer_id: 5,
+      reservation_id: 65
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 14,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 5, body: "An unforgettable experience! The host was exceptional, going above and beyond to ensure our comfort. The apartment was spacious, clean, and had breathtaking views.",
+      listing_id: 14,
+      reviewer_id: 1,
+      reservation_id: 66
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 14,
+      renter_id: 24,
+    );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The photos were misleading, and the actual apartment was smaller and poorly maintained. The host was unresponsive to our concerns.",
+      listing_id: 14,
+      reviewer_id: 24,
+      reservation_id: 67
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 14,
+      renter_id: 16,
+    );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The photos were misleading, and the actual apartment was smaller and poorly maintained. The host was unresponsive to our concerns.",
+      listing_id: 14,
+      reviewer_id: 16,
+      reservation_id: 68
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 14,
+      renter_id: 2,
+    );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The photos were misleading, and the actual apartment was smaller and poorly maintained. The host was unresponsive to our concerns.",
+      listing_id: 14,
+      reviewer_id: 2,
+      reservation_id: 69
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 14,
+      renter_id: 3,
+    );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The photos were misleading, and the actual apartment was smaller and poorly maintained. The host was unresponsive to our concerns.",
+      listing_id: 14,
+      reviewer_id: 3,
+      reservation_id: 70
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 15,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had all the necessary amenities and the host was helpful." ,
+      listing_id: 15,
+      reviewer_id: 1,
+      reservation_id: 71
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 15,
+      renter_id: 3,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent accommodation. The location was good, but the noise from the neighbors was a bit disruptive.",
+      listing_id: 15,
+      reviewer_id: 3,
+      reservation_id: 72
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 15,
+      renter_id: 5,
+    );
+
+    Review.create!(
+      rating: 5, body: "Absolutely loved it! The host was friendly, and the apartment was clean, comfortable, and beautifully decorated.",
+      listing_id: 15,
+      reviewer_id: 5,
+      reservation_id: 73
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 15,
+      renter_id: 6,
+    );
+
+    Review.create!(
+      rating: 4, body: "Good experience overall. The host provided clear instructions, and the apartment had a nice view.",
+      listing_id: 15,
+      reviewer_id: 6,
+      reservation_id: 74
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 15,
+      renter_id: 13,
+    );
+
+    Review.create!(
+      rating: 5, body: "Outstanding stay! The property exceeded our expectations, and the host was incredibly accommodating.",
+      listing_id: 15,
+      reviewer_id: 13,
+      reservation_id: 75
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 16,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 2, body: "Not up to par. The apartment was poorly maintained and lacked basic amenities. The host was unresponsive to our concerns." ,
+      listing_id: 16,
+      reviewer_id: 1,
+      reservation_id: 76
+    )
+
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 16,
+      renter_id: 14,
+    );
+
+    Review.create!(
+      rating: 5, body: "Fantastic stay! The host was welcoming, and the apartment was clean, spacious, and had a great location." ,
+      listing_id: 16,
+      reviewer_id: 14,
+      reservation_id: 77
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 16,
+      renter_id: 8,
+    );
+
+    Review.create!(
+      rating: 5, body: "Fantastic stay! The host was welcoming, and the apartment was clean, spacious, and had a great location." ,
+      listing_id: 16,
+      reviewer_id: 8,
+      reservation_id: 78
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 16,
+      renter_id: 19,
+    );
+
+    Review.create!(
+      rating: 5, body: "Fantastic stay! The host was welcoming, and the apartment was clean, spacious, and had a great location." ,
+      listing_id: 16,
+      reviewer_id: 19,
+      reservation_id: 79
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 16,
+      renter_id: 25,
+    );
+
+    Review.create!(
+      rating: 5, body: "Fantastic stay! The host was welcoming, and the apartment was clean, spacious, and had a great location." ,
+      listing_id: 16,
+      reviewer_id: 25,
+      reservation_id: 80
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 17,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 5, body: "Fantastic stay! The host was welcoming, and the apartment was clean, spacious, and had a great location." ,
+      listing_id: 17,
+      reviewer_id: 1,
+      reservation_id: 81
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 17,
+      renter_id: 7,
+    );
+
+    Review.create!(
+      rating: 3, body: "Average accommodation. The apartment was clean, but the furniture was outdated. The host was responsive, but the noise from the neighbors was bothersome at times.",
+      listing_id: 17,
+      reviewer_id: 7,
+      reservation_id: 82
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 17,
+      renter_id: 10,
+    );
+
+    Review.create!(
+      rating: 4, body: "Good experience overall. The host was friendly and provided useful tips for exploring the city. The apartment was comfortable, although the bathroom could have been cleaner." ,
+      listing_id: 17,
+      reviewer_id: 10,
+      reservation_id: 83
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 17,
+      renter_id: 24,
+    );
+
+    Review.create!(
+      rating: 2, body: "Below expectations. The photos were misleading, and the actual apartment was smaller and in need of maintenance. The host was unresponsive to our inquiries.",
+      listing_id: 17,
+      reviewer_id: 24,
+      reservation_id: 84
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 17,
+      renter_id: 18,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great value for the price. The apartment had a convenient location and comfortable beds. The host was helpful and provided prompt communication throughout our stay." ,
+      listing_id: 17,
+      reviewer_id: 18,
+      reservation_id: 85
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 18,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 5, body: "Absolutely loved it! The host was warm and welcoming, and the apartment was clean, spacious, and beautifully designed. Would definitely stay here again in the future.",
+      listing_id: 18,
+      reviewer_id: 1,
+      reservation_id: 86
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 18,
+      renter_id: 12,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment had a good location, but the noise from the nearby construction was disruptive. The host was responsive to our needs.",
+      listing_id: 18,
+      reviewer_id: 12,
+      reservation_id: 87
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 18,
+      renter_id: 4,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment had a good location, but the noise from the nearby construction was disruptive. The host was responsive to our needs.",
+      listing_id: 18,
+      reviewer_id: 4,
+      reservation_id: 88
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 18,
+      renter_id: 26,
+    );
+
+    Review.create!(
+      rating: 5, body: "A wonderful experience! The host was attentive and provided excellent recommendations for local attractions. The apartment was immaculate and had stunning views." ,
+      listing_id: 18,
+      reviewer_id: 26,
+      reservation_id: 89
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 18,
+      renter_id: 17,
+    );
+
+    Review.create!(
+      rating: 4, body: "Enjoyable stay. The host was friendly and accommodating. The apartment was clean and comfortable, although the kitchen could have been better equipped." ,
+      listing_id: 18,
+      reviewer_id: 17,
+      reservation_id: 90
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 19,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 1, body: "Awful experience. The apartment was dirty and smelled bad. The host was unresponsive and did not address our complaints." ,
+      listing_id: 19,
+      reviewer_id: 1,
+      reservation_id: 91
+    )
+    
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 19,
+      renter_id: 12,
+    );
+
+    Review.create!(
+      rating: 1, body: "Awful experience. The apartment was dirty and smelled bad. The host was unresponsive and did not address our complaints." ,
+      listing_id: 19,
+      reviewer_id: 12,
+      reservation_id: 92
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 19,
+      renter_id: 27,
+    );
+
+    Review.create!(
+      rating: 1, body: "Awful experience. The apartment was dirty and smelled bad. The host was unresponsive and did not address our complaints." ,
+      listing_id: 19,
+      reviewer_id: 27,
+      reservation_id: 93
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 19,
+      renter_id: 23,
+    );
+
+    Review.create!(
+      rating: 1, body: "Awful experience. The apartment was dirty and smelled bad. The host was unresponsive and did not address our complaints." ,
+      listing_id: 19,
+      reviewer_id: 23,
+      reservation_id: 94
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 19,
+      renter_id: 16,
+    );
+
+    Review.create!(
+      rating: 1, body: "Awful experience. The apartment was dirty and smelled bad. The host was unresponsive and did not address our complaints." ,
+      listing_id: 19,
+      reviewer_id: 16,
+      reservation_id: 95
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 20,
+      renter_id: 1,
+    );
+
+    Review.create!(
+      rating: 5, body: "Exceptional stay! The host was amazing and provided outstanding hospitality. The apartment was clean, spacious, and had a great location.",
+      listing_id: 20,
+      reviewer_id: 16,
+      reservation_id: 96
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 20,
+      renter_id: 16,
+    );
+
+    Review.create!(
+      rating: 2, body: "Disappointing stay. The apartment was not as described, and the host was unhelpful. Would not recommend.",
+      listing_id: 20,
+      reviewer_id: 16,
+      reservation_id: 97
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 20,
+      renter_id: 14,
+    );
+
+    Review.create!(
+      rating: 4, body: "Great location and comfortable stay. The host was responsive and provided helpful recommendations for local attractions. Would consider staying here again in the future." ,
+      listing_id: 20,
+      reviewer_id: 14,
+      reservation_id: 98
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 20,
+      renter_id: 12,
+    );
+
+    Review.create!(
+      rating: 3, body: "Decent stay. The apartment was clean, but the noise from the street was bothersome. The host was responsive, but could have been more helpful." ,
+      listing_id: 20,
+      reviewer_id: 12,
+      reservation_id: 99
+    )
+    
+    Reservation.create!(
+      num_of_guests: 2,
+      check_in_date: "2022/05/11", check_out_date: "2022/08/11" ,
+      listing_id: 20,
+      renter_id: 14,
+    );
+
+    Review.create!(
+      rating: 5, body: "Highly recommended! The host was exceptional, providing great recommendations for local attractions. The apartment was clean, modern, and had a great location.",
+      listing_id: 20,
+      reviewer_id: 14,
+      reservation_id: 100
+    )
+
     
 
     puts "Done!"
