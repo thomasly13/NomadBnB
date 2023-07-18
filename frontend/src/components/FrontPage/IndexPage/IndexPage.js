@@ -22,15 +22,22 @@ export const ListingsIndex = () => {
         dispatch(fetchAllListings())
     }, [dispatch])
 
+    const toListing = (e, id) => {
+        e.stopPropagation();
+        history.push(`/listings/${id}`)
+
+    }
+
     const CoolMarker = ({id}) => {
         return (
-            <div className="houseIcon" style={{ color: "#ffffff", fontSize: "18px" }} onClick={() => {history.push(`/listings/${id}`)}}>
+            <div className="houseIcon" style={{ color: "#ffffff", fontSize: "18px" }} onClick={(e) => toListing(e, id)}>
                 <i className="fa-solid fa-house-chimney"></i>
             </div>   
         )
     }
 
-    const toggleMap = () => {
+    const toggleMap = (e) => {
+        e.stopPropagation();
         const cool = document.getElementById("cooler-map")
         if (!showMap) {
             cool.classList.remove(".off-map")
