@@ -50,5 +50,21 @@ class Reservation < ApplicationRecord
     .where("check_in_date >= ?", Date.today)
     .where(renter: {id: renter_id})
   end 
+
+  def self.black_out_reservations(listing_id)
+    return Reservation.includes(:listing)
+    .where("check_in_date >= ?", Date.today)
+    .where(listing: {id: listing_id})
+  end 
+
+  def self.black_out_dates(listing_id)
+    reservations = Reservation.black_out_reservations(listing_id)
+    black_out_dates = []
+    reservations.each do |reservation|
+      black_out_dates.concat((reservation.check_in_date..reservation.check_out_date).to_a)
+    end
+    return black_out_dates
+  end
+
   
 end

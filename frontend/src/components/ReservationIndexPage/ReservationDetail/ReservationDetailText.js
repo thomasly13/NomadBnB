@@ -7,7 +7,7 @@ import { ReservationPreviousEdit } from "./ReviewForm/ReservationPreviousReviewE
 import { useHistory } from "react-router-dom/cjs/react-router-dom.min";
 
 
-export const ReservationDetailText = ({reservation, user, listing}) => {
+export const ReservationDetailText = ({reservation, user, listing, changeLoad}) => {
 
     const history = useHistory();
 
@@ -68,7 +68,8 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
             id: reservation.id
         }
         const res = await dispatch(updateExistingReservation(reservationDetails))
-        setEdit(false)   ;
+        changeLoad();
+        setEdit(false);
     };
 
     const handleDelete = async (e) => {
@@ -110,7 +111,12 @@ export const ReservationDetailText = ({reservation, user, listing}) => {
                     <span className="reservation-information-payment-total-cost-money">${listing.price} &#215; {nights} nights = ${nights * listing.price}</span>
                 </div>
 
-                { !edit ? null : 
+                { !edit ?
+                <div className="reservation-information-payment-information-container">
+                    <span className="payment-big-title">Guests</span>
+                    <span className="reservation-information-payment-total-cost-money">{reservation.numOfGuests}</span>
+                </div>
+                 : 
                 <div className="reservation-edit-guests-container">
                     <div className="guest-drop-down-adults-container-1">
                         <div className="adults-text-container-1">

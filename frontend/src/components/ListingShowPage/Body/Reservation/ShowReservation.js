@@ -88,7 +88,7 @@ export const ShowReservation = ({listing}) => {
 
 
     const res = await dispatch(postCreateReservation(reservationDetails))
-    debugger
+
 
     if (res.errors === "Awesome Made!") {
 
@@ -166,7 +166,7 @@ export const ShowReservation = ({listing}) => {
                         <span className="check-out-text">CHECKOUT</span>
                         { checkOutDate ? <span className="check-in-input">{checkOutDate}</span> : <span className="check-in-input">Add date</span>}
                       </div>
-                      { showMenu && <ReservationCalendar handleCheckinDate={handleCheckinDate} handleCheckoutDate={handleCheckoutDate} startingDate={checkInDate} endingDate={checkOutDate}/>}
+                      { showMenu && <ReservationCalendar handleCheckinDate={handleCheckinDate} handleCheckoutDate={handleCheckoutDate} listingId={listing.id} startingDate={checkInDate} endingDate={checkOutDate}/>}
                     </button>
                     <div className="reservation-form-guests-container" onClick={handleToggleGuestMenu}>
                       <span className="guests-text">GUESTS</span>

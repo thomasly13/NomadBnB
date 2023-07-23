@@ -87,7 +87,7 @@
 .email-sign-in-form-input input, .sign-in-form-input input, .sign-up-first-name-input input, .sign-up-last-name-input input, .sign-up-email-input input, .sign-up-password-input input{
   border: none;
   outline: none;
-  margin: 26px 12px 6px;
+  margin: 18px 12px 6px;
   color: #222222;
   background-color: transparent;
   font-family: 'Circular', '-apple-system','BlinkMacSystemFont','Roboto','Helvetica Neue',sans-serif;

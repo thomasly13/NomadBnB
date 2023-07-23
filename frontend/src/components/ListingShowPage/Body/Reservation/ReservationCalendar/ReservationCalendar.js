@@ -3,11 +3,18 @@ import 'react-date-range/dist/styles.css'; // main style file
 import 'react-date-range/dist/theme/default.css'; // theme css file
 import { DateRange } from 'react-date-range';
 import { useState } from "react";
+import { useSelector } from "react-redux";
 
 
-export const ReservationCalendar = ({handleCheckinDate, handleCheckoutDate, endingDate, startingDate}) => {
+export const ReservationCalendar = ({handleCheckinDate, handleCheckoutDate, endingDate, startingDate, listingId}) => {
 
+    const reservations = useSelector(state => state.listing[listingId].reservations)
 
+    const blackOutDates = []
+
+    reservations.map(reservation => {
+        blackOutDates.push(new Date(reservation))
+    });
 
     const [dateState, setDateState] = useState([
         {
@@ -39,7 +46,7 @@ export const ReservationCalendar = ({handleCheckinDate, handleCheckoutDate, endi
                 showSelectionPreview={true}
                 moveRangeOnFirstSelection={false}
                 minDate={new Date()}
-                disabledDates={[new Date("2023-07-29")]}
+                disabledDates={blackOutDates}
             />
         </div>
     )

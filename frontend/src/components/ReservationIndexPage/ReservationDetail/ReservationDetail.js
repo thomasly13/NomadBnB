@@ -1,4 +1,4 @@
-import React, {useEffect} from "react";
+import React, {useEffect, useState} from "react";
 import GoogleMapReact from 'google-map-react';
 import { ReservationPageNavigation } from "../Navigation/ReservationPageNavigation";
 import { ReservationDetailText } from "./ReservationDetailText";
@@ -16,11 +16,21 @@ export const ReservationDetail = () => {
     const reservation = useSelector(state => state.reservation[reservationId])
     const listing = useSelector(state => (reservation ? state.listing[reservation.listingId] : null))
 
+    const [load, setLoad] = useState(false)
+
    
     useEffect(() => {
         window.scrollTo({top: 0, left:0 , behavior: "smooth"})
         dispatch(fetchReceiveReservation(reservationId))
-    }, [dispatch, reservationId])
+    }, [dispatch, reservationId, load])
+
+    const changeLoad = () => {
+        if (load) {
+            setLoad(false)
+        } else {
+            setLoad(true)
+        }
+    }
 
 
     const CoolMarker = () => {
@@ -57,7 +67,7 @@ export const ReservationDetail = () => {
                 < ReservationPageNavigation />
                 <div className="reservation-detail-container">
 
-                    < ReservationDetailText  reservation={reservation} user={user} listing={listing}/>
+                    < ReservationDetailText changeLoad={changeLoad} reservation={reservation} user={user} listing={listing}/>
                 
                     <div style={{ height: '90.2vh', width: '75%' }}>
                         <GoogleMapReact

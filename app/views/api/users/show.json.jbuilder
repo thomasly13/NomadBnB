@@ -14,7 +14,6 @@ end
 json.set! 'reservations' do
 
     json.set! 'previousReservations' do
-
         if @user.reservations.previous_reservations(@user.id).length != 0
             @user.reservations.previous_reservations(@user.id).each do |reservation|
                 json.set! reservation.id do

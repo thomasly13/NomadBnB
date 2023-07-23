@@ -40,14 +40,14 @@ export const ListingsIndex = () => {
         e.stopPropagation();
         const cool = document.getElementById("cooler-map")
         if (!showMap) {
-            cool.classList.remove(".off-map")
-            cool.classList.add(".on-map")
-            setShowMap(false)
+            cool.classList.remove("off-map")
+            cool.classList.add("on-map")
+            setShowMap(true)
             return
         } else {
-            cool.classList.remove(".on-map")
-            cool.classList.remove(".off-map")
-            setShowMap(true)
+            cool.classList.remove("on-map")
+            cool.classList.add("off-map")
+            setShowMap(false)
         }
         
     }
@@ -104,14 +104,14 @@ export const ListingsIndex = () => {
             </div>
             <button className="cooler-button" onClick={toggleMap}>
                 <div className="cooler-button-container">
-                    <span className="cooler-button-text">Show Map</span>
+                    { !showMap ? <span className="cooler-button-text">Show Map</span> :
+                    <span className="cooler-button-text">Hide Map</span> }
                     <div style={{ color: "white", fontSize: "20px" }}>
                         <i className="fa-solid fa-map"></i>                    
                     </div>                    
-                </div>
-
-
-                <div id="cooler-map" >
+                </div>            
+            </button>
+            <div id="cooler-map" className="off-map">
                     <GoogleMapReact
                             bootstrapURLKeys={{ key:  "AIzaSyCL1buWaa613e2kJz-1qY5HBNNZamJaWG8" }}
                             defaultCenter={defaultProps.center}
@@ -131,8 +131,7 @@ export const ListingsIndex = () => {
                         })}
 
                     </GoogleMapReact>
-                </div>                
-            </button>
+                </div>    
 
 
         </>
