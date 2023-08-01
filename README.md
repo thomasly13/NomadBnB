@@ -17,7 +17,7 @@ NomadBnB is a clone of the short-term rental application, Airbnb. NomadBnB allow
 
 NomadBnB's core feature is the reservation system, which allows users to book reservations at available listings and organizes relevant information in the users' show page. The backend is built using Ruby On Rails and a PostgreSQL database. The frontend uses React.js, Redux, HTML5, and CSS. 
 
-###Features 
+### Features 
 ### User Authentication:
 - Users can sign up for an account or login with credentaials, as well as log out.
 - Users can use a Demo account, which allows for full access to the application.
