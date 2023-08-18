@@ -30,9 +30,9 @@ export const ListingsIndex = () => {
 
     const CoolMarker = ({id}) => {
         return (
-            <div className="houseIcon" style={{ color: "#ffffff", fontSize: "18px" }} onClick={(e) => toListing(e, id)}>
+            <button className="houseIcon" style={{ color: "#ffffff", fontSize: "18px" }} onClick={(e) => toListing(e, id)}>
                 <i className="fa-solid fa-house-chimney"></i>
-            </div>   
+            </button>   
         )
     }
 
@@ -53,23 +53,16 @@ export const ListingsIndex = () => {
     }
 
     let defaultProps;
-    let coordinates;
-    
-    // (listing ? coordinates = listing.coordinates.split(' ') : coordinates = null)
-
-    // if (listing) {
  
-    // }
-        defaultProps = {
-            center: {
-            lat: 37.76028551221444,
-            lng: -122.50293691134891
-            },
-            zoom: 12.5
-        };       
+    defaultProps = {
+        center: {
+        lat: 37.76028551221444,
+        lng: -122.50293691134891
+        },
+        zoom: 12.5
+    };       
 
     
-
     const helper = (listing) => {
 
         let address = listing.address.split(", ");
@@ -91,10 +84,10 @@ export const ListingsIndex = () => {
                         < ImageCarousel images={listing.images} />
                         <span className="listing-property-location">{helper(listing)}</span>
                         {listing.numOfBeds === 1 ? <span className="listing-property-beds">{listing.numOfBeds} bed</span> : <span className="listing-property-beds">{listing.numOfBeds} beds</span>}
-                        <div className="listing-property-nights">
+                        <section className="listing-property-nights">
                             <span className="listing-property-price" >${listing.price} </span>
                             <span className="listing-property-night">night</span>
-                        </div>
+                        </section>
                         
 
                     </NavLink>)
