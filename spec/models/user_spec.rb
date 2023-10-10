@@ -44,12 +44,34 @@ RSpec.describe User, type: :model do
             it 'properly sets the password reader' do
                 user = User.new(email:"Sasuke", password:"brooooo")
                 expect(user.password).to eq("brooooo")
-              end
+            end
         end
     end
 
-    
-    
-  
 
+    describe 'session token' do 
+        it 'assigns a session token if one is not given' do 
+            expect(subject.session_token).not_to be_nil
+        end
+    end
+
+    describe 'finds users by credentials' do
+        context 'with a valid email and password' do 
+            it 'return the proper user' do 
+                neji = User.create(email:"neji@gmail.com", password:"password", first_name:"Neji", last_name:"Hyuga")
+                user = User.find_by_credentials('neji@gmail.com', 'password')
+
+                expect(neji.email).to eq(user.email)
+                expect(neji.password_digest).to eq(user.password_digest)
+            end
+        end
+
+        context 'with an invalid email and password' do 
+            it 'returns nil' do
+                lee = User.create(email:"lee@gmail.com", password:"password", first_name:"Rock", last_name:"lee")
+                user = User.find_by_credentials('lee@gmail.com', 'notthepassword')
+                expect(user).to be_nil
+            end
+        end
+    end
 end
