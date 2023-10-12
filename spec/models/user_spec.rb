@@ -28,6 +28,10 @@ RSpec.describe User, type: :model do
         it { should validate_length_of(:password).is_at_least(6).is_at_most(255)}
     end
 
+    describe 'associations' do 
+        it{ should have_many(:listings)}
+    end
+
     describe 'password encryption' do 
         it 'does not save passwords to the database' do 
             User.create!(email: 'naruto@gmail.com', password:'password', first_name: "naruto", last_name: "Uzamaki")
